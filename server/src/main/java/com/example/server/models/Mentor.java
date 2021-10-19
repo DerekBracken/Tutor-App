@@ -64,7 +64,7 @@ public class Mentor {
         this.location = location;
         this.englishLevel = englishLevel;
         this.languagesSpoken = languagesSpoken;
-        this.availability = new ArrayList<>();
+        this.availability = new ArrayList<>();  // add as argument
         this.meetings = new ArrayList<>();
     }
 
