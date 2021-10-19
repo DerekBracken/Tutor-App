@@ -16,15 +16,14 @@ public class MenteeController {
     @Autowired
     MenteeRepository menteeRepository;
 
-    @GetMapping(value = "/mentee")
+    @GetMapping(value = "/mentees")
     public ResponseEntity<Mentee> getMentee(){
         return new ResponseEntity (menteeRepository.findAll(), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/mentee")
+    @PostMapping(value = "/mentees")
     public ResponseEntity<Mentee> postMentee(@RequestBody Mentee mentee){
         menteeRepository.save(mentee);
         return new ResponseEntity<>(mentee, HttpStatus.CREATED);
     }
-
 }
