@@ -76,16 +76,16 @@ public class DataLoader implements ApplicationRunner {
         menteeRepository.save(michael);
 
 //      //Mentors
-        Mentor johnny = new Mentor("John", "Flinn", date1, "email", "09", "male", "want to help", "Dublin", englishLevel, languagesSpoken);
+        Mentor johnny = new Mentor("John", "Flinn", date1, "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", englishLevel, languagesSpoken);
         mentorRepository.save(johnny);
 
-        Mentor roosa = new Mentor("Roose", );
+        Mentor roosa = new Mentor("Roosa", "Roserry", date3, "roosa@gmail.com", "0892384792", "female", "I enjoy teaching", "Edinbrugh", englishLevel,  languagesSpoken);
         mentorRepository.save(roosa);
 
-        Mentor hannah = new Mentor();
+        Mentor hannah = new Mentor("Hannah", "Hannerson", date1, "hanna@gmail.com", "088736478", "female", "I like helping people", "Glasgow", englishLevel, languagesSpoken);
         mentorRepository.save(hannah);
 
-        Mentor colin = new Mentor();
+        Mentor colin = new Mentor( "Colin", "Colington", date2, "colin@teach.com","018263543947", "male", "Good opertunity to meet new people", "Dundee", englishLevel, languagesSpoken);
         mentorRepository.save(colin);
 
         //Date and time
@@ -104,8 +104,13 @@ public class DataLoader implements ApplicationRunner {
         meetingRepository.save(meeting1);
 
         Meeting meeting2 = new Meeting(meeting2date, meeting2time, "these are notes", "www", maggie, roosa);
-        meetingRepository.save(meeting1);
+        meetingRepository.save(meeting2);
 
-        
+        Meeting meeting3 = new Meeting(meeting3date, meeting3time, "these are notes", "www", kelly, colin);
+        meetingRepository.save(meeting3);
+
+        Meeting meeting4 = new Meeting(meeting4date, meeting4time, "these are notes", "www", michael, hannah);
+        meetingRepository.save(meeting4);
+
     }
 }
