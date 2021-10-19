@@ -31,8 +31,8 @@ public class Mentor {
     @Column(name="gender")
     private String gender;
 
-    @Column(name="mentoring_reason")
-    private String mentoringReason;
+    @Column(name="description")
+    private String description;
 
     @Column(name="location")
     private String location;
@@ -46,14 +46,14 @@ public class Mentor {
     @Column(name="availability")
     private List<String> availability;
 
-    public Mentor(String firstName, String lastName, Date dateOfBirth, String email, String contactNumber, String gender, String mentoringReason, String location, String englishLevel, List<String> languagesSpoken, List<String> availability) {
+    public Mentor(String firstName, String lastName, Date dateOfBirth, String email, String contactNumber, String gender, String description, String location, String englishLevel, List<String> languagesSpoken, List<String> availability) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.email = email;
         this.contactNumber = contactNumber;
         this.gender = gender;
-        this.mentoringReason = mentoringReason;
+        this.description = description;
         this.location = location;
         this.englishLevel = englishLevel;
         this.languagesSpoken = languagesSpoken;
@@ -119,12 +119,12 @@ public class Mentor {
         this.gender = gender;
     }
 
-    public String getMentoringReason() {
-        return mentoringReason;
+    public String getDescription() {
+        return description;
     }
 
-    public void setMentoringReason(String mentoringReason) {
-        this.mentoringReason = mentoringReason;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getLocation() {
