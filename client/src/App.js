@@ -1,8 +1,9 @@
+import HomeContainer from "./containers/HomeContainer";
 
 function App() {
   return (
         <>
-        Hello all
+        <HomeContainer/>
         </>
   );
 }
