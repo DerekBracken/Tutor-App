@@ -1,4 +1,5 @@
 package com.example.server.models;
 
-public class Mentor extends Person{
+public class Mentor {
+    
 }
