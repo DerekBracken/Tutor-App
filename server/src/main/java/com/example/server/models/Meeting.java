@@ -7,7 +7,7 @@ import java.sql.Time;
 import java.util.Date;
 
 @Entity
-@Table(name="Meeting")
+@Table(name="meetings")
 public class Meeting {
 
     @Id

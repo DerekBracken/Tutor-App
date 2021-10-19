@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @Entity
-@Table(name="Mentor")
+@Table(name="mentors")
 public class Mentor {
 
     @Id
@@ -41,19 +41,19 @@ public class Mentor {
     private String location;
 
     @Column(name="english_level")
-    private List<String> englishLevel;
+    private ArrayList<String> englishLevel;
 
     @Column(name="languages_spoken")
-    private List<String> languagesSpoken;
+    private ArrayList<String> languagesSpoken;
 
     @Column(name="availability")
-    private List<String> availability;
+    private ArrayList<String> availability;
 
     @JsonBackReference
     @OneToMany(mappedBy = "mentor", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
 
-    public Mentor(String firstName, String lastName, LocalDate dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, List<String> englishLevel, List<String> languagesSpoken, List<String> availability) {
+    public Mentor(String firstName, String lastName, LocalDate dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, ArrayList<String> englishLevel, ArrayList<String> languagesSpoken) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -64,7 +64,7 @@ public class Mentor {
         this.location = location;
         this.englishLevel = englishLevel;
         this.languagesSpoken = languagesSpoken;
-        this.availability = availability;
+        this.availability = new ArrayList<>();
         this.meetings = new ArrayList<>();
     }
 
@@ -143,27 +143,27 @@ public class Mentor {
         this.location = location;
     }
 
-    public List<String> getEnglishLevel() {
+    public ArrayList<String> getEnglishLevel() {
         return englishLevel;
     }
 
-    public void setEnglishLevel(List<String> englishLevel) {
+    public void setEnglishLevel(ArrayList<String> englishLevel) {
         this.englishLevel = englishLevel;
     }
 
-    public List<String> getLanguagesSpoken() {
+    public ArrayList<String> getLanguagesSpoken() {
         return languagesSpoken;
     }
 
-    public void setLanguagesSpoken(List<String> languagesSpoken) {
+    public void setLanguagesSpoken(ArrayList<String> languagesSpoken) {
         this.languagesSpoken = languagesSpoken;
     }
 
-    public List<String> getAvailability() {
+    public ArrayList<String> getAvailability() {
         return availability;
     }
 
-    public void setAvailability(List<String> availability) {
+    public void setAvailability(ArrayList<String> availability) {
         this.availability = availability;
     }
 

@@ -20,9 +20,9 @@ public class MeetingController {
         return new ResponseEntity(meetingRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/meetings")
-    public ResponseEntity<Meeting> postMeeting(@RequestBody Meeting meeting){
-        meetingRepository.save(meeting);
-        return new ResponseEntity<>(meeting, HttpStatus.OK);
-    }
+//    @GetMapping(value = "/meetings")
+//    public ResponseEntity<Meeting> postMeeting(@RequestBody Meeting meeting){
+//        meetingRepository.save(meeting);
+//        return new ResponseEntity<>(meeting, HttpStatus.OK);
+//    }
 }

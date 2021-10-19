@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="Mentee")
+@Table(name="mentees")
 public class Mentee {
 
     @Id
@@ -43,19 +43,19 @@ public class Mentee {
     private String englishLevel;
 
     @Column(name="languages_spoken")
-    private List<String> languagesSpoken;
+    private ArrayList<String> languagesSpoken;
 
     @Column(name="availability")
-    private List<String> availability;
+    private ArrayList<String> availability;
 
-    @Column(name="questionnaire")
-    private Questionnaire questionnaire;
+//    @Column(name="questionnaire")
+//    private Questionnaire questionnaire;
 
     @JsonBackReference
     @OneToMany(mappedBy = "mentee", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
 
-    public Mentee(String firstName, String lastName, LocalDate dateOfBirth, String email, String contactNumber, String gender, String aboutMe, String location, String englishLevel, List<String> languagesSpoken, List<String> availability, Questionnaire questionnaire) {
+    public Mentee(String firstName, String lastName, LocalDate dateOfBirth, String email, String contactNumber, String gender, String aboutMe, String location, String englishLevel, ArrayList<String> languagesSpoken, List<String> availability) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -66,8 +66,8 @@ public class Mentee {
         this.location = location;
         this.englishLevel = englishLevel;
         this.languagesSpoken = languagesSpoken;
-        this.availability = availability;
-        this.questionnaire = questionnaire;
+        this.availability = new ArrayList();
+//        this.questionnaire = null;
         this.meetings = new ArrayList<>();
     }
 
@@ -158,7 +158,7 @@ public class Mentee {
         return languagesSpoken;
     }
 
-    public void setLanguagesSpoken(List<String> languagesSpoken) {
+    public void setLanguagesSpoken(ArrayList<String> languagesSpoken) {
         this.languagesSpoken = languagesSpoken;
     }
 
@@ -166,17 +166,17 @@ public class Mentee {
         return availability;
     }
 
-    public void setAvailability(List<String> availability) {
+    public void setAvailability(ArrayList<String> availability) {
         this.availability = availability;
     }
 
-    public Questionnaire getQuestionnaire() {
-        return questionnaire;
-    }
-
-    public void setQuestionnaire(Questionnaire questionnaire) {
-        this.questionnaire = questionnaire;
-    }
+//    public Questionnaire getQuestionnaire() {
+//        return questionnaire;
+//    }
+//
+//    public void setQuestionnaire(Questionnaire questionnaire) {
+//        this.questionnaire = questionnaire;
+//    }
 
     public List<Meeting> getMeetings() {
         return meetings;
