@@ -1,7 +1,10 @@
 package com.example.server.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -20,7 +23,7 @@ public class Mentor {
     private String lastName;
 
     @Column(name="dob")
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     @Column(name="email")
     private String email;
@@ -31,14 +34,14 @@ public class Mentor {
     @Column(name="gender")
     private String gender;
 
-    @Column(name="description")
-    private String description;
+    @Column(name="motivation")
+    private String motivation;
 
     @Column(name="location")
     private String location;
 
     @Column(name="english_level")
-    private String englishLevel;
+    private List<String> englishLevel;
 
     @Column(name="languages_spoken")
     private List<String> languagesSpoken;
@@ -46,18 +49,23 @@ public class Mentor {
     @Column(name="availability")
     private List<String> availability;
 
-    public Mentor(String firstName, String lastName, Date dateOfBirth, String email, String contactNumber, String gender, String description, String location, String englishLevel, List<String> languagesSpoken, List<String> availability) {
+    @JsonBackReference
+    @OneToMany(mappedBy = "mentor", fetch = FetchType.LAZY)
+    private List<Meeting> meetings;
+
+    public Mentor(String firstName, String lastName, LocalDate dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, List<String> englishLevel, List<String> languagesSpoken, List<String> availability) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.email = email;
         this.contactNumber = contactNumber;
         this.gender = gender;
-        this.description = description;
+        this.motivation = motivation;
         this.location = location;
         this.englishLevel = englishLevel;
         this.languagesSpoken = languagesSpoken;
         this.availability = availability;
+        this.meetings = new ArrayList<>();
     }
 
     public Mentor() {
@@ -87,11 +95,11 @@ public class Mentor {
         this.lastName = lastName;
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -119,12 +127,12 @@ public class Mentor {
         this.gender = gender;
     }
 
-    public String getDescription() {
-        return description;
+    public String getMotivation() {
+        return motivation;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setMotivation(String motivation) {
+        this.motivation = motivation;
     }
 
     public String getLocation() {
@@ -135,11 +143,11 @@ public class Mentor {
         this.location = location;
     }
 
-    public String getEnglishLevel() {
+    public List<String> getEnglishLevel() {
         return englishLevel;
     }
 
-    public void setEnglishLevel(String englishLevel) {
+    public void setEnglishLevel(List<String> englishLevel) {
         this.englishLevel = englishLevel;
     }
 
@@ -157,5 +165,17 @@ public class Mentor {
 
     public void setAvailability(List<String> availability) {
         this.availability = availability;
+    }
+
+    public List<Meeting> getMeetings() {
+        return meetings;
+    }
+
+    public void setMeetings(List<Meeting> meetings) {
+        this.meetings = meetings;
+    }
+
+    public void addMeeting(Meeting meeting){
+        this.meetings.add(meeting);
     }
 }

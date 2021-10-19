@@ -1,7 +1,10 @@
 package com.example.server.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,7 +22,7 @@ public class Mentee {
     private String lastName;
 
     @Column(name="dob")
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     @Column(name="email")
     private String email;
@@ -30,8 +33,8 @@ public class Mentee {
     @Column(name="gender")
     private String gender;
 
-    @Column(name="description")
-    private String description;
+    @Column(name="about_me")
+    private String aboutMe;
 
     @Column(name="location")
     private String location;
@@ -48,19 +51,24 @@ public class Mentee {
     @Column(name="questionnaire")
     private Questionnaire questionnaire;
 
-    public Mentee(String firstName, String lastName, Date dateOfBirth, String email, String contactNumber, String gender, String description, String location, String englishLevel, List<String> languagesSpoken, List<String> availability, Questionnaire questionnaire) {
+    @JsonBackReference
+    @OneToMany(mappedBy = "mentee", fetch = FetchType.LAZY)
+    private List<Meeting> meetings;
+
+    public Mentee(String firstName, String lastName, LocalDate dateOfBirth, String email, String contactNumber, String gender, String aboutMe, String location, String englishLevel, List<String> languagesSpoken, List<String> availability, Questionnaire questionnaire) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.email = email;
         this.contactNumber = contactNumber;
         this.gender = gender;
-        this.description = description;
+        this.aboutMe = aboutMe;
         this.location = location;
         this.englishLevel = englishLevel;
         this.languagesSpoken = languagesSpoken;
         this.availability = availability;
         this.questionnaire = questionnaire;
+        this.meetings = new ArrayList<>();
     }
 
     public Mentee() {
@@ -90,11 +98,11 @@ public class Mentee {
         this.lastName = lastName;
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -122,12 +130,12 @@ public class Mentee {
         this.gender = gender;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAboutMe() {
+        return aboutMe;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAboutMe(String aboutMe) {
+        this.aboutMe = aboutMe;
     }
 
     public String getLocation() {
@@ -168,5 +176,17 @@ public class Mentee {
 
     public void setQuestionnaire(Questionnaire questionnaire) {
         this.questionnaire = questionnaire;
+    }
+
+    public List<Meeting> getMeetings() {
+        return meetings;
+    }
+
+    public void setMeetings(List<Meeting> meetings) {
+        this.meetings = meetings;
+    }
+
+    public void addMeeting(Meeting meeting){
+        this.meetings.add(meeting);
     }
 }
