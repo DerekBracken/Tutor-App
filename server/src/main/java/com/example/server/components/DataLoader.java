@@ -91,7 +91,7 @@ public class DataLoader implements ApplicationRunner {
         Time meeting3time = new Time(19);
         Time meeting4time = new Time(13-30);
 
-//      //Savind instances of MENTORS
+      //Savind instances of MENTORS
         Mentor johnny = new Mentor("John", "Flinn", date1, "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", englishLevel, languagesSpoken);
         mentorRepository.save(johnny);
 
@@ -134,6 +134,10 @@ public class DataLoader implements ApplicationRunner {
         Availabilty four = new Availabilty("Weekend Evening");
         availability.add(four);
         availabilityRepository.save(four);
+
+        //Saving Instances of ENGLISH LEVEL //Beginner, Elementary, Pre-Intermediate, Intermediate, Upper-Intermediate, Advanced
+        
+
 
         //Saving Mentor's availability
         johnny.addAvailability(one);

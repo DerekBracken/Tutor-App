@@ -21,8 +21,8 @@ public class Availabilty {
     @ManyToMany
     @JoinTable(
             name = "availabilities_mentors",
-            joinColumns = {@JoinColumn(name="mentor_id", nullable = false,updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name="availability_id", nullable = false,updatable = false)}
+            joinColumns = {@JoinColumn(name="mentor_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name="availability_id", nullable = false, updatable = false)}
     )
     private List<Mentor> mentors;
 
