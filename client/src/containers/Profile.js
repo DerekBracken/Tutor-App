@@ -1,5 +1,6 @@
 import HeaderComponent from "../components/HeaderComponent";
 import PersonalInformation from "../components/PersonalInformation";
+import { withRouter } from 'react-router-dom';
 
 const Profile = () => {
 
@@ -11,4 +12,4 @@ const Profile = () => {
         </>
     )
 }
-export default Profile;
+export default withRouter(Profile);

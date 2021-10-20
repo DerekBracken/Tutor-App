@@ -1,6 +1,7 @@
 import Calendar from "../components/Calendar";
 import HeaderComponent from "../components/HeaderComponent";
 import MenteeList from "../components/MenteeList";
+import { withRouter } from 'react-router-dom';
 
 const MentorContainer = () => {
     
@@ -15,4 +16,4 @@ const MentorContainer = () => {
     )
 }
 
-export default MentorContainer;
+export default withRouter(MentorContainer);
