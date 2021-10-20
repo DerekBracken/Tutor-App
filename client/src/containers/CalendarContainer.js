@@ -23,13 +23,16 @@ const localizer = dateFnsLocalizer({
     locales,
 });
 
+// move to helpers folder to be imported elsewhere
+const makeDate = date => new Date(Date.parse(date))
+
 //dates are really weird
 const events = [
     {
         title: "Big Meeting",
         allDay: true,
-        start: new Date(2021, 11, 29),
-        end: new Date(2021, 11, 0),
+        start: makeDate("2021-05-30"),
+        end: makeDate("2021-05-30"),
     },
     {
         title: "Vacation",
@@ -38,13 +41,12 @@ const events = [
     },
     {
         title: "Conference",
-        start: new Date(2021, 6, 20),
-        end: new Date(2021, 6, 23),
+        start: new Date(2021, 12, 20),
+        end: new Date(2021, 12, 23),
     },
 ];
 
 
-//add details to correspond to JSON e.g. details
 function CalendarContainer() {
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "",});
     const [allEvents, setAllEvents] = useState(events);
@@ -59,8 +61,9 @@ function CalendarContainer() {
             <h2>Add New Event</h2>
             <div>
                 <input type="text" placeholder="Add Title" style={{ width: "20%", marginRight: "10px" }} value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} />
-                <DatePicker placeholderText="Start Date" style={{ marginRight: "10px" }} selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} />
-                <DatePicker placeholderText="End Date" selected={newEvent.end} onChange={(end) => setNewEvent({ ...newEvent, end })} />
+                <input type="date"/> {/* add props */}
+                {/* <DatePicker placeholderText="Start Date" style={{ marginRight: "10px" }} selected={newEvent.start} onChange={(start) => setNewEvent({ ...newEvent, start })} />
+                <DatePicker placeholderText="End Date" selected={newEvent.end} onChange={(end) => setNewEvent({ ...newEvent, end })} /> */}
                 <button stlye={{ marginTop: "10px" }} onClick={handleAddEvent}>
                     Add Event
                 </button>
