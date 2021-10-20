@@ -6,6 +6,8 @@ import MentorContainer from "./containers/MentorContainer";
 import Profile from "./containers/Profile";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import PageNotFound from "./components/404";
+import React, {useState} from 'react';
+import AllMentorsContainer from "./containers/AllMentorsContainer";
 
 function App() {
 
@@ -14,12 +16,12 @@ function App() {
       
         <Router>
 
-        <Layout userName={userName} setUserName={setUserName}>
+        {/* <Layout userName={userName} setUserName={setUserName}> */}
 
         <Switch>
 
         {/* Derek's authentication */}
-        <AuthProvider>
+        {/* <AuthProvider>
            
               <PrivateRoute exact path="/" component={Dashboard} />
 
@@ -31,7 +33,7 @@ function App() {
 
               <Route path="/forgot-password" component={ForgotPassword} />
       
-          </AuthProvider>
+          </AuthProvider> */}
 
           {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
           <Route path="/mentee" exact>
@@ -66,12 +68,8 @@ function App() {
           </Route>
 
 
-
-        
-
-
           </Switch>
-          </Layout>
+          {/* </Layout> */}
         
 
         </Router>

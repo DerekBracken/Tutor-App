@@ -1,5 +1,6 @@
 import HeaderComponent from "../components/HeaderComponent";
 import MatchedMentorList from "../components/MatchedMentorList";
+import { withRouter } from 'react-router-dom';
 
 const AllMentorsContainer = () => {
 
@@ -14,4 +15,4 @@ const AllMentorsContainer = () => {
 
 }
 
-export default AllMentorsContainer;
+export default withRouter(AllMentorsContainer);

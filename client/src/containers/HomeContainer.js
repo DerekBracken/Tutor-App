@@ -1,5 +1,6 @@
 import FooterComponent from "../components/FooterComponent";
 import HeaderComponent from "../components/HeaderComponent";
+import { withRouter } from 'react-router-dom';
 
 const HomeContainer = () => {
 
@@ -11,4 +12,4 @@ const HomeContainer = () => {
     )
 }
 
-export default HomeContainer;
+export default withRouter(HomeContainer);

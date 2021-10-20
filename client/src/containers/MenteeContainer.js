@@ -1,5 +1,6 @@
 import HeaderComponent from "../components/HeaderComponent";
 import SessionsList from "../components/SessionsList";
+import { withRouter } from 'react-router-dom';
 
 const MenteeContainer = () => {
     
@@ -13,4 +14,4 @@ const MenteeContainer = () => {
     )
 }
 
-export default MenteeContainer;
+export default withRouter(MenteeContainer);
