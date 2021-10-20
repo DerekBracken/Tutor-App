@@ -1,13 +1,15 @@
 import Signup from "../components/authentication/SigninComponent";
-import { AuthProvider } from "../contexts/AuthContext";
+import { AuthProvider, useAuth } from "../contexts/AuthContext";
+
+
 
 function Authentication() {
+  const { currentUser } = useAuth()
+
   return (
-      <AuthProvider>
-        <div>
-           <Signup/>
-        </div>
-      </AuthProvider>
+      <div>
+        {currentUser && currentUser.email} Has Signed In
+      </div>
   );
 }
 

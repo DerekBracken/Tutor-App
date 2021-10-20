@@ -6,10 +6,10 @@ import "../../style/Authentication.css"
 export default function Login(){
     const emailRef = useRef()
     const passwordRef = useRef()
-    const { signup } = useAuth()
+    const { login } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    // const history = useHistory()
+    const history = useHistory()
 
     async function handleSubmit(e){
         e.preventDefault()
@@ -17,10 +17,10 @@ export default function Login(){
         try {
             setError('')
             setLoading(true)
-            await signup(emailRef.current.value, passwordRef.current.value)
-            // history.push("/")
+            await login(emailRef.current.value, passwordRef.current.value)
+            history.push("/authentication-complete")
         } catch {
-            setError('Failed to create an account')
+            setError('Failed to sign in')
         }
         setLoading(false)        
     }
@@ -41,7 +41,7 @@ export default function Login(){
                     </div>
                     <button disabled={loading} type="submit">Log In</button>
                 </form> 
-                <h3>Need an account? Sign In</h3>
+                <h3>Need an account? <Link to="/signup">Sign In </Link></h3>
             </div>
         </>
     )

@@ -50,7 +50,7 @@ export default function Signup(){
                     </div>
                     <button disabled={loading} type="submit">Sign Up</button>
                 </form> 
-                <h3>Already have an account? Log In</h3>
+                <h3>Already have an account? <Link to="/login">Log In</Link></h3>
             </div>
         </>
     )

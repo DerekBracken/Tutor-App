@@ -19,10 +19,6 @@ function App() {
   const [username, setUserName] = useState("")
   return (
 
-      // <>
-      // <Authentication/>
-      // </>
-
         <Router>
 
         {/* <Layout userName={userName} setUserName={setUserName}> */}
@@ -39,6 +35,9 @@ function App() {
               <Route path="/signup" component={Signup} />
 
               <Route path="/login" component={Login} />
+
+              <Route path="/authentication-complete" component={Authentication} />
+
 
               {/* <Route path="/forgot-password" component={ForgotPassword} /> */}
       
