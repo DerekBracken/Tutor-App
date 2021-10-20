@@ -9,6 +9,7 @@ import PageNotFound from "./components/404";
 import React, {useState} from 'react';
 import AllMentorsContainer from "./containers/AllMentorsContainer";
 import SignupContainer from "./containers/SignupContainer";
+import CalendarContainer from "./containers/CalendarContainer";
 
 function App() {
 
@@ -66,6 +67,11 @@ function App() {
 
           <Route path="/signupform" exact>
             <SignupContainer/>
+          </Route>
+
+          {/* calendar just for access, not the final route */}
+          <Route path="/calendar" exact>
+            <CalendarContainer/>
           </Route>
 
           <Route component={PageNotFound}>
