@@ -1,45 +1,82 @@
+import {useState, useEffect} from 'react';
+
+
+
 const MentorSignupFormComponent = () =>{
 
+    // const [firstName, setFirstName] = useState("");
+    // const [lastName, setLastName] = useState("");
+    // const [dob, setDob] = useState("");
+    // const [gender, setGender] = useState("");
+    // const [motivation, setMotivation] = useState("");
+    // const [location, setLocation] = useState("");
+    // const [levelWillingToTeach, setLevelWillingToTeach] = useState("");
+    // const []
+    
+    // const handleFirstNameChange = (event)=>{
+    //     setFirstName(event.target.value)
+    // }
+
+    const handleFormSubmit= (event)=>{
+
+    event.preventDefault();
+    const firstName = event.target[0].value.trim();
+    console.log("this is firstname", firstName)
+
+    const lastName = event.target[2].value.trim()
+
+    const dob = event.target[3].value;
+
+    const contactNumber = event.target[4].value.trim();
+
+    const gender = event.target[5].value;
+
+    const motivation = event.target[6].value.trim();
+    
+    const location = event.target[7].value;
+
+    console.log(event.target);
+}
+
+
+// put all the required back in the form...
     return (
         <>
             <h1>MentorSignupFormComponent</h1>
-            <form>
-                <label>
-                    First name: 
-                    <input type='text' id='first-name' name="first_name" placeholder="Enter first name" required/>
-                </label>
-                <label>
-                    Last name:
-                    <input type='text' id='last-name' name="last_name" placeholder="Enter last name" required/>
-                </label>
-                <label>
-                    Enter date of birth:
-                    <input type="date" id='dob' name='dob' required/>
-                </label>
-                <label>
+            <form onSubmit={handleFormSubmit}>
+                
+                <label HTMLfor="first_name">First name:</label>
+                    <input type='text' id='first-name' name="first_name" placeholder="Enter first name" />
+                
+                <label HTMLfor="last_name">Last name:</label>
+                    <input type='text' id='last-name' name="last_name" placeholder="Enter last name" />
+ 
+                <label HTMLfor='dob'>Enter date of birth:</label>
+                    <input type="date" id='dob' name='dob' />
+                    
+                {/* <label>
+                will pre-populate with email from Derek's bit
+
                     Enter email address: 
                     <input type='email' id='email' name='email' placeholder="Enter email address" required/>
-                </label>
-                <label>
-                    Enter contact number:
-                    <input type='tel' id='contact-number' name='contact_number' placeholder="Enter contact number" required/>
-                </label>
-                <label>
-                    Gender identity:
-                    <select name='gender' id='gender' required>
+                </label> */}
+                
+                <label HTMLfor="contact_number">Enter contact number:</label>
+                    <input type='tel' id='contact-number' name='contact_number' placeholder="Enter contact number" />
+                    
+                <label HTMLfor="gender">Gender identity:</label>
+                    <select name='gender' id='gender' >
                     <option disabled selected>Select from below</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="other">Other</option>
                     </select>
-                </label>
-                <label>
-                    What made you want to become a mentor?
-                    <textarea id='motivation' name='motivation' placeholder='Answer here' required/>
-                </label>
-                <label>
-                Where are you based?
-                    <select name='location' id='location' required>
+                
+                <label HTMLfor="motivation">What made you want to become a mentor?</label>
+                    <textarea id='motivation' name='motivation' placeholder='Answer here' />
+                
+                <label HTMLfor="location">Where are you based?</label>
+                    <select name='location' id='location' >
                     <option disabled selected>Select from below</option>
                         <option value="Aberdeen">Aberdeen</option>
                         <option value="Dundee">Dundee</option>
@@ -48,51 +85,60 @@ const MentorSignupFormComponent = () =>{
                         <option value="Inverness">Inverness</option>
                         <option value="Stirling">Stirling</option>
                     </select>
-                </label>
-
-                <label>
-                    What are you willing to teach?
-                        <div><input type="checkbox" name="beginner" value="beginner" id="beginner"/>
-                        <label for="beginner">Beginner</label></div>
-
-                        <div><input type="checkbox" name="elementary" value="elementary" id="elementary"/>
-                        <label for="elementary">Elementary</label></div>
-
-                        <div><input type="checkbox" name="pre_intermediate" value="pre_intermediate" id="pre_intermediate"/>
-                        <label for="pre_intermediate">Pre-Intermediate</label></div>
-
-                        <div><input type="checkbox" name="intermediate" value="intermediate" id="intermediate"/>
-                        <label for="intermediate">Intermediate</label></div>
-
-                        <div><input type="checkbox" name="upper_intermediate" value="upper_intermediate" id="upper_intermediate"/>
-                        <label for="upper_intermediate">Upper-Intermediate</label></div>
-
-                        <div><input type="checkbox" name="advanced" value="advanced" id="advanced"/>
-                        <label for="advanced">Advanced</label></div>
-
-                </label>
-                <label>
-                    What languages to do you speak?
-                    <input type='text' id='languages_spoken' name="languages_spoken" placeholder="Input languages spoken" required/>
-                </label>
-                <label>
-                    Select availability:
-                        <div><input type="checkbox" name="mon_fri_day" value="mon_fri_day" id="mon_fri_day"/>
-                        <label for="mon_fri_day">Mon-Fri Daytime</label></div>
-
-                        <div><input type="checkbox" name="mon_fri_eve" value="mon_fri_eve" id="mon_fri_eve"/>
-                        <label for="mon_fri_eve">Mon-Fri Evening</label></div>
-
-                        <div><input type="checkbox" name="weekend_day" value="weekend_day" id="weekend_day"/>
-                        <label for="weekend_day">Weekend Daytime</label></div>
-
-                        <div><input type="checkbox" name="weekend_eve" value="weekend_eve" id="weekend_eve"/>
-                        <label for="weekend_eve">Weekend Evening</label></div>
-
-                </label>
                 
-       
-                <input type='submit' value='submit'/>
+
+                <div>
+                    <label>What are you willing to teach?</label>
+                        <div><label HTMLfor="beginner">Beginner</label>
+                        <input type="checkbox" name="beginner" value="beginner" id="beginner"/>
+                        </div>
+
+                        <div><label HTMLfor="elementary">Elementary</label>
+                        <input type="checkbox" name="elementary" value="elementary" id="elementary"/>
+                        </div>
+
+                        <div><label HTMLfor="pre_intermediate">Pre-Intermediate</label>
+                        <input type="checkbox" name="pre_intermediate" value="pre_intermediate" id="pre_intermediate"/>
+                        </div>
+
+                        <div><label HTMLfor="intermediate">Intermediate</label>
+                        <input type="checkbox" name="intermediate" value="intermediate" id="intermediate"/>
+                        </div>
+
+                        <div><label HTMLfor="upper_intermediate">Upper-Intermediate</label>
+                        <input type="checkbox" name="upper_intermediate" value="upper_intermediate" id="upper_intermediate"/>
+                        </div>
+                        
+                        <div><label HTMLfor="advanced">Advanced</label>
+                        <input type="checkbox" name="advanced" value="advanced" id="advanced"/>
+                        </div>
+
+                </div>
+                <label HTMLfor="languages_spoken">
+                    What languages to do you speak?</label>
+                    <input type='text' id='languages_spoken' name="languages_spoken" placeholder="Input languages spoken" />
+                
+                <div>
+                    Select availability:
+                        <div><label HTMLfor="mon_fri_day">Mon-Fri Daytime</label>
+                        <input type="checkbox" name="mon_fri_day" value="mon_fri_day" id="mon_fri_day"/>
+                        </div>
+
+                        <div><label HTMLfor="mon_fri_eve">Mon-Fri Evening</label>
+                        <input type="checkbox" name="mon_fri_eve" value="mon_fri_eve" id="mon_fri_eve"/>
+                        </div>
+
+                        <div><label HTMLfor="weekend_day">Weekend Daytime</label>
+                        <input type="checkbox" name="weekend_day" value="weekend_day" id="weekend_day"/>
+                        </div>
+
+                        <div><label HTMLfor="weekend_eve">Weekend Evening</label>
+                        <input type="checkbox" name="weekend_eve" value="weekend_eve" id="weekend_eve"/>
+                        </div>
+
+                </div>
+                
+                <input type='submit' value='submit' />
             </form>
         </>
     )
