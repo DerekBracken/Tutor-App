@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import PageNotFound from "./components/404";
 import React, {useState} from 'react';
 import AllMentorsContainer from "./containers/AllMentorsContainer";
+import SignupContainer from "./containers/SignupContainer";
 
 function App() {
 
@@ -63,10 +64,14 @@ function App() {
             <AllMentorsContainer />
           </Route>
 
+          <Route path="/signupform" exact>
+            <SignupContainer/>
+          </Route>
 
           <Route component={PageNotFound}>
           </Route>
 
+          
 
           </Switch>
           {/* </Layout> */}
