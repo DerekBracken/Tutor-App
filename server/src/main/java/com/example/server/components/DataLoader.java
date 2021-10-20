@@ -1,6 +1,7 @@
 package com.example.server.components;
 
 import com.example.server.models.Availabilty;
+import com.example.server.models.EnglishLevel;
 import com.example.server.models.Mentee;
 import com.example.server.models.Mentor;
 import com.example.server.repositories.AvailabilityRepository;
@@ -136,7 +137,7 @@ public class DataLoader implements ApplicationRunner {
         availabilityRepository.save(four);
 
         //Saving Instances of ENGLISH LEVEL //Beginner, Elementary, Pre-Intermediate, Intermediate, Upper-Intermediate, Advanced
-        
+        EnglishLevel beginner = new EnglishLevel("Beginner");
 
 
         //Saving Mentor's availability
