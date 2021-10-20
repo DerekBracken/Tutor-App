@@ -4,10 +4,7 @@ import com.example.server.models.Availabilty;
 import com.example.server.models.EnglishLevel;
 import com.example.server.models.Mentee;
 import com.example.server.models.Mentor;
-import com.example.server.repositories.AvailabilityRepository;
-import com.example.server.repositories.MeetingRepository;
-import com.example.server.repositories.MenteeRepository;
-import com.example.server.repositories.MentorRepository;
+import com.example.server.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -33,7 +30,10 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     AvailabilityRepository availabilityRepository;
 
-    private ArrayList<String> englishLevel;
+    @Autowired
+    EnglishLevelRepository englishLevelRepository;
+
+    private ArrayList<EnglishLevel> englishLevel;
     private ArrayList<String> languagesSpoken;
     private ArrayList<Availabilty> availability;
     private LocalDate date1;
@@ -55,7 +55,6 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args){
-        englishLevel.add("mid");
         languagesSpoken.add("English");
 
 
@@ -92,17 +91,17 @@ public class DataLoader implements ApplicationRunner {
         Time meeting3time = new Time(19);
         Time meeting4time = new Time(13-30);
 
-      //Savind instances of MENTORS
-        Mentor johnny = new Mentor("John", "Flinn", date1, "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", englishLevel, languagesSpoken);
+      //Saving instances of MENTORS
+        Mentor johnny = new Mentor("John", "Flinn", date1, "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", languagesSpoken);
         mentorRepository.save(johnny);
 
-        Mentor roosa = new Mentor("Roosa", "Roserry", date3, "roosa@gmail.com", "0892384792", "female", "I enjoy teaching", "Edinbrugh", englishLevel,  languagesSpoken);
+        Mentor roosa = new Mentor("Roosa", "Roserry", date3, "roosa@gmail.com", "0892384792", "female", "I enjoy teaching", "Edinbrugh",  languagesSpoken);
         mentorRepository.save(roosa);
 
-        Mentor hannah = new Mentor("Hannah", "Hannerson", date1, "hanna@gmail.com", "088736478", "female", "I like helping people", "Glasgow", englishLevel, languagesSpoken);
+        Mentor hannah = new Mentor("Hannah", "Hannerson", date1, "hanna@gmail.com", "088736478", "female", "I like helping people", "Glasgow", languagesSpoken);
         mentorRepository.save(hannah);
 
-        Mentor colin = new Mentor( "Colin", "Colington", date2, "colin@teach.com","018263543947", "male", "Good opertunity to meet new people", "Dundee", englishLevel, languagesSpoken);
+        Mentor colin = new Mentor( "Colin", "Colington", date2, "colin@teach.com","018263543947", "male", "Good opertunity to meet new people", "Dundee", languagesSpoken);
         mentorRepository.save(colin);
 
 
@@ -138,9 +137,50 @@ public class DataLoader implements ApplicationRunner {
 
         //Saving Instances of ENGLISH LEVEL //Beginner, Elementary, Pre-Intermediate, Intermediate, Upper-Intermediate, Advanced
         EnglishLevel beginner = new EnglishLevel("Beginner");
+        englishLevel.add(beginner);
+        englishLevelRepository.save(beginner);
 
+        EnglishLevel elementary = new EnglishLevel("Elementary");
+        englishLevel.add(elementary);
+        englishLevelRepository.save(elementary);
 
-        //Saving Mentor's availability
+        EnglishLevel preIntermediate = new EnglishLevel("Pre-Intermediate");
+        englishLevel.add(preIntermediate);
+        englishLevelRepository.save(preIntermediate);
+
+        EnglishLevel intermediate = new EnglishLevel("Intermediate");
+        englishLevel.add(intermediate);
+        englishLevelRepository.save(intermediate);
+
+        EnglishLevel upperIntermediate = new EnglishLevel("upper-Intermediate");
+        englishLevel.add(upperIntermediate);
+        englishLevelRepository.save(upperIntermediate);
+
+        EnglishLevel advanced = new EnglishLevel("Advanced");
+        englishLevel.add(advanced);
+        englishLevelRepository.save(advanced);
+
+        //Saving mentor's ENGLISH LEVEL
+        johnny.addEnglishLevel(beginner);
+        mentorRepository.save(johnny);
+        roosa.addEnglishLevel(beginner);
+        roosa.addEnglishLevel(intermediate);
+        roosa.addEnglishLevel(preIntermediate);
+        roosa.addEnglishLevel(advanced);
+        mentorRepository.save(roosa);
+        hannah.addEnglishLevel(intermediate);
+        hannah.addEnglishLevel(upperIntermediate);
+        hannah.addEnglishLevel(advanced);
+        mentorRepository.save(hannah);
+        colin.addEnglishLevel(beginner);
+        colin.addEnglishLevel(elementary);
+        colin.addEnglishLevel(preIntermediate);
+        colin.addEnglishLevel(intermediate);
+        colin.addEnglishLevel(upperIntermediate);
+        colin.addEnglishLevel(advanced);
+        mentorRepository.save(colin);
+
+        //Saving Mentor's AVAILABILITY
         johnny.addAvailability(one);
         johnny.addAvailability(two);
         johnny.addAvailability(three);
