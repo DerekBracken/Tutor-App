@@ -20,7 +20,7 @@ public class Availabilty {
     @JsonBackReference
     @ManyToMany
     @JoinTable(
-            name = "avalabilities_mentors",
+            name = "availabilities_mentors",
             joinColumns = {@JoinColumn(name="mentor_id", nullable = false,updatable = false)},
             inverseJoinColumns = {@JoinColumn(name="availability_id", nullable = false,updatable = false)}
     )

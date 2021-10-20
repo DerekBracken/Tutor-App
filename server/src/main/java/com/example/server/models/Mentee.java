@@ -45,9 +45,14 @@ public class Mentee {
     @Column(name="languages_spoken")
     private ArrayList<String> languagesSpoken;
 
-    @Column(name="availability")
-    private ArrayList<String> availability;
-
+    @JsonBackReference
+    @ManyToMany
+    @JoinTable(
+            name= "availabilities_mentees",
+            joinColumns = {@JoinColumn(name="availability_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name="mentee_id", nullable = false, updatable = false)}
+    )
+    private List<Availabilty> availability;
 //    @Column(name="questionnaire")
 //    private Questionnaire questionnaire;
 
@@ -66,9 +71,10 @@ public class Mentee {
         this.location = location;
         this.englishLevel = englishLevel;
         this.languagesSpoken = languagesSpoken;
-        this.availability = new ArrayList();
-//        this.questionnaire = null;
+        this.availability = new ArrayList<Availabilty>();
         this.meetings = new ArrayList<>();
+        //        this.questionnaire = null;
+
     }
 
     public Mentee() {
@@ -162,15 +168,19 @@ public class Mentee {
         this.languagesSpoken = languagesSpoken;
     }
 
-    public List<String> getAvailability() {
+    public List<Availabilty> getAvailability() {
         return availability;
     }
 
-    public void setAvailability(ArrayList<String> availability) {
+    public void setAvailability(List<Availabilty> availability) {
         this.availability = availability;
     }
 
-//    public Questionnaire getQuestionnaire() {
+    public void addAvailability(Availabilty availabilty){
+        this.availability.add(availabilty);
+    }
+
+    //    public Questionnaire getQuestionnaire() {
 //        return questionnaire;
 //    }
 //

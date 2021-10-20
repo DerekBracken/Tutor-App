@@ -49,9 +49,9 @@ public class Mentor {
     @JsonBackReference
     @ManyToMany
     @JoinTable(
-            name = "avalabilities_mentors",
-            joinColumns = {@JoinColumn(name="availability_id", nullable = false,updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name="mentor_id", nullable = false,updatable = false)}
+            name = "availabilities_mentors",
+            joinColumns = {@JoinColumn(name="availability_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name="mentor_id", nullable = false, updatable = false)}
     )
     private List<Availabilty> availability;
 

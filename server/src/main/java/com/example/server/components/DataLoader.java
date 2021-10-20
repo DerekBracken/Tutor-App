@@ -1,10 +1,8 @@
 package com.example.server.components;
 
 import com.example.server.models.Availabilty;
-import com.example.server.models.Meeting;
-import com.example.server.models.Mentee;
 import com.example.server.models.Mentor;
-import com.example.server.repositories.AvailbilityRepository;
+import com.example.server.repositories.AvailabilityRepository;
 import com.example.server.repositories.MeetingRepository;
 import com.example.server.repositories.MenteeRepository;
 import com.example.server.repositories.MentorRepository;
@@ -31,7 +29,7 @@ public class DataLoader implements ApplicationRunner {
     MenteeRepository menteeRepository;
 
     @Autowired
-    AvailbilityRepository availbilityRepository;
+    AvailabilityRepository availabilityRepository;
 
     private ArrayList<String> englishLevel;
     private ArrayList<String> languagesSpoken;
@@ -82,23 +80,6 @@ public class DataLoader implements ApplicationRunner {
 //        Mentee michael = new Mentee("Michael", "Scarn", date1, "mscarn@hotmail.com", "0987973735", "male", "I love inside jokes. I hope to be a part of one someday.", "Glasgow", "low", languagesSpoken, availability);
 //        menteeRepository.save(michael);
 
-//      //Mentors
-        Mentor johnny = new Mentor("John", "Flinn", date1, "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", englishLevel, languagesSpoken);
-        mentorRepository.save(johnny);
-
-
-        Mentor roosa = new Mentor("Roosa", "Roserry", date3, "roosa@gmail.com", "0892384792", "female", "I enjoy teaching", "Edinbrugh", englishLevel,  languagesSpoken);
-        mentorRepository.save(roosa);
-
-
-        Mentor hannah = new Mentor("Hannah", "Hannerson", date1, "hanna@gmail.com", "088736478", "female", "I like helping people", "Glasgow", englishLevel, languagesSpoken);
-
-        mentorRepository.save(hannah);
-
-        Mentor colin = new Mentor( "Colin", "Colington", date2, "colin@teach.com","018263543947", "male", "Good opertunity to meet new people", "Dundee", englishLevel, languagesSpoken);
-        mentorRepository.save(colin);
-
-
         //Date and time
         Date meeting1date = new Date(2021-2-1);
         Date meeting2date = new Date(2021-5-2);
@@ -109,6 +90,20 @@ public class DataLoader implements ApplicationRunner {
         Time meeting2time = new Time(17-30);
         Time meeting3time = new Time(19);
         Time meeting4time = new Time(13-30);
+
+//      //Mentors
+        Mentor johnny = new Mentor("John", "Flinn", date1, "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", englishLevel, languagesSpoken);
+        mentorRepository.save(johnny);
+
+        Mentor roosa = new Mentor("Roosa", "Roserry", date3, "roosa@gmail.com", "0892384792", "female", "I enjoy teaching", "Edinbrugh", englishLevel,  languagesSpoken);
+        mentorRepository.save(roosa);
+
+        Mentor hannah = new Mentor("Hannah", "Hannerson", date1, "hanna@gmail.com", "088736478", "female", "I like helping people", "Glasgow", englishLevel, languagesSpoken);
+        mentorRepository.save(hannah);
+
+        Mentor colin = new Mentor( "Colin", "Colington", date2, "colin@teach.com","018263543947", "male", "Good opertunity to meet new people", "Dundee", englishLevel, languagesSpoken);
+        mentorRepository.save(colin);
+
 
         //Time
 //        Meeting meeting1 = new Meeting(meeting1date, meeting1time, "these are notes", "www", johnny, sean);
@@ -126,20 +121,19 @@ public class DataLoader implements ApplicationRunner {
         //Availability add
         Availabilty one = new Availabilty("Monday-Friday Daytime");
         availability.add(one);
-        availbilityRepository.save(one);
-
+        availabilityRepository.save(one);
 
         Availabilty two = new Availabilty("Monday-Friday Evening");
         availability.add(two);
-        availbilityRepository.save(two);
+        availabilityRepository.save(two);
 
         Availabilty three = new Availabilty("Weekend Daytime");
         availability.add(three);
-        availbilityRepository.save(three);
+        availabilityRepository.save(three);
 
         Availabilty four = new Availabilty("Weekend Evening");
         availability.add(four);
-        availbilityRepository.save(four);
+        availabilityRepository.save(four);
 
         johnny.addAvailability(one);
         johnny.addAvailability(two);
