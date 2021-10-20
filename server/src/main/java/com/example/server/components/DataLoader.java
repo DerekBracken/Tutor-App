@@ -56,28 +56,29 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args){
         languagesSpoken.add("English");
-
+        languagesSpoken.add("Polish");
+        languagesSpoken.add("Bulgarian");
 
         //Saving Instances of MENTEES
-        Mentee sean = new Mentee("Sean", "Hollywood", date1, "seanh@gmail.com", "0857107119", "male", "Hi", "Edinburgh", "mid", languagesSpoken);
+        Mentee sean = new Mentee("Sean", "Hollywood", date1, "seanh@gmail.com", "0857107119", "male", "Hi", "Edinburgh", "Beginner", languagesSpoken);
         menteeRepository.save(sean);
 
-        Mentee maggie = new Mentee("Maggie", "Pent",date2, "m.pen@hotmail.com", "07987 654 343", "female", "I like cats","Edinburgh", "low", languagesSpoken);
+        Mentee maggie = new Mentee("Maggie", "Pent",date2, "m.pen@hotmail.com", "07987 654 343", "female", "I like cats","Edinburgh", "Pre-Intermediate", languagesSpoken);
         menteeRepository.save(maggie);
 
-        Mentee kelly = new Mentee("Kelly", "Kapour", date3, "k.capour@hotmail.com", "098989 65678","female", "I'm really smart you guys", "Dundee", "high", languagesSpoken);
+        Mentee kelly = new Mentee("Kelly", "Kapour", date3, "k.capour@hotmail.com", "098989 65678","female", "I'm really smart you guys", "Dundee", "Advanced", languagesSpoken);
         menteeRepository.save(kelly);
 
-        Mentee dwight = new Mentee("Dwight", "Shrute", date4, "dksmaster@hotmail.com", "0131 09083735", "male", "Getting told 'Don't me an idiot' changed my life", "Glasgow", "high", languagesSpoken);
+        Mentee dwight = new Mentee("Dwight", "Shrute", date4, "dksmaster@hotmail.com", "0131 09083735", "male", "Getting told 'Don't me an idiot' changed my life", "Intermediate", "high", languagesSpoken);
         menteeRepository.save(dwight);
 
-        Mentee daryl = new Mentee("Daryl", "Foula", date3, "daryl@gmail.com", "09908083735", "male", "I'm a mystery of a person", "Glasgow", "low", languagesSpoken);
+        Mentee daryl = new Mentee("Daryl", "Foula", date3, "daryl@gmail.com", "09908083735", "male", "I'm a mystery of a person", "Glasgow", "Upper-Intermediate", languagesSpoken);
         menteeRepository.save(daryl);
 
-        Mentee pam = new Mentee("Pam", "Halpert", date1, "pammy@aol.com", "097283735", "female", "I don't care what they say about me, I just want to eat.", "Edinburgh", "med", languagesSpoken);
+        Mentee pam = new Mentee("Pam", "Halpert", date1, "pammy@aol.com", "097283735", "female", "I don't care what they say about me, I just want to eat.", "Edinburgh", "Upper-Intermediate", languagesSpoken);
         menteeRepository.save(pam);
 
-        Mentee michael = new Mentee("Michael", "Scarn", date1, "mscarn@hotmail.com", "0987973735", "male", "I love inside jokes. I hope to be a part of one someday.", "Glasgow", "low", languagesSpoken);
+        Mentee michael = new Mentee("Michael", "Scarn", date1, "mscarn@hotmail.com", "0987973735", "male", "I love inside jokes. I hope to be a part of one someday.", "Glasgow", "Beginner", languagesSpoken);
         menteeRepository.save(michael);
 
         //Date and time
@@ -92,7 +93,7 @@ public class DataLoader implements ApplicationRunner {
         Time meeting4time = new Time(13-30);
 
       //Saving instances of MENTORS
-        Mentor johnny = new Mentor("John", "Flinn", date1, "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", languagesSpoken);
+        Mentor johnny = new Mentor("John", "Johnson", date1, "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", languagesSpoken);
         mentorRepository.save(johnny);
 
         Mentor roosa = new Mentor("Roosa", "Roserry", date3, "roosa@gmail.com", "0892384792", "female", "I enjoy teaching", "Edinbrugh",  languagesSpoken);
@@ -152,7 +153,7 @@ public class DataLoader implements ApplicationRunner {
         englishLevel.add(intermediate);
         englishLevelRepository.save(intermediate);
 
-        EnglishLevel upperIntermediate = new EnglishLevel("upper-Intermediate");
+        EnglishLevel upperIntermediate = new EnglishLevel("Upper-Intermediate");
         englishLevel.add(upperIntermediate);
         englishLevelRepository.save(upperIntermediate);
 
