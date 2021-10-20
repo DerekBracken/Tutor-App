@@ -26,9 +26,19 @@ public class Availabilty {
     )
     private List<Mentor> mentors;
 
+    @JsonBackReference
+    @ManyToMany
+    @JoinTable(
+            name= "availabilities_mentees",
+            joinColumns = {@JoinColumn(name="mentee_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name="availability_id", nullable = false, updatable = false)}
+    )
+    private List<Mentee> mentees;
+
     public Availabilty(String availability) {
         this.availability = availability;
         this.mentors = new ArrayList<Mentor>();
+        this.mentees = new ArrayList<Mentee>();
     }
 
     public Availabilty() {
@@ -58,5 +68,11 @@ public class Availabilty {
         this.mentors = mentors;
     }
 
+    public List<Mentee> getMentees() {
+        return mentees;
+    }
 
+    public void setMentees(List<Mentee> mentees) {
+        this.mentees = mentees;
+    }
 }

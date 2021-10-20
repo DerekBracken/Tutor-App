@@ -1,6 +1,7 @@
 package com.example.server.components;
 
 import com.example.server.models.Availabilty;
+import com.example.server.models.Mentee;
 import com.example.server.models.Mentor;
 import com.example.server.repositories.AvailabilityRepository;
 import com.example.server.repositories.MeetingRepository;
@@ -53,32 +54,31 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args){
-
         englishLevel.add("mid");
         languagesSpoken.add("English");
 
 
-        //Mentees
-//        Mentee sean = new Mentee("Sean", "Hollywood", date1, "seanh@gmail.com", "0857107119", "male", "Hi", "Edinburgh", "mid", languagesSpoken, "availability");
-//        menteeRepository.save(sean);
-//
-//        Mentee maggie = new Mentee("Maggie", "Pent",date2, "m.pen@hotmail.com", "07987 654 343", "female", "I like cats","Edinburgh", "low", languagesSpoken, "availability");
-//        menteeRepository.save(maggie);
-//
-//        Mentee kelly = new Mentee("Kelly", "Kapour", date3, "k.capour@hotmail.com", "098989 65678","female", "I'm really smart you guys", "Dundee", "high", languagesSpoken, availability);
-//        menteeRepository.save(kelly);
-//
-//        Mentee dwight = new Mentee("Dwight", "Shrute", date4, "dksmaster@hotmail.com", "0131 09083735", "male", "Getting told 'Don't me an idiot' changed my life", "Glasgow", "high", languagesSpoken, availability);
-//        menteeRepository.save(dwight);
-//
-//        Mentee daryl = new Mentee("Daryl", "Foula", date3, "daryl@gmail.com", "09908083735", "male", "I'm a mystery of a person", "Glasgow", "low", languagesSpoken, availability);
-//        menteeRepository.save(daryl);
-//
-//        Mentee pam = new Mentee("Pam", "Halpert", date1, "pammy@aol.com", "097283735", "female", "I don't care what they say about me, I just want to eat.", "Edinburgh", "med", languagesSpoken, availability);
-//        menteeRepository.save(pam);
-//
-//        Mentee michael = new Mentee("Michael", "Scarn", date1, "mscarn@hotmail.com", "0987973735", "male", "I love inside jokes. I hope to be a part of one someday.", "Glasgow", "low", languagesSpoken, availability);
-//        menteeRepository.save(michael);
+        //Saving Instances of MENTEES
+        Mentee sean = new Mentee("Sean", "Hollywood", date1, "seanh@gmail.com", "0857107119", "male", "Hi", "Edinburgh", "mid", languagesSpoken);
+        menteeRepository.save(sean);
+
+        Mentee maggie = new Mentee("Maggie", "Pent",date2, "m.pen@hotmail.com", "07987 654 343", "female", "I like cats","Edinburgh", "low", languagesSpoken);
+        menteeRepository.save(maggie);
+
+        Mentee kelly = new Mentee("Kelly", "Kapour", date3, "k.capour@hotmail.com", "098989 65678","female", "I'm really smart you guys", "Dundee", "high", languagesSpoken);
+        menteeRepository.save(kelly);
+
+        Mentee dwight = new Mentee("Dwight", "Shrute", date4, "dksmaster@hotmail.com", "0131 09083735", "male", "Getting told 'Don't me an idiot' changed my life", "Glasgow", "high", languagesSpoken);
+        menteeRepository.save(dwight);
+
+        Mentee daryl = new Mentee("Daryl", "Foula", date3, "daryl@gmail.com", "09908083735", "male", "I'm a mystery of a person", "Glasgow", "low", languagesSpoken);
+        menteeRepository.save(daryl);
+
+        Mentee pam = new Mentee("Pam", "Halpert", date1, "pammy@aol.com", "097283735", "female", "I don't care what they say about me, I just want to eat.", "Edinburgh", "med", languagesSpoken);
+        menteeRepository.save(pam);
+
+        Mentee michael = new Mentee("Michael", "Scarn", date1, "mscarn@hotmail.com", "0987973735", "male", "I love inside jokes. I hope to be a part of one someday.", "Glasgow", "low", languagesSpoken);
+        menteeRepository.save(michael);
 
         //Date and time
         Date meeting1date = new Date(2021-2-1);
@@ -91,7 +91,7 @@ public class DataLoader implements ApplicationRunner {
         Time meeting3time = new Time(19);
         Time meeting4time = new Time(13-30);
 
-//      //Mentors
+//      //Savind instances of MENTORS
         Mentor johnny = new Mentor("John", "Flinn", date1, "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", englishLevel, languagesSpoken);
         mentorRepository.save(johnny);
 
@@ -118,7 +118,7 @@ public class DataLoader implements ApplicationRunner {
 //        Meeting meeting4 = new Meeting(meeting4date, meeting4time, "these are notes", "www", hannah, michael);
 //        meetingRepository.save(meeting4);
 
-        //Availability add
+        //Saving Instances of AVAILABILITY
         Availabilty one = new Availabilty("Monday-Friday Daytime");
         availability.add(one);
         availabilityRepository.save(one);
@@ -135,6 +135,7 @@ public class DataLoader implements ApplicationRunner {
         availability.add(four);
         availabilityRepository.save(four);
 
+        //Saving Mentor's availability
         johnny.addAvailability(one);
         johnny.addAvailability(two);
         johnny.addAvailability(three);
@@ -148,5 +149,26 @@ public class DataLoader implements ApplicationRunner {
         mentorRepository.save(hannah);
         colin.addAvailability(one);
         mentorRepository.save(colin);
+
+        //Saving Mentee's Availability
+        sean.addAvailability(one);
+        menteeRepository.save(sean);
+        maggie.addAvailability(two);
+        maggie.addAvailability(three);
+        maggie.addAvailability(four);
+        menteeRepository.save(maggie);
+        kelly.addAvailability(four);
+        menteeRepository.save(kelly);
+        dwight.addAvailability(one);
+        dwight.addAvailability(two);
+        dwight.addAvailability(three);
+        dwight.addAvailability(four);
+        menteeRepository.save(dwight);
+        pam.addAvailability(two);
+        pam.addAvailability(one);
+        menteeRepository.save(pam);
+        michael.addAvailability(one);
+        michael.addAvailability(four);
+        menteeRepository.save(michael);
     }
 }
