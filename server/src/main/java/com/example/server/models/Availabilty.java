@@ -57,4 +57,6 @@ public class Availabilty {
     public void setMentors(List<Mentor> mentors) {
         this.mentors = mentors;
     }
+
+
 }

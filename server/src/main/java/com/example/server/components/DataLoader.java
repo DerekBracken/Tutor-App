@@ -47,6 +47,7 @@ public class DataLoader implements ApplicationRunner {
         this.englishLevel = new ArrayList();
         this.languagesSpoken = new ArrayList();
         this.availability = new ArrayList();
+
         this.date1 = LocalDate.of(1987, 9, 1);
         this.date2 = LocalDate.of(2005, 5, 1);
         this.date3 = LocalDate.of(1992, 9, 1);
@@ -57,23 +58,6 @@ public class DataLoader implements ApplicationRunner {
 
         englishLevel.add("mid");
         languagesSpoken.add("English");
-
-        //Availability add
-        Availabilty one = new Availabilty("Monday-Friday Daytime");
-        availbilityRepository.save(one);
-        availability.add(one);
-
-        Availabilty two = new Availabilty("Monday-Friday Evening");
-        availbilityRepository.save(two);
-        availability.add(two);
-
-        Availabilty three = new Availabilty("Weekend Daytime");
-        availbilityRepository.save(three);
-        availability.add(three);
-
-        Availabilty four = new Availabilty("Weekend Evening");
-        availbilityRepository.save(four);
-        availability.add(four);
 
 
         //Mentees
@@ -101,24 +85,19 @@ public class DataLoader implements ApplicationRunner {
 //      //Mentors
         Mentor johnny = new Mentor("John", "Flinn", date1, "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", englishLevel, languagesSpoken);
         mentorRepository.save(johnny);
-        johnny.addAvailability(one);
-        johnny.addAvailability(two);
-        johnny.addAvailability(three);
+
 
         Mentor roosa = new Mentor("Roosa", "Roserry", date3, "roosa@gmail.com", "0892384792", "female", "I enjoy teaching", "Edinbrugh", englishLevel,  languagesSpoken);
         mentorRepository.save(roosa);
-        roosa.addAvailability(four);
-        roosa.addAvailability(one);
+
 
         Mentor hannah = new Mentor("Hannah", "Hannerson", date1, "hanna@gmail.com", "088736478", "female", "I like helping people", "Glasgow", englishLevel, languagesSpoken);
+
         mentorRepository.save(hannah);
-        hannah.addAvailability(three);
-        hannah.addAvailability(one);
-        hannah.addAvailability(two);
 
         Mentor colin = new Mentor( "Colin", "Colington", date2, "colin@teach.com","018263543947", "male", "Good opertunity to meet new people", "Dundee", englishLevel, languagesSpoken);
         mentorRepository.save(colin);
-        colin.addAvailability(one);
+
 
         //Date and time
         Date meeting1date = new Date(2021-2-1);
@@ -144,5 +123,36 @@ public class DataLoader implements ApplicationRunner {
 //        Meeting meeting4 = new Meeting(meeting4date, meeting4time, "these are notes", "www", hannah, michael);
 //        meetingRepository.save(meeting4);
 
+        //Availability add
+        Availabilty one = new Availabilty("Monday-Friday Daytime");
+        availability.add(one);
+        availbilityRepository.save(one);
+
+
+        Availabilty two = new Availabilty("Monday-Friday Evening");
+        availability.add(two);
+        availbilityRepository.save(two);
+
+        Availabilty three = new Availabilty("Weekend Daytime");
+        availability.add(three);
+        availbilityRepository.save(three);
+
+        Availabilty four = new Availabilty("Weekend Evening");
+        availability.add(four);
+        availbilityRepository.save(four);
+
+        johnny.addAvailability(one);
+        johnny.addAvailability(two);
+        johnny.addAvailability(three);
+        mentorRepository.save(johnny);
+        roosa.addAvailability(four);
+        roosa.addAvailability(one);
+        mentorRepository.save(roosa);
+        hannah.addAvailability(three);
+        hannah.addAvailability(one);
+        hannah.addAvailability(two);
+        mentorRepository.save(hannah);
+        colin.addAvailability(one);
+        mentorRepository.save(colin);
     }
 }
