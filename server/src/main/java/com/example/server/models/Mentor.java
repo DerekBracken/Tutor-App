@@ -53,13 +53,13 @@ public class Mentor {
             joinColumns = {@JoinColumn(name="availability_id", nullable = false,updatable = false)},
             inverseJoinColumns = {@JoinColumn(name="mentor_id", nullable = false,updatable = false)}
     )
-    private String availability;
+    private List<Availabilty> availability;
 
     @JsonBackReference
     @OneToMany(mappedBy = "mentor", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
 
-    public Mentor(String firstName, String lastName, LocalDate dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, ArrayList<String> englishLevel, ArrayList<String> languagesSpoken, String availability) {
+    public Mentor(String firstName, String lastName, LocalDate dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, ArrayList<String> englishLevel, ArrayList<String> languagesSpoken) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -70,7 +70,7 @@ public class Mentor {
         this.location = location;
         this.englishLevel = englishLevel;
         this.languagesSpoken = languagesSpoken;
-        this.availability = availability;  // add as argument
+        this.availability = new ArrayList<Availabilty>();  // add as argument
         this.meetings = new ArrayList<>();
     }
 
@@ -165,12 +165,16 @@ public class Mentor {
         this.languagesSpoken = languagesSpoken;
     }
 
-    public String getAvailability() {
+    public List<Availabilty> getAvailability() {
         return availability;
     }
 
-    public void setAvailability(String availability) {
+    public void setAvailability(List<Availabilty> availability) {
         this.availability = availability;
+    }
+
+    public void addAvailability(Availabilty availabilty){
+        this.availability.add(availabilty);
     }
 
     public List<Meeting> getMeetings() {
