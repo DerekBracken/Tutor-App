@@ -10,13 +10,19 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import PageNotFound from "./components/404";
 import React, {useState} from 'react';
 import AllMentorsContainer from "./containers/AllMentorsContainer";
-import SignupContainer from "./containers/SignupContainer";
+import Signup from "./components/authentication/SigninComponent";
+import Login from "./components/authentication/LoginComponent";
+
 
 function App() {
 
   const [username, setUserName] = useState("")
   return (
-      
+
+      // <>
+      // <Authentication/>
+      // </>
+
         <Router>
 
         {/* <Layout userName={userName} setUserName={setUserName}> */}
@@ -24,19 +30,19 @@ function App() {
         <Switch>
 
         {/* Derek's authentication */}
-        {/* <AuthProvider>
+        <AuthProvider>
            
-              <PrivateRoute exact path="/" component={Dashboard} />
+              {/* <PrivateRoute exact path="/" component={Dashboard} /> */}
 
-              <PrivateRoute path="/update-profile" component={updateProfile} />
+              {/* <PrivateRoute path="/update-profile" component={updateProfile} /> */}
 
               <Route path="/signup" component={Signup} />
 
               <Route path="/login" component={Login} />
 
-              <Route path="/forgot-password" component={ForgotPassword} />
+              {/* <Route path="/forgot-password" component={ForgotPassword} /> */}
       
-          </AuthProvider> */}
+          </AuthProvider>
 
           {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
           <Route path="/mentee" exact>
@@ -66,14 +72,12 @@ function App() {
             <AllMentorsContainer />
           </Route>
 
-          <Route path="/signupform" exact>
+          {/* <Route path="/signupform" exact>
             <SignupContainer/>
-          </Route>
+          </Route> */}
 
           <Route component={PageNotFound}>
           </Route>
-
-          
 
           </Switch>
           {/* </Layout> */}
