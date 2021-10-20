@@ -4,12 +4,78 @@ import HomeContainer from "./containers/HomeContainer";
 import MenteeContainer from "./containers/MenteeContainer";
 import MentorContainer from "./containers/MentorContainer";
 import Profile from "./containers/Profile";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import PageNotFound from "./components/404";
 
 function App() {
+
+  const [username, setUserName] = useState("")
   return (
-        <>
-        <MenteeSignupFormComponent/>
-        </>
+      
+        <Router>
+
+        <Layout userName={userName} setUserName={setUserName}>
+
+        <Switch>
+
+        {/* Derek's authentication */}
+        <AuthProvider>
+           
+              <PrivateRoute exact path="/" component={Dashboard} />
+
+              <PrivateRoute path="/update-profile" component={updateProfile} />
+
+              <Route path="/signup" component={Signup} />
+
+              <Route path="/login" component={Login} />
+
+              <Route path="/forgot-password" component={ForgotPassword} />
+      
+          </AuthProvider>
+
+          {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
+          <Route path="/mentee" exact>
+            <MenteeContainer />
+          </Route>
+
+          <Route path="/mentor" exact>
+            <MentorContainer />
+          </Route>
+
+          <Route path="/mentee/mentors" exact>
+            <AllMentorsContainer/>
+          </Route>
+
+          <Route path="/profile" exact>
+            <Profile/>
+          </Route>
+
+
+          {/* Not private */}
+    
+          <Route path="/" exact>
+            <HomeContainer />
+          </Route>
+
+          <Route path="/viewmentors" exact>
+            <AllMentorsContainer />
+          </Route>
+
+
+          <Route component={PageNotFound}>
+          </Route>
+
+
+
+        
+
+
+          </Switch>
+          </Layout>
+        
+
+        </Router>
+  
   );
 }
 
