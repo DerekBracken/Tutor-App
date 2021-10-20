@@ -36,6 +36,7 @@ public class DataLoader implements ApplicationRunner {
     private LocalDate date3;
     private LocalDate date4;
 
+    //MP: I'M NOT SURE WHY WE HAVE TWO DATA LOADERS? LINE 20 AND LINE 40?
     public DataLoader (){
         //NEED TO FLESH OUT LANGUAGES SPOKEN AND ENGLISH LEVEL TO ADD THINGS TO IT
         this.englishLevel = new ArrayList();
@@ -89,27 +90,27 @@ public class DataLoader implements ApplicationRunner {
         mentorRepository.save(colin);
 
         //Date and time
-        Date meeting1date = new Date(2021-02-01);
-        Date meeting2date = new Date(2021-05-02);
-        Date meeting3date = new Date(2021-03-04);
-        Date meeting4date = new Date(2021-01-01);
+        Date meeting1date = new Date(2021-2-1);
+        Date meeting2date = new Date(2021-5-2);
+        Date meeting3date = new Date(2021-3-4);
+        Date meeting4date = new Date(2021-1-1);
 
-        Time meeting1time = new Time(09-30-00-00);
-        Time meeting2time = new Time(17-30-00-00);
-        Time meeting3time = new Time(19-00-00-00);
-        Time meeting4time = new Time(13-30-00-00);
+        Time meeting1time = new Time(9-30);
+        Time meeting2time = new Time(17-30);
+        Time meeting3time = new Time(19);
+        Time meeting4time = new Time(13-30);
 
         //Time
         Meeting meeting1 = new Meeting(meeting1date, meeting1time, "these are notes", "www", johnny, sean);
         meetingRepository.save(meeting1);
 
-        Meeting meeting2 = new Meeting(meeting2date, meeting2time, "these are notes", "www", maggie, roosa);
+        Meeting meeting2 = new Meeting(meeting2date, meeting2time, "these are notes", "www", roosa, maggie);
         meetingRepository.save(meeting2);
 
-        Meeting meeting3 = new Meeting(meeting3date, meeting3time, "these are notes", "www", kelly, colin);
+        Meeting meeting3 = new Meeting(meeting3date, meeting3time, "these are notes", "www",  colin, kelly);
         meetingRepository.save(meeting3);
 
-        Meeting meeting4 = new Meeting(meeting4date, meeting4time, "these are notes", "www", michael, hannah);
+        Meeting meeting4 = new Meeting(meeting4date, meeting4time, "these are notes", "www", hannah, michael);
         meetingRepository.save(meeting4);
 
     }
