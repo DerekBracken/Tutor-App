@@ -1,13 +1,11 @@
-import Signup from "./components/authentication/SigninComponent";
+import Authentication from "./containers/Authentication";
 import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
   return (
-      <AuthProvider>
         <div>
-           <Signup/>
+           <Authentication/>
         </div>
-      </AuthProvider>
   );
 }
 

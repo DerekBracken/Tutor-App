@@ -35,20 +35,20 @@ export default function Signup(){
                 <h2>Sign Up</h2>
                 {error && <alert variant="danger">{error}</alert>}
                 <form onSubmit={handleSubmit}>
-                    <form id="email">
+                    <div id="email">
                         <label>Email</label>
                         <input type="email" ref={emailRef} required />
-                    </form>
-                    <form id="password">
+                    </div>
+                    <div id="password">
                         <label>password</label>
                         <input type="password" ref={passwordRef} required />
-                    </form>
-                    <form id="password-confirm">
+                    </div>
+                    <div id="password-confirm">
                         <label>password Conformation</label>
                         <input type="password" ref={passwordConfirmRef} required />
-                    </form>
-                </form>
-                <button disabled={loading} type="submit">Sign Up</button>
+                    </div>
+                    <button disabled={loading} type="submit">Sign Up</button>
+                </form>     
             </div>
             <div>
                 Already have an account? Log In
