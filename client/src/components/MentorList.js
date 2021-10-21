@@ -1,11 +1,16 @@
 import Mentor from "./Mentor";
 
-const MentorList = () => {
+const MentorList = ({allMentors}) => {
+
+    const individualMentor = allMentors.map((mentor, index) => {
+        return <Mentor mentor = {mentor} key = {index}/>
+    })
 
     return(
         <>
         <h2> I'm the Mentor List </h2> 
-        <Mentor/>
+        <p>{allMentors[0].firstName}</p>
+        {individualMentor}
         </>
     )
 }
