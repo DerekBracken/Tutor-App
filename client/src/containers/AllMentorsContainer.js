@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 const AllMentorsContainer = () => {
 
     const [allMentors, setAllMentors] = useState(null);
+    const [teachingLevel, setTeachingLevel] = useState(null);
 
     useEffect(() => {
         getAllMentors();
@@ -18,6 +19,11 @@ const AllMentorsContainer = () => {
         fetch("http://localhost:8080/mentors")
         .then(res => res.json())
         .then(allMentors => setAllMentors(allMentors))
+    }
+
+    const getTeachingLevel = function() {
+        fetch("http://localhost:8080/availabilities_mentors")
+        .then(res => res.json())
     }
 
     if (allMentors !=null){
