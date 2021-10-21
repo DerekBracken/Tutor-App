@@ -1,3 +1,5 @@
+import Authentication from "./containers/Authentication";
+import { AuthProvider } from "./contexts/AuthContext";
 import MentorSignupFormComponent from "./components/MentorSignupFormComponent";
 import MenteeSignupFormComponent from "./components/MenteeSignupFormComponent";
 import HomeContainer from "./containers/HomeContainer";
@@ -11,12 +13,16 @@ import AllMentorsContainer from "./containers/AllMentorsContainer";
 import SignupContainer from "./containers/SignupContainer";
 import CalendarContainer from "./containers/CalendarContainer";
 import LearningResourcesContainer from "./containers/LearningResourcesContainer";
+import Signup from "./components/authentication/SigninComponent";
+import Login from "./components/authentication/LoginComponent";
+import ForgotPassword from "./components/authentication/ForgotPassword";
+
 
 function App() {
 
   const [username, setUserName] = useState("")
   return (
-      
+
         <Router>
 
         {/* <Layout userName={userName} setUserName={setUserName}> */}
@@ -24,19 +30,22 @@ function App() {
         <Switch>
 
         {/* Derek's authentication */}
-        {/* <AuthProvider>
+        <AuthProvider>
            
-              <PrivateRoute exact path="/" component={Dashboard} />
+              {/* <PrivateRoute exact path="/" component={Dashboard} /> */}
 
-              <PrivateRoute path="/update-profile" component={updateProfile} />
+              {/* <PrivateRoute path="/update-profile" component={updateProfile} /> */}
 
               <Route path="/signup" component={Signup} />
 
               <Route path="/login" component={Login} />
 
+              <Route path="/authentication-complete" component={Authentication} />
+
+
               <Route path="/forgot-password" component={ForgotPassword} />
       
-          </AuthProvider> */}
+          </AuthProvider>
 
           {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
           <Route path="/mentee" exact>
@@ -66,9 +75,9 @@ function App() {
             <AllMentorsContainer />
           </Route>
 
-          <Route path="/signupform" exact>
+          {/* <Route path="/signupform" exact>
             <SignupContainer/>
-          </Route>
+          </Route> */}
 
           {/* calendar just for access, not the final route */}
           <Route path="/calendar" exact>
