@@ -18,7 +18,7 @@ const MenteeSignupFormComponent = () =>{
         }
 
 
-        console.log("availability" ,availability)
+        console.log("mentee availability" ,availability)
     }
     return (
         <>
