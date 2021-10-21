@@ -6,11 +6,19 @@ const MenteeSignupFormComponent = () =>{
         const lastName = event.target[2].value.trim();
         const dob = event.target[3].value
         const contactNumber = event.target[4].value
-         const gender = event.target[5].value
+        const gender = event.target[5].value
         const motivation = event.target[6].value.trim();
         const location = event.target[7].value;
+        const engLevel = event.target[8].value;
+        const availability = []
+        for (let i = 9; i < 13; i ++){
+            if (event.target[i].checked){
+                availability.push(event.target[i].value)
+            }
+        }
 
-        console.log(event)
+
+        console.log("availability" ,availability)
     }
     return (
         <>
