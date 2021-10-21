@@ -12,6 +12,7 @@ import React, {useState} from 'react';
 import AllMentorsContainer from "./containers/AllMentorsContainer";
 import Signup from "./components/authentication/SigninComponent";
 import Login from "./components/authentication/LoginComponent";
+import ForgotPassword from "./components/authentication/ForgotPassword";
 
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
               <Route path="/authentication-complete" component={Authentication} />
 
 
-              {/* <Route path="/forgot-password" component={ForgotPassword} /> */}
+              <Route path="/forgot-password" component={ForgotPassword} />
       
           </AuthProvider>
 
