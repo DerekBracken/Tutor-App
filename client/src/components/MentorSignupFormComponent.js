@@ -1,47 +1,32 @@
-import {useState, useEffect} from 'react';
-
-
 
 const MentorSignupFormComponent = () =>{
 
-    // const [firstName, setFirstName] = useState("");
-    // const [lastName, setLastName] = useState("");
-    // const [dob, setDob] = useState("");
-    // const [gender, setGender] = useState("");
-    // const [motivation, setMotivation] = useState("");
-    // const [location, setLocation] = useState("");
-    // const [levelWillingToTeach, setLevelWillingToTeach] = useState("");
-    // const []
-    
-    // const handleFirstNameChange = (event)=>{
-    //     setFirstName(event.target.value)
-    // }
 
     const handleFormSubmit= (event)=>{
-    event.preventDefault();
-    const firstName = event.target[0].value.trim();
-    const lastName = event.target[2].value.trim()
-    const dob = event.target[3].value;
-    const contactNumber = event.target[4].value.trim();
-    const gender = event.target[5].value;
-    const motivation = event.target[6].value.trim();
-    const location = event.target[7].value;
-    const engLevel = []
-    for (let i = 8; i < 14; i ++){
-        if (event.target[i].checked){
-            engLevel.push(event.target[i].value)
+        event.preventDefault();
+        const firstName = event.target[0].value.trim();
+        const lastName = event.target[2].value.trim()
+        const dob = event.target[3].value;
+        const contactNumber = event.target[4].value.trim();
+        const gender = event.target[5].value;
+        const motivation = event.target[6].value.trim();
+        const location = event.target[7].value;
+        const engLevel = []
+        for (let i = 8; i < 14; i ++){
+            if (event.target[i].checked){
+                engLevel.push(event.target[i].value)
+            }
         }
-    }
-    const availability = []
-    for (let i = 14; i < 18; i ++){
-        if (event.target[i].checked){
-            availability.push(event.target[i].value)
+        const availability = []
+        for (let i = 14; i < 18; i ++){
+            if (event.target[i].checked){
+                availability.push(event.target[i].value)
+            }
         }
-    }
 
-    console.log("mentor engLevel", engLevel);
+        console.log("mentor engLevel", engLevel);
 
-    console.log("mentor availability" ,availability);
+        console.log("mentor availability" ,availability);
 }
 
 
