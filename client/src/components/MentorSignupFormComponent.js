@@ -4,17 +4,21 @@ const MentorSignupFormComponent = () =>{
 
     const handleFormSubmit= (event)=>{
         event.preventDefault();
-        const firstName = event.target[0].value.trim();
-        const lastName = event.target[2].value.trim()
-        const dob = event.target[3].value;
-        const contactNumber = event.target[4].value.trim();
-        const gender = event.target[5].value;
-        const motivation = event.target[6].value.trim();
-        const location = event.target[7].value;
-        const engLevel = []
-        for (let i = 8; i < 14; i ++){
+
+        const mentor = {
+            firstName : event.target[0].value.trim(),
+            lastName : event.target[1].value.trim(),
+            dob : event.target[2].value,
+            contactNumber : event.target[3].value.trim(),
+            gender : event.target[4].value,
+            motivation : event.target[5].value.trim(),
+            location : event.target[6].value
+        }
+
+        const teachingLevel = []
+        for (let i = 7; i < 14; i ++){
             if (event.target[i].checked){
-                engLevel.push(event.target[i].value)
+                teachingLevel.push(event.target[i].value)
             }
         }
         const availability = []
@@ -23,10 +27,6 @@ const MentorSignupFormComponent = () =>{
                 availability.push(event.target[i].value)
             }
         }
-
-        console.log("mentor engLevel", engLevel);
-
-        console.log("mentor availability" ,availability);
 }
 
 

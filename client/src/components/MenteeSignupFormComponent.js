@@ -3,22 +3,23 @@ const MenteeSignupFormComponent = () =>{
 
     const handleFormSubmit = (event)=>{
         event.preventDefault();
-        const firstName = event.target[0].value.trim();
-        const lastName = event.target[2].value.trim();
-        const dob = event.target[3].value
-        const contactNumber = event.target[4].value
-        const gender = event.target[5].value
-        const motivation = event.target[6].value.trim();
-        const location = event.target[7].value;
-        const engLevel = event.target[8].value;
+        const mentee = {
+            firstName : event.target[0].value.trim(),
+            lastName : event.target[1].value.trim(),
+            dob : event.target[2].value,
+            contactNumber : event.target[3].value,
+            gender : event.target[4].value,
+            motivation : event.target[5].value.trim(),
+            location : event.target[6].value,
+            engLevel : event.target[7].value
+        }
+        console.log(mentee);
         const availability = []
-        for (let i = 9; i < 13; i ++){
+        for (let i = 8; i < 13; i ++){
             if (event.target[i].checked){
                 availability.push(event.target[i].value)
             }
         }
-
-
         console.log("mentee availability" ,availability)
     }
     return (
