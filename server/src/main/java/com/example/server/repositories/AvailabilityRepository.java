@@ -10,4 +10,6 @@ public interface AvailabilityRepository extends JpaRepository<Availabilty, Long>
     List<Availabilty> findByMentors_id(Long id);
 
     List<Availabilty> findByMentees_id(Long id);
+
+
 }

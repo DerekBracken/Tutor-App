@@ -160,23 +160,19 @@ public class DataLoader implements ApplicationRunner {
 
         //Saving mentor's ENGLISH LEVEL
         johnny.addEnglishLevel(beginner);
-//        mentorRepository.save(johnny);
         roosa.addEnglishLevel(beginner);
         roosa.addEnglishLevel(intermediate);
         roosa.addEnglishLevel(preIntermediate);
         roosa.addEnglishLevel(advanced);
-//        mentorRepository.save(roosa);
         hannah.addEnglishLevel(intermediate);
         hannah.addEnglishLevel(upperIntermediate);
         hannah.addEnglishLevel(advanced);
-//        mentorRepository.save(hannah);
         colin.addEnglishLevel(beginner);
         colin.addEnglishLevel(elementary);
         colin.addEnglishLevel(preIntermediate);
         colin.addEnglishLevel(intermediate);
         colin.addEnglishLevel(upperIntermediate);
         colin.addEnglishLevel(advanced);
-//        mentorRepository.save(colin);
 
         //Saving Mentor's AVAILABILITY
         johnny.addAvailability(one);

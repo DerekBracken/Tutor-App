@@ -21,10 +21,13 @@ const AllMentorsContainer = () => {
         .then(allMentors => setAllMentors(allMentors))
     }
 
-    const getTeachingLevel = function() {
-        fetch("http://localhost:8080/availabilities_mentors")
-        .then(res => res.json())
-    }
+    // 2 step fetch process, first gets the id's of the people passing to second fetch which gets their availability
+    // const getAvailabilities = function() {
+    //     fetch("http://localhost:8080/availability/mentors/{id}")
+    //     .then(res => res.json())
+    // }
+
+
 
     if (allMentors !=null){
         return(

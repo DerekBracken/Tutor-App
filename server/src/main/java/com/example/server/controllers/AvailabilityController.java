@@ -16,12 +16,17 @@ public class AvailabilityController {
     AvailabilityRepository availabilityRepository;
 
     @GetMapping(value = "/availability/mentors/{id}")
-    public ResponseEntity<Availabilty> getMentorAvailabilities(@PathVariable Long id){
+    public ResponseEntity<Availabilty> getMentorAvailabilitiesById(@PathVariable Long id){
         return new ResponseEntity(availabilityRepository.findByMentors_id(id), HttpStatus.OK);
     }
 
     @GetMapping(value = "/availability/mentees/{id}")
-    public ResponseEntity<Availabilty> getMenteeAvailabilities(@PathVariable Long id){
+    public ResponseEntity<Availabilty> getMenteeAvailabilitiesById(@PathVariable Long id){
         return new ResponseEntity(availabilityRepository.findByMentees_id(id), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/availability/mentors")
+    public ResponseEntity<Availability> getMentorAvailabilities(){
+        return new ResponseEntity(availabilityRepository);
     }
 }
