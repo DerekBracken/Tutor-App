@@ -1,8 +1,10 @@
-const Mentor = () => {
+const Mentor = ({mentor}) => {
+
+    
 
     return(
         <>
-        <h2> I'm the Mentor </h2>
+        <p>Name: {mentor.firstName} {mentor.lastName}, Email: {mentor.email}, Reason for joining service: {mentor.motivation}, Location: {mentor.location}, Gender: {mentor.gender} </p>
         </>
     )
 }

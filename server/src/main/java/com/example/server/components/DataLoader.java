@@ -78,16 +78,16 @@ public class DataLoader implements ApplicationRunner {
         Mentee michael = new Mentee("Michael", "Scarn", date1, "mscarn@hotmail.com", "0987973735", "male", "I love inside jokes. I hope to be a part of one someday.", "Glasgow", "Beginner", languagesSpoken);
         menteeRepository.save(michael);
 
-        //Date and time - THESE DON"T WORK
-//        Date meeting1date = new Date(2021-2-1);
-//        Date meeting2date = new Date(2021-5-2);
-//        Date meeting3date = new Date(2021-3-4);
-//        Date meeting4date = new Date(2021-1-1);
-//
-//        Time meeting1time = new Time(9-30);
-//        Time meeting2time = new Time(17-30);
-//        Time meeting3time = new Time(19);
-//        Time meeting4time = new Time(13-30);
+//        Date and time - THESE DON"T WORK
+        Date meeting1date = new Date(2021-2-1);
+        Date meeting2date = new Date(2021-5-2);
+        Date meeting3date = new Date(2021-3-4);
+        Date meeting4date = new Date(2021-1-1);
+
+        Time meeting1time = new Time(9-30);
+        Time meeting2time = new Time(17-30);
+        Time meeting3time = new Time(19);
+        Time meeting4time = new Time(13-30);
 
       //Saving instances of MENTORS
         Mentor johnny = new Mentor("John", "Johnson", date1, "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", languagesSpoken);
@@ -104,17 +104,17 @@ public class DataLoader implements ApplicationRunner {
 
 
         //MEETINGS - NEED NEW DATE AND TIME INSTANCES TO CONFIRM IT WORKS
-//        Meeting meeting1 = new Meeting(meeting1date, meeting1time, "these are notes", "www", johnny, sean);
-//        meetingRepository.save(meeting1);
-//
-//        Meeting meeting2 = new Meeting(meeting2date, meeting2time, "these are notes", "www", roosa, maggie);
-//        meetingRepository.save(meeting2);
-//
-//        Meeting meeting3 = new Meeting(meeting3date, meeting3time, "these are notes", "www",  colin, kelly);
-//        meetingRepository.save(meeting3);
-//
-//        Meeting meeting4 = new Meeting(meeting4date, meeting4time, "these are notes", "www", hannah, michael);
-//        meetingRepository.save(meeting4);
+        Meeting meeting1 = new Meeting(meeting1date, meeting1time, "these are notes", "www", johnny, sean);
+        meetingRepository.save(meeting1);
+
+        Meeting meeting2 = new Meeting(meeting2date, meeting2time, "these are notes", "www", roosa, maggie);
+        meetingRepository.save(meeting2);
+
+        Meeting meeting3 = new Meeting(meeting3date, meeting3time, "these are notes", "www",  colin, kelly);
+        meetingRepository.save(meeting3);
+
+        Meeting meeting4 = new Meeting(meeting4date, meeting4time, "these are notes", "www", hannah, michael);
+        meetingRepository.save(meeting4);
 
         //Saving Instances of AVAILABILITY
         Availabilty one = new Availabilty("Monday-Friday Daytime");
@@ -160,23 +160,19 @@ public class DataLoader implements ApplicationRunner {
 
         //Saving mentor's ENGLISH LEVEL
         johnny.addEnglishLevel(beginner);
-        mentorRepository.save(johnny);
         roosa.addEnglishLevel(beginner);
         roosa.addEnglishLevel(intermediate);
         roosa.addEnglishLevel(preIntermediate);
         roosa.addEnglishLevel(advanced);
-        mentorRepository.save(roosa);
         hannah.addEnglishLevel(intermediate);
         hannah.addEnglishLevel(upperIntermediate);
         hannah.addEnglishLevel(advanced);
-        mentorRepository.save(hannah);
         colin.addEnglishLevel(beginner);
         colin.addEnglishLevel(elementary);
         colin.addEnglishLevel(preIntermediate);
         colin.addEnglishLevel(intermediate);
         colin.addEnglishLevel(upperIntermediate);
         colin.addEnglishLevel(advanced);
-        mentorRepository.save(colin);
 
         //Saving Mentor's AVAILABILITY
         johnny.addAvailability(one);

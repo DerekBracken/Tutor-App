@@ -1,4 +1,4 @@
-const Mentee = () => {
+const Mentee = ({allMentees}) => {
 
     return(
         <>
