@@ -1,0 +1,13 @@
+#main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+
+
+/* .action-button:hover{
+    border-color:green;
+    background-color: hotpink;
+} */
+

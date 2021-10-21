@@ -10,6 +10,7 @@ import React, {useState} from 'react';
 import AllMentorsContainer from "./containers/AllMentorsContainer";
 import SignupContainer from "./containers/SignupContainer";
 import CalendarContainer from "./containers/CalendarContainer";
+import LearningResourcesContainer from "./containers/LearningResourcesContainer";
 
 function App() {
 
@@ -74,10 +75,12 @@ function App() {
             <CalendarContainer/>
           </Route>
 
-          <Route component={PageNotFound}>
+          <Route path="/learningresources" exact>
+            <LearningResourcesContainer/>
           </Route>
 
-          
+          <Route component={PageNotFound}>
+          </Route>
 
           </Switch>
           {/* </Layout> */}
