@@ -27,27 +27,29 @@ function App() {
 
         {/* <Layout userName={userName} setUserName={setUserName}> */}
 
-        <Switch>
 
         {/* Derek's authentication */}
         <AuthProvider>
+        <Switch>
            
               {/* <PrivateRoute exact path="/" component={Dashboard} /> */}
 
               {/* <PrivateRoute path="/update-profile" component={updateProfile} /> */}
 
-              <Route path="/signup" component={Signup} />
+              <Route path="/signup" component={Signup} exact />
 
-              <Route path="/login" component={Login} />
+              <Route path="/login" component={Login} exact />
 
-              <Route path="/authentication-complete" component={Authentication} />
+              <Route path="/authentication-complete" component={Authentication} exact />
 
 
-              <Route path="/forgot-password" component={ForgotPassword} />
-      
-          </AuthProvider>
+              <Route path="/forgot-password" component={ForgotPassword} exact/>
 
-          {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
+              <Route path="/" exact>
+                <HomeContainer />
+              </Route>
+
+                     {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
           <Route path="/mentee" exact>
             <MenteeContainer />
           </Route>
@@ -67,9 +69,7 @@ function App() {
 
           {/* Not private */}
     
-          <Route path="/" exact>
-            <HomeContainer />
-          </Route>
+  
 
           <Route path="/viewmentors" exact>
             <AllMentorsContainer />
@@ -88,10 +88,17 @@ function App() {
             <LearningResourcesContainer/>
           </Route>
 
-          <Route component={PageNotFound}>
-          </Route>
-
+                 <Route> 
+                  <PageNotFound/>
+                </Route>
+   
+      
           </Switch>
+          </AuthProvider>
+
+
+   
+
           {/* </Layout> */}
         
 

@@ -1,8 +1,7 @@
 import FooterComponent from "../components/FooterComponent";
 import HeaderComponent from "../components/HeaderComponent";
 import { withRouter } from 'react-router-dom';
-import LoginComponent from "../components/authentication/LoginComponent";
-import SigninComponent from "../components/authentication/SigninComponent";
+// import LoginComponent from "../components/authentication/LoginComponent";
 import "../styles/homepage.css";
 
 
@@ -20,8 +19,7 @@ const HomeContainer = () => {
             
             </div>
        
-        <LoginComponent/>
-        <SigninComponent/>
+        {/* <LoginComponent/> */}
         <FooterComponent/>
 
         </div>

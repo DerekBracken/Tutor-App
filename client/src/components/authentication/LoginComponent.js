@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-const LoginComponent = () => {
-
-    return(
-        <>
-        <button> Im the login</button>
-        </>
-    )
-
-}
-
-export default LoginComponent;
-=======
 import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from "react-router-dom"
@@ -60,4 +47,3 @@ export default function Login(){
         </>
     )
 }
->>>>>>> feature/authentication

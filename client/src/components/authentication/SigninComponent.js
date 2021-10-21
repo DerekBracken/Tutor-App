@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-const SigninComponent = () => {
-
-    return(
-        <>
-        <button> Im the signin component</button>
-        </>
-    )
-
-}
-
-export default SigninComponent;
-=======
 import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from "react-router-dom"
@@ -23,7 +10,7 @@ export default function Signup(){
     const { signup } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    // const history = useHistory()
+    const history = useHistory()
 
     async function handleSubmit(e){
         e.preventDefault()
@@ -36,7 +23,7 @@ export default function Signup(){
             setError('')
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
-            // history.push("/")
+            history.push("/")
         } catch {
             setError('Failed to create an account')
         }
@@ -68,4 +55,3 @@ export default function Signup(){
         </>
     )
 }
->>>>>>> feature/authentication
