@@ -1,7 +1,17 @@
 import "../styles/header.css"
 import {Link} from "react-router-dom"
+import { useAuth } from "../contexts/AuthContext";
+
 
 const HeaderComponent = () => {
+    const { currentUser } = useAuth()
+    let profile;
+    if (currentUser){
+      profile = "profile"
+    } else {
+      profile = "login"
+    }
+
 
     return(
         <>
@@ -31,7 +41,7 @@ const HeaderComponent = () => {
 
             <div>
             <Link to="/profile"><button>
-              Profile
+              {profile}
             </button>
             </Link>
             </div>
