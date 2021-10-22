@@ -17,7 +17,7 @@ public class Availabilty {
     @Column(name="availability")
     private String availability;
 
-    @JsonBackReference
+//    @JsonBackReference(value = "availabilties-mentors")
     @ManyToMany
     @JoinTable(
             name = "availabilities_mentors",
@@ -26,7 +26,7 @@ public class Availabilty {
     )
     private List<Mentor> mentors;
 
-    @JsonBackReference
+//    @JsonBackReference(value = "availabilties-mentees")
     @ManyToMany
     @JoinTable(
             name= "availabilities_mentees",
