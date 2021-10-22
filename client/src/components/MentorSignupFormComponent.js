@@ -1,7 +1,16 @@
+import Service from "../services/service";
+import {useState} from 'react';
+
 
 const MentorSignupFormComponent = () =>{
+    const [formData, setFormData] = useState({})
 
-
+    const handlePost = (mentor) => {
+        const service = new Service();
+        service.postMentor("/api/mentors", mentor)
+        //    .then(() => window.location = '/mentors')
+      }
+ 
     const handleFormSubmit= (event)=>{
         event.preventDefault();
 
@@ -27,6 +36,8 @@ const MentorSignupFormComponent = () =>{
                 availability.push(event.target[i].value)
             }
         }
+        console.log(mentor);
+        handlePost('http://localhost:8080/api/mentors', mentor)
 }
 
 

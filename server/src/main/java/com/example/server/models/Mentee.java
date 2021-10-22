@@ -22,7 +22,7 @@ public class Mentee {
     private String lastName;
 
     @Column(name="dob")
-    private LocalDate dateOfBirth;
+    private String dateOfBirth;
 
     @Column(name="email")
     private String email;
@@ -45,7 +45,7 @@ public class Mentee {
     @Column(name="languages_spoken")
     private ArrayList<String> languagesSpoken;
 
-    @JsonBackReference
+//    @JsonBackReference
     @ManyToMany
     @JoinTable(
             name= "availabilities_mentees",
@@ -54,14 +54,14 @@ public class Mentee {
     )
     private List<Availabilty> availability;
 
-    @JsonBackReference
+//    @JsonBackReference
     @OneToMany(mappedBy = "mentee", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
 
     //    @Column(name="questionnaire")
     //    private Questionnaire questionnaire;
 
-    public Mentee(String firstName, String lastName, LocalDate dateOfBirth, String email, String contactNumber, String gender, String aboutMe, String location, String englishLevel, ArrayList<String> languagesSpoken) {
+    public Mentee(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String aboutMe, String location, String englishLevel, ArrayList<String> languagesSpoken) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -104,11 +104,11 @@ public class Mentee {
         this.lastName = lastName;
     }
 
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

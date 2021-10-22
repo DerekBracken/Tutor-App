@@ -25,8 +25,8 @@ public class AvailabilityController {
         return new ResponseEntity(availabilityRepository.findByMentees_id(id), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/availability/mentors")
-    public ResponseEntity<Availability> getMentorAvailabilities(){
-        return new ResponseEntity(availabilityRepository);
-    }
+//    @GetMapping(value = "/availability/mentors")
+//    public ResponseEntity<Availability> getMentorAvailabilities(){
+//        return new ResponseEntity(availabilityRepository);
+//    }
 }

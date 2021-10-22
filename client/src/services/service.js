@@ -1,4 +1,4 @@
-const baseMentorUrl = 'http://localhost:5000/'
+const baseMentorUrl = 'http://localhost:8080/api/mentors'
 const baseMenteeUrl = 'http://localhost:5000/'
 const baseMeetingUrl = 'http://localhost:5000/'
 
@@ -16,7 +16,7 @@ class Service {
     // }
   
     postMentor(baseMentorUrl, payload){
-        return fetch(baseAppUrl, {
+        return fetch(baseMentorUrl, {
           method: "POST",
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(payload)

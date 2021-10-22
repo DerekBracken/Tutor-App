@@ -1,6 +1,7 @@
 package com.example.server.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -23,7 +24,7 @@ public class Mentor {
     private String lastName;
 
     @Column(name="dob")
-    private LocalDate dateOfBirth;
+    private String dateOfBirth;
 
     @Column(name="email")
     private String email;
@@ -39,8 +40,9 @@ public class Mentor {
 
     @Column(name="location")
     private String location;
-
-    @JsonBackReference
+//
+//    @JsonBackReference(value="english-levels-mentors")
+    @JsonIgnoreProperties("mentors")
     @ManyToMany
     @JoinTable(
         name="englishLevels_mentors",
@@ -49,10 +51,15 @@ public class Mentor {
     )
     private List<EnglishLevel> englishLevel;
 
+//    @Column(name="languages_spoken")
+//    private ArrayList<String> languagesSpoken;
+    @ElementCollection
+    @CollectionTable(name="languages_spoken", joinColumns=@JoinColumn(name = "mentor_id"))
     @Column(name="languages_spoken")
-    private ArrayList<String> languagesSpoken;
+    private List<String> languagesSpoken;
 
-    @JsonBackReference
+//    @JsonBackReference(value="availabilities-mentors")
+    @JsonIgnoreProperties({"mentors", "mentees"})
     @ManyToMany
     @JoinTable(
             name = "availabilities_mentors",
@@ -61,11 +68,12 @@ public class Mentor {
     )
     private List<Availabilty> availability;
 
-    @JsonBackReference
+//    @JsonBackReference(value="mentor")
+    @JsonIgnoreProperties({"mentor", "mentee"})
     @OneToMany(mappedBy = "mentor", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
 
-    public Mentor(String firstName, String lastName, LocalDate dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, ArrayList<String> languagesSpoken) {
+    public Mentor(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, List<String> languagesSpoken) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -107,11 +115,11 @@ public class Mentor {
         this.lastName = lastName;
     }
 
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -166,11 +174,11 @@ public class Mentor {
         this.englishLevel.add(englishLevel);
     }
 
-    public ArrayList<String> getLanguagesSpoken() {
+    public List<String> getLanguagesSpoken() {
         return languagesSpoken;
     }
 
-    public void setLanguagesSpoken(ArrayList<String> languagesSpoken) {
+    public void setLanguagesSpoken(List<String> languagesSpoken) {
         this.languagesSpoken = languagesSpoken;
     }
 
