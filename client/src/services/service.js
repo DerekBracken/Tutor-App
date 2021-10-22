@@ -1,6 +1,6 @@
-const baseMentorUrl = 'http://localhost:8080/api/mentors'
-const baseMenteeUrl = 'http://localhost:5000/'
-const baseMeetingUrl = 'http://localhost:5000/'
+const baseMentorUrl = 'http://localhost:8080/mentors'
+const baseMenteeUrl = 'http://localhost:8080/'
+const baseMeetingUrl = 'http://localhost:8080/'
 
 class Service {
 

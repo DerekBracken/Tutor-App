@@ -3,26 +3,15 @@ import {useState} from 'react';
 
 
 const MentorSignupFormComponent = () =>{
-    const [formData, setFormData] = useState({})
 
     const handlePost = (mentor) => {
         const service = new Service();
-        service.postMentor("/api/mentors", mentor)
+        service.postMentor("http://localhost:8080/mentors", mentor)
         //    .then(() => window.location = '/mentors')
       }
  
     const handleFormSubmit= (event)=>{
         event.preventDefault();
-
-        const mentor = {
-            firstName : event.target[0].value.trim(),
-            lastName : event.target[1].value.trim(),
-            dob : event.target[2].value,
-            contactNumber : event.target[3].value.trim(),
-            gender : event.target[4].value,
-            motivation : event.target[5].value.trim(),
-            location : event.target[6].value
-        }
 
         const teachingLevel = []
         for (let i = 7; i < 14; i ++){
@@ -30,6 +19,19 @@ const MentorSignupFormComponent = () =>{
                 teachingLevel.push(event.target[i].value)
             }
         }
+
+        const mentor = {
+            "firstName" : event.target[0].value.trim(),
+            "lastName" : event.target[1].value.trim(),
+            "dateOfBirth" : event.target[2].value,
+            "contactNumber" : event.target[3].value.trim(),
+            "gender" : event.target[4].value,
+            "motivation" : event.target[5].value.trim(),
+            "location" : event.target[6].value,
+            "languagesSpoken": ["English", "french"]
+        }
+
+
         const availability = []
         for (let i = 14; i < 18; i ++){
             if (event.target[i].checked){
@@ -37,7 +39,7 @@ const MentorSignupFormComponent = () =>{
             }
         }
         console.log(mentor);
-        handlePost('http://localhost:8080/api/mentors', mentor)
+        handlePost(mentor)
 }
 
 
