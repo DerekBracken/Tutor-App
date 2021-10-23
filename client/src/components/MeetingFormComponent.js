@@ -6,7 +6,7 @@ const MeetingFormComponent = ({allMentees}) => {
 
     const handleFormSubmit = (event) =>{
         event.preventDefault();
-        console.log(allMentees);
+        console.log(event.target[3].value);
 
         const meeting = {
             date: event.target[0].value.substring(0,10),
