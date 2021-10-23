@@ -1,6 +1,7 @@
 package com.example.server.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -42,21 +43,25 @@ public class Mentee {
     @Column(name="english_level")
     private String englishLevel;
 
+    @ElementCollection
+    @CollectionTable(name="languages_spoken_mentee", joinColumns=@JoinColumn(name = "mentee_id"))
     @Column(name="languages_spoken")
-    private ArrayList<String> languagesSpoken;
+    private List<String> languagesSpoken;
 
 //    @JsonBackReference
-    @ManyToMany
-    @JoinTable(
-            name= "availabilities_mentees",
-            joinColumns = {@JoinColumn(name="availability_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name="mentee_id", nullable = false, updatable = false)}
-    )
-    private List<Availabilty> availability;
+@JsonIgnoreProperties({"mentees", "mentors"})
+@ManyToMany
+@JoinTable(
+        name = "availabilities_mentees",
+        joinColumns = {@JoinColumn(name="availability_id", nullable = false, updatable = false)},
+        inverseJoinColumns = {@JoinColumn(name="mentee_id", nullable = false, updatable = false)}
+)
+private List<Availabilty> availability;
 
 //    @JsonBackReference
-    @OneToMany(mappedBy = "mentee", fetch = FetchType.LAZY)
-    private List<Meeting> meetings;
+@JsonIgnoreProperties({"mentee", "mentor"})
+@OneToMany(mappedBy = "mentee", fetch = FetchType.LAZY)
+private List<Meeting> meetings;
 
     //    @Column(name="questionnaire")
     //    private Questionnaire questionnaire;

@@ -54,7 +54,7 @@ public class Mentor {
 //    @Column(name="languages_spoken")
 //    private ArrayList<String> languagesSpoken;
     @ElementCollection
-    @CollectionTable(name="languages_spoken", joinColumns=@JoinColumn(name = "mentor_id"))
+    @CollectionTable(name="languages_spoken_mentors", joinColumns=@JoinColumn(name = "mentor_id"))
     @Column(name="languages_spoken")
     private List<String> languagesSpoken;
 
