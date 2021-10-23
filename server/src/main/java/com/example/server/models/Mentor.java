@@ -42,38 +42,30 @@ public class Mentor {
     private String location;
 //
 //    @JsonBackReference(value="english-levels-mentors")
-    @JsonIgnoreProperties("mentors")
-    @ManyToMany
-    @JoinTable(
-        name="englishLevels_mentors",
-        joinColumns = {@JoinColumn(name="englishAvailability_id", nullable = false, updatable = false)},
-        inverseJoinColumns = {@JoinColumn(name="mentor_id", nullable = false, updatable = false)}
-    )
-    private List<EnglishLevel> englishLevel;
+    @ElementCollection
+    @CollectionTable(name="teaching_level_mentors", joinColumns=@JoinColumn(name = "mentor_id"))
+    @Column(name="teaching_level")
+    private List<String> teachingLevel;
 
 //    @Column(name="languages_spoken")
 //    private ArrayList<String> languagesSpoken;
     @ElementCollection
-    @CollectionTable(name="languages_spoken", joinColumns=@JoinColumn(name = "mentor_id"))
+    @CollectionTable(name="languages_spoken_mentors", joinColumns=@JoinColumn(name = "mentor_id"))
     @Column(name="languages_spoken")
     private List<String> languagesSpoken;
 
 //    @JsonBackReference(value="availabilities-mentors")
-    @JsonIgnoreProperties({"mentors", "mentees"})
-    @ManyToMany
-    @JoinTable(
-            name = "availabilities_mentors",
-            joinColumns = {@JoinColumn(name="availability_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name="mentor_id", nullable = false, updatable = false)}
-    )
-    private List<Availabilty> availability;
+    @ElementCollection
+    @CollectionTable(name="availabilities_mentors", joinColumns=@JoinColumn(name = "mentor_id"))
+    @Column(name="availabilities")
+    private List<String> availability;
 
 //    @JsonBackReference(value="mentor")
     @JsonIgnoreProperties({"mentor", "mentee"})
     @OneToMany(mappedBy = "mentor", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
 
-    public Mentor(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, List<String> languagesSpoken) {
+    public Mentor(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, List<String> teachingLevel, List<String> languagesSpoken, List<String> availability) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -82,9 +74,9 @@ public class Mentor {
         this.gender = gender;
         this.motivation = motivation;
         this.location = location;
-        this.englishLevel = new ArrayList<EnglishLevel>();
+        this.teachingLevel = teachingLevel;
         this.languagesSpoken = languagesSpoken;
-        this.availability = new ArrayList<Availabilty>();  // add as argument
+        this.availability = availability;  // add as argument
         this.meetings = new ArrayList<>();
     }
 
@@ -163,15 +155,15 @@ public class Mentor {
         this.location = location;
     }
 
-    public List<EnglishLevel> getEnglishLevel() {
-        return englishLevel;
+    public List<String> getTeachingLevel() {
+        return teachingLevel;
     }
 
-    public void setEnglishLevel(List<EnglishLevel> englishLevel) {
-        this.englishLevel = englishLevel;
+    public void setEnglishLevel(List<String> teachingLevel) {
+        this.teachingLevel = teachingLevel;
     }
-    public void addEnglishLevel(EnglishLevel englishLevel){
-        this.englishLevel.add(englishLevel);
+    public void addEnglishLevel(String teachingLevel){
+        this.teachingLevel.add(teachingLevel);
     }
 
     public List<String> getLanguagesSpoken() {
@@ -182,15 +174,15 @@ public class Mentor {
         this.languagesSpoken = languagesSpoken;
     }
 
-    public List<Availabilty> getAvailability() {
+    public List<String> getAvailability() {
         return availability;
     }
 
-    public void setAvailability(List<Availabilty> availability) {
+    public void setAvailability(List<String> availability) {
         this.availability = availability;
     }
 
-    public void addAvailability(Availabilty availabilty){
+    public void addAvailability(String availabilty){
         this.availability.add(availabilty);
     }
 

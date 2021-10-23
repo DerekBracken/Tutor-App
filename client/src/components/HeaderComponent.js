@@ -1,16 +1,32 @@
+import React, { useState } from 'react'
 import "../styles/header.css"
 import {Link} from "react-router-dom"
 import { useAuth } from "../contexts/AuthContext";
 
 
 const HeaderComponent = () => {
-    const { currentUser } = useAuth()
+    const { currentUser, logout } = useAuth()
+    const [error, setError] = useState("")
+    // const [profile, setProfile] = useState()
+    // const [loggedin, setLoggedin] = useState(false)
+
     let profile;
     if (currentUser){
-      profile = "profile"
+      profile = "Profile"
     } else {
-      profile = "login"
+      profile = "login" 
     }
+
+    async function handleLogout() {
+      setError('')
+
+      try {
+          await logout()
+          // history.pushState('/login')
+      } catch {
+          setError('Failed to log out')
+      }
+  }
 
 
     return(
@@ -40,10 +56,8 @@ const HeaderComponent = () => {
             </div> */}
 
             <div>
-            <Link to="/profile"><button>
-              {profile}
-            </button>
-            </Link>
+            <Link to="/profile"><button>{profile}</button></Link>
+            {currentUser && <button variant='link' onClick={handleLogout}>Log Out</button>}
             </div>
            
         </div>
