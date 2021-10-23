@@ -1,8 +1,8 @@
-import FooterComponent from "../components/FooterComponent";
 import HeaderComponent from "../components/HeaderComponent";
 import { withRouter } from 'react-router-dom';
 // import LoginComponent from "../components/authentication/LoginComponent";
 import "../styles/homepage.css";
+import Footer from "../components/FooterComponent";
 
 
 
@@ -20,7 +20,7 @@ const HomeContainer = () => {
             </div>
        
         {/* <LoginComponent/> */}
-        <FooterComponent/>
+        <Footer/>
 
         </div>
         </>

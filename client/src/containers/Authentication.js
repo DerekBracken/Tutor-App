@@ -1,4 +1,5 @@
 import Signup from "../components/authentication/SigninComponent";
+import Footer from "../components/FooterComponent";
 import { AuthProvider, useAuth } from "../contexts/AuthContext";
 
 
@@ -9,6 +10,7 @@ function Authentication() {
   return (
       <div>
         {currentUser && currentUser.email} Has Signed In
+        <Footer/>
       </div>
   );
 }

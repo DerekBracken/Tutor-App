@@ -8,6 +8,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { withRouter } from 'react-router-dom';
+import Footer from "../components/FooterComponent";
 
 //need to change this from the US to the UK - GB isn't working
 const locales = {
@@ -69,6 +70,7 @@ function CalendarContainer() {
                 </button>
             </div>
             <Calendar localizer={localizer} events={allEvents} startAccessor="start" endAccessor="end" style={{ height: 500, margin: "50px" }} />
+            <Footer/>
         </div>
     );
 }
