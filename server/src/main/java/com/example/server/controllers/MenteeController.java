@@ -5,10 +5,7 @@ import com.example.server.repositories.MenteeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MenteeController {
@@ -17,7 +14,11 @@ public class MenteeController {
     MenteeRepository menteeRepository;
 
     @GetMapping(value = "/mentees")
-    public ResponseEntity<Mentee> getMentee(){
+    public ResponseEntity<Mentee> getMentee(
+            @RequestParam(value = "email", required = false) String email){
+        if (email != null){
+            return new ResponseEntity (menteeRepository.findByEmail(email), HttpStatus.OK);
+        }
         return new ResponseEntity (menteeRepository.findAll(), HttpStatus.OK);
     }
 
