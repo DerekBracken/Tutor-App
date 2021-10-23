@@ -10,7 +10,7 @@ const MenteeSignupFormComponent = () =>{
         const service = new Service();
         service.postMentor("http://localhost:8080/mentees", mentee)
         //    .then(() => window.location = '/mentees')
-      }
+    }
 
     const handleFormSubmit = (event)=>{
         event.preventDefault();
@@ -26,7 +26,9 @@ const MenteeSignupFormComponent = () =>{
             "gender" : event.target[4].value,
             "motivation" : event.target[5].value.trim(),
             "location" : event.target[6].value,
-            "engLevel" : event.target[7].value
+            "engLevel" : event.target[7].value,
+            "languagesSpoken": [event.target[8].value, "English"],
+            "availability" : availability
         }
 
         for (let i = 8; i < 13; i ++){
@@ -35,10 +37,7 @@ const MenteeSignupFormComponent = () =>{
             }
         }
 
-        console.log("mentee", mentee);
-        console.log("mentee availability" ,availability)
-
-        handlePost(mentee)
+        handlePost(mentee) 
     }
     return (
         <>

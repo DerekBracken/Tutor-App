@@ -24,7 +24,7 @@ public class MentorController {
 
     @RequestMapping(value = "/mentors", consumes="application/json", method = RequestMethod.POST)
     public ResponseEntity<Mentor> postMentor(@RequestBody Mentor mentor){
-        Mentor updateMentor = new Mentor(mentor.getFirstName(), mentor.getLastName(), mentor.getDateOfBirth(), mentor.getEmail(), mentor.getContactNumber(), mentor.getGender(), mentor.getMotivation(), mentor.getLocation(), mentor.getLanguagesSpoken());
+        Mentor updateMentor = new Mentor(mentor.getFirstName(), mentor.getLastName(), mentor.getDateOfBirth(), mentor.getEmail(), mentor.getContactNumber(), mentor.getGender(), mentor.getMotivation(), mentor.getLocation(), mentor.getLanguagesSpoken(), mentor.getAvailability());
         mentorRepository.save(updateMentor);
         return new ResponseEntity<>(mentor, HttpStatus.CREATED);
     }

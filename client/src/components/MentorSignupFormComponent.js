@@ -10,7 +10,7 @@ const MentorSignupFormComponent = () =>{
         const service = new Service();
         service.postMentor("http://localhost:8080/mentors", mentor)
         //    .then(() => window.location = '/mentors')
-      }
+    }
  
     const handleFormSubmit= (event)=>{
         event.preventDefault();
@@ -27,7 +27,9 @@ const MentorSignupFormComponent = () =>{
             "gender" : event.target[4].value,
             "motivation" : event.target[5].value.trim(),
             "location" : event.target[6].value,
-            "languagesSpoken": ["English", "french"]
+            "teachingLevel" : teachingLevel,
+            "languagesSpoken": [event.target[8].value, "English"],
+            "availability" : availability
         }
 
         for (let i = 14; i < 18; i ++){
@@ -42,12 +44,8 @@ const MentorSignupFormComponent = () =>{
             }
         }
 
-        console.log(mentor);
-        console.log(availability);
-        console.log(mentor);
-
         handlePost(mentor)
-}
+    }
 
 
 // put all the required back in the form...

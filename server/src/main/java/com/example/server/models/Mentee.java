@@ -49,24 +49,20 @@ public class Mentee {
     private List<String> languagesSpoken;
 
 //    @JsonBackReference
-@JsonIgnoreProperties({"mentees", "mentors"})
-@ManyToMany
-@JoinTable(
-        name = "availabilities_mentees",
-        joinColumns = {@JoinColumn(name="availability_id", nullable = false, updatable = false)},
-        inverseJoinColumns = {@JoinColumn(name="mentee_id", nullable = false, updatable = false)}
-)
-private List<Availabilty> availability;
+    @ElementCollection
+    @CollectionTable(name="availabilities_mentees", joinColumns=@JoinColumn(name = "mentee_id"))
+    @Column(name="availabilities")
+    private List<String> availability;
 
-//    @JsonBackReference
-@JsonIgnoreProperties({"mentee", "mentor"})
-@OneToMany(mappedBy = "mentee", fetch = FetchType.LAZY)
-private List<Meeting> meetings;
+    //    @JsonBackReference
+    @JsonIgnoreProperties({"mentee", "mentor"})
+    @OneToMany(mappedBy = "mentee", fetch = FetchType.LAZY)
+    private List<Meeting> meetings;
 
     //    @Column(name="questionnaire")
     //    private Questionnaire questionnaire;
 
-    public Mentee(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String aboutMe, String location, String englishLevel, ArrayList<String> languagesSpoken) {
+    public Mentee(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String aboutMe, String location, String englishLevel, ArrayList<String> languagesSpoken, ArrayList<String> availability) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -77,7 +73,7 @@ private List<Meeting> meetings;
         this.location = location;
         this.englishLevel = englishLevel;
         this.languagesSpoken = languagesSpoken;
-        this.availability = new ArrayList<Availabilty>();
+        this.availability = availability;
         this.meetings = new ArrayList<>();
         //        this.questionnaire = null;
     }
@@ -173,15 +169,15 @@ private List<Meeting> meetings;
         this.languagesSpoken = languagesSpoken;
     }
 
-    public List<Availabilty> getAvailability() {
+    public List<String> getAvailability() {
         return availability;
     }
 
-    public void setAvailability(List<Availabilty> availability) {
+    public void setAvailability(List<String> availability) {
         this.availability = availability;
     }
 
-    public void addAvailability(Availabilty availabilty){
+    public void addAvailability(String availabilty){
         this.availability.add(availabilty);
     }
 
