@@ -63,8 +63,9 @@ function App() {
           </Route>
 
           <Route path="/profile" exact>
-            <MenteeSignupFormComponent/>
+            <Login/>
             <MentorSignupFormComponent/>
+            <MenteeSignupFormComponent/>
           </Route>
 
 

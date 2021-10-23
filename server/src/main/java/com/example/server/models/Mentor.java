@@ -42,14 +42,10 @@ public class Mentor {
     private String location;
 //
 //    @JsonBackReference(value="english-levels-mentors")
-    @JsonIgnoreProperties("mentors")
-    @ManyToMany
-    @JoinTable(
-        name="englishLevels_mentors",
-        joinColumns = {@JoinColumn(name="englishAvailability_id", nullable = false, updatable = false)},
-        inverseJoinColumns = {@JoinColumn(name="mentor_id", nullable = false, updatable = false)}
-    )
-    private List<EnglishLevel> englishLevel;
+    @ElementCollection
+    @CollectionTable(name="teaching_level_mentors", joinColumns=@JoinColumn(name = "mentor_id"))
+    @Column(name="teaching_level")
+    private List<String> teachingLevel;
 
 //    @Column(name="languages_spoken")
 //    private ArrayList<String> languagesSpoken;
@@ -69,7 +65,7 @@ public class Mentor {
     @OneToMany(mappedBy = "mentor", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
 
-    public Mentor(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, List<String> languagesSpoken, List<String> availability) {
+    public Mentor(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, List<String> teachingLevel, List<String> languagesSpoken, List<String> availability) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -78,7 +74,7 @@ public class Mentor {
         this.gender = gender;
         this.motivation = motivation;
         this.location = location;
-        this.englishLevel = new ArrayList<EnglishLevel>();
+        this.teachingLevel = teachingLevel;
         this.languagesSpoken = languagesSpoken;
         this.availability = availability;  // add as argument
         this.meetings = new ArrayList<>();
@@ -159,15 +155,15 @@ public class Mentor {
         this.location = location;
     }
 
-    public List<EnglishLevel> getEnglishLevel() {
-        return englishLevel;
+    public List<String> getTeachingLevel() {
+        return teachingLevel;
     }
 
-    public void setEnglishLevel(List<EnglishLevel> englishLevel) {
-        this.englishLevel = englishLevel;
+    public void setEnglishLevel(List<String> teachingLevel) {
+        this.teachingLevel = teachingLevel;
     }
-    public void addEnglishLevel(EnglishLevel englishLevel){
-        this.englishLevel.add(englishLevel);
+    public void addEnglishLevel(String teachingLevel){
+        this.teachingLevel.add(teachingLevel);
     }
 
     public List<String> getLanguagesSpoken() {

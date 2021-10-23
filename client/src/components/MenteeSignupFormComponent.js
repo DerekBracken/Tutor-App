@@ -24,9 +24,9 @@ const MenteeSignupFormComponent = () =>{
             "email" : currentUser.email,
             "contactNumber" : event.target[3].value,
             "gender" : event.target[4].value,
-            "motivation" : event.target[5].value.trim(),
+            "aboutMe" : event.target[5].value.trim(),
             "location" : event.target[6].value,
-            "engLevel" : event.target[7].value,
+            "englishLevel" : event.target[7].value,
             "languagesSpoken": [event.target[8].value, "English"],
             "availability" : availability
         }
@@ -36,7 +36,7 @@ const MenteeSignupFormComponent = () =>{
                 availability.push(event.target[i].value)
             }
         }
-
+        console.log(mentee);
         handlePost(mentee) 
     }
     return (
