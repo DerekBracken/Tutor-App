@@ -49,7 +49,7 @@ const AllMentorsContainer = () => {
         <h3> All Mentors Container </h3>
         <HeaderComponent/>
         <MatchedMentorList/>
-        <FooterComponent/>
+        <Footer/>
         
         </>
     )
