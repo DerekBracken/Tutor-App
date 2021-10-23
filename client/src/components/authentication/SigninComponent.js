@@ -48,6 +48,14 @@ export default function Signup(){
                         <label>password Conformation</label>
                         <input type="password" ref={passwordConfirmRef} required />
                     </div>
+                    <div>
+                    <label>Membership :</label>
+                    <select name='account' id='account' required>
+                        <option disabled selected>Select from below</option>
+                            <option value="mentor">Mentor</option>
+                            <option value="mentee">Mentee</option>
+                    </select>
+                    </div>
                     <button disabled={loading} type="submit">Sign Up</button>
                 </form> 
                 <h3>Already have an account? <Link to="/login">Log In</Link></h3>

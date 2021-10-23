@@ -28,7 +28,7 @@ const MentorSignupFormComponent = () =>{
             "motivation" : event.target[5].value.trim(),
             "location" : event.target[6].value,
             "teachingLevel" : teachingLevel,
-            "languagesSpoken": [event.target[8].value, "English"],
+            "languagesSpoken": [event.target[13].value, "English"],
             "availability" : availability
         }
 
@@ -43,6 +43,7 @@ const MentorSignupFormComponent = () =>{
                 teachingLevel.push(event.target[i].value)
             }
         }
+        console.log(mentor);
 
         handlePost(mentor)
     }
