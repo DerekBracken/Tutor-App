@@ -1,26 +1,44 @@
-const MenteeSignupFormComponent = () =>{
+import Service from "../services/service";
+import { useAuth } from "../contexts/AuthContext"
 
+
+const MenteeSignupFormComponent = () =>{
+    const { currentUser } = useAuth()
+
+
+    const handlePost = (mentee) => {
+        const service = new Service();
+        service.postMentor("http://localhost:8080/mentees", mentee)
+        //    .then(() => window.location = '/mentees')
+      }
 
     const handleFormSubmit = (event)=>{
         event.preventDefault();
-        const mentee = {
-            firstName : event.target[0].value.trim(),
-            lastName : event.target[1].value.trim(),
-            dob : event.target[2].value,
-            contactNumber : event.target[3].value,
-            gender : event.target[4].value,
-            motivation : event.target[5].value.trim(),
-            location : event.target[6].value,
-            engLevel : event.target[7].value
-        }
-        console.log(mentee);
+
         const availability = []
+
+        const mentee = {
+            "firstName" : event.target[0].value.trim().charAt(0).toUpperCase() + event.target[0].value.slice(1),
+            "lastName" : event.target[1].value.trim().charAt(0).toUpperCase() + event.target[1].value.slice(1),
+            "dateOfBirth" : event.target[2].value,
+            "email" : currentUser.email,
+            "contactNumber" : event.target[3].value,
+            "gender" : event.target[4].value,
+            "motivation" : event.target[5].value.trim(),
+            "location" : event.target[6].value,
+            "engLevel" : event.target[7].value
+        }
+
         for (let i = 8; i < 13; i ++){
             if (event.target[i].checked){
                 availability.push(event.target[i].value)
             }
         }
+
+        console.log("mentee", mentee);
         console.log("mentee availability" ,availability)
+
+        handlePost(mentee)
     }
     return (
         <>

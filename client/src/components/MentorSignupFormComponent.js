@@ -1,5 +1,4 @@
 import Service from "../services/service";
-import {useState} from 'react';
 import { useAuth } from "../contexts/AuthContext"
 
 
@@ -17,11 +16,7 @@ const MentorSignupFormComponent = () =>{
         event.preventDefault();
 
         const teachingLevel = []
-        for (let i = 7; i < 14; i ++){
-            if (event.target[i].checked){
-                teachingLevel.push(event.target[i].value)
-            }
-        }
+        const availability = []
 
         const mentor = {
             "firstName" : event.target[0].value.trim().charAt(0).toUpperCase() + event.target[0].value.slice(1),
@@ -35,13 +30,18 @@ const MentorSignupFormComponent = () =>{
             "languagesSpoken": ["English", "french"]
         }
 
-
-        const availability = []
         for (let i = 14; i < 18; i ++){
             if (event.target[i].checked){
                 availability.push(event.target[i].value)
             }
         }
+
+        for (let i = 7; i < 14; i ++){
+            if (event.target[i].checked){
+                teachingLevel.push(event.target[i].value)
+            }
+        }
+
         console.log(mentor);
         console.log(availability);
         console.log(mentor);
