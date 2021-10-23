@@ -1,4 +1,3 @@
-import Authentication from "./containers/Authentication";
 import { AuthProvider } from "./contexts/AuthContext";
 import MentorSignupFormComponent from "./components/MentorSignupFormComponent";
 import MenteeSignupFormComponent from "./components/MenteeSignupFormComponent";
@@ -19,8 +18,8 @@ import ForgotPassword from "./components/authentication/ForgotPassword";
 
 
 function App() {
-
   const [username, setUserName] = useState("")
+  
   return (
 
         <Router>
@@ -40,14 +39,16 @@ function App() {
 
               <Route path="/login" component={Login} exact />
 
-              <Route path="/authentication-complete" component={Authentication} exact />
-
+              <Route path="/profile" component={Profile} exact />
 
               <Route path="/forgot-password" component={ForgotPassword} exact/>
 
-              <Route path="/" exact>
-                <HomeContainer />
-              </Route>
+              <Route path="/mentor-form" component={MentorSignupFormComponent} exact/>
+
+              <Route path="/mentee-form" component={MenteeSignupFormComponent} exact/>
+
+              <Route path="/" exact><HomeContainer/></Route>
+
 
                      {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
           <Route path="/mentee" exact>
@@ -60,12 +61,6 @@ function App() {
 
           <Route path="/mentee/mentors" exact>
             <AllMentorsContainer/>
-          </Route>
-
-          <Route path="/profile" exact>
-            <Login/>
-            <MentorSignupFormComponent/>
-            <MenteeSignupFormComponent/>
           </Route>
 
 
