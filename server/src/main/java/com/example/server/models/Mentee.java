@@ -61,8 +61,8 @@ public class Mentee {
 
     @JsonIgnoreProperties({"mentees"})
     @ManyToOne
-    @JoinColumn(name = "mentor_id", nullable = false)
-    private Mentee mentee;
+    @JoinColumn(name = "mentor_id")
+    private Mentor mentor;
 
     //    @Column(name="questionnaire")
     //    private Questionnaire questionnaire;
@@ -80,7 +80,7 @@ public class Mentee {
         this.languagesSpoken = languagesSpoken;
         this.availability = availability;
         this.meetings = new ArrayList<>();
-        //        this.questionnaire = null;
+//        this.questionnaire = null;
     }
 
     public Mentee() {
@@ -198,15 +198,15 @@ public class Mentee {
         this.meetings.add(meeting);
     }
 
-    public Mentee getMentee() {
-        return mentee;
+    public Mentor getMentor() {
+        return mentor;
     }
 
-    public void setMentee(Mentee mentee) {
-        this.mentee = mentee;
+    public void setMentor(Mentor mentor) {
+        this.mentor = mentor;
     }
 
-    //    public Questionnaire getQuestionnaire() {
+//    public Questionnaire getQuestionnaire() {
 //        return questionnaire;
 //    }
 //
