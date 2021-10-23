@@ -59,6 +59,11 @@ public class Mentee {
     @OneToMany(mappedBy = "mentee", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
 
+    @JsonIgnoreProperties({"mentees"})
+    @ManyToOne
+    @JoinColumn(name = "mentor_id", nullable = false)
+    private Mentee mentee;
+
     //    @Column(name="questionnaire")
     //    private Questionnaire questionnaire;
 
@@ -191,6 +196,14 @@ public class Mentee {
 
     public void addMeeting(Meeting meeting){
         this.meetings.add(meeting);
+    }
+
+    public Mentee getMentee() {
+        return mentee;
+    }
+
+    public void setMentee(Mentee mentee) {
+        this.mentee = mentee;
     }
 
     //    public Questionnaire getQuestionnaire() {
