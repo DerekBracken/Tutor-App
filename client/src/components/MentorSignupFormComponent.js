@@ -1,8 +1,11 @@
 import Service from "../services/service";
 import {useState} from 'react';
+import { useAuth } from "../contexts/AuthContext"
 
 
 const MentorSignupFormComponent = () =>{
+    const { currentUser } = useAuth()
+
 
     const handlePost = (mentor) => {
         const service = new Service();
@@ -21,9 +24,10 @@ const MentorSignupFormComponent = () =>{
         }
 
         const mentor = {
-            "firstName" : event.target[0].value.trim(),
-            "lastName" : event.target[1].value.trim(),
+            "firstName" : event.target[0].value.trim().charAt(0).toUpperCase() + event.target[0].value.slice(1),
+            "lastName" : event.target[1].value.trim().charAt(0).toUpperCase() + event.target[1].value.slice(1),
             "dateOfBirth" : event.target[2].value,
+            "email" : currentUser.email,
             "contactNumber" : event.target[3].value.trim(),
             "gender" : event.target[4].value,
             "motivation" : event.target[5].value.trim(),
@@ -39,6 +43,9 @@ const MentorSignupFormComponent = () =>{
             }
         }
         console.log(mentor);
+        console.log(availability);
+        console.log(mentor);
+
         handlePost(mentor)
 }
 
