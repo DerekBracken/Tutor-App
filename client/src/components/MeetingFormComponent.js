@@ -1,11 +1,12 @@
 import { useAuth } from "../contexts/AuthContext";
 
 
-const MeetingFormComponent = ({mentees}) => {
+const MeetingFormComponent = ({allMentees}) => {
     const {currentUser} = useAuth()
 
     const handleFormSubmit = (event) =>{
         event.preventDefault();
+        console.log(allMentees);
 
         const meeting = {
             date: event.target[0].value.substring(0,10),
@@ -18,9 +19,9 @@ const MeetingFormComponent = ({mentees}) => {
     }
 
     // below should loop through the current mentors list of mentees
-    // const menteeOptions = mentees.map((mentee, index) =>{
-    //     return <option value={index} key={index}>{mentee}</option>
-    // })
+    const menteeOptions = allMentees.map((mentee, index) =>{
+        return <option value={index} key={index}>{mentee.firstName} {mentee.lastName}</option>
+    })
 
     return(
         <>
@@ -40,7 +41,7 @@ const MeetingFormComponent = ({mentees}) => {
             <label HTMLfor="mentee">Choose mentee: </label>
                 <select name='mentee' id='mentee' required>
                     <option disabled selected>Select mentee from list below</option>
-                    {/* {menteeOptions} */}
+                    {menteeOptions}
                 </select>
             <input type='submit' value='Submit'/>
         </form>
