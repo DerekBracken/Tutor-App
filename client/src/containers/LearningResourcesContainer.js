@@ -7,8 +7,14 @@ const LearningResources = () => {
 
     return(
         <>
-        <h3> Learning Resources Container </h3>
         <HeaderComponent/>
+        <div id="learning-resources-wrapper-block">
+            <div id="learning-resources-title">Learning Resources</div>
+            <div id="learning-resources-wrapper">
+                hiohjweo;jfpwFPik[]
+            </div>
+        </div>
+
         <Footer/>
         </>
     )
