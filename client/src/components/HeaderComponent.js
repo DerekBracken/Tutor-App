@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "../styles/header.css"
 import {Link} from "react-router-dom"
 import { useAuth } from "../contexts/AuthContext";
+import image from "../imagehell/MeetEngLogo.svg";
 
 
 const HeaderComponent = () => {
@@ -31,33 +32,28 @@ const HeaderComponent = () => {
 
     return(
         <>
-        <div id="main-nav">
+        <div id="header">
 
-            <div>
-            <Link to="/"><button>
-              Home
-            </button>
-            </Link>
-            </div>
+            <img id="logo" src={image} type='image' alt='logo'/>
+            <div id="nav-bar">
+            <li><Link to="/"> Home </Link></li> 
 
-            <div>
-            <Link to="/learningresources"><button>
-              Learning resources
-            </button>
-            </Link>
-            </div>
+            <li><Link to="/learningresources">Learning Resources</Link></li>
 
-            <div>
-                <button >Mentor/mentee</button>
-            </div>
+            <li><Link to="/how-we-work">How It Works</Link></li>
+
+            <li><Link to="/mentors">All Mentors</Link></li>
 
             {/* <div>
                 <button >Chat</button>
             </div> */}
 
+
             <div>
             <Link to="/profile"><button>{profile}</button></Link>
             {currentUser && <button variant='link' onClick={handleLogout}>Log Out</button>}
+            </div>
+
             </div>
            
         </div>

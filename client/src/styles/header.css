@@ -1,13 +1,27 @@
-#main-nav {
+#header{
+    font-family: 'Cabin', sans-serif;
+    background-color: #5C7AEA;
+    font-size: 16px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-top: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
 }
 
+#logo{
+    max-height: 32px;
+    padding-left: 8px;
+}
 
-/* .action-button:hover{
-    border-color:green;
-    background-color: hotpink;
+#nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    float:right;
+}
+
+/* #nav-bar> li> Link {
+    color: white;
+    text-decoration: none;
 } */
-
