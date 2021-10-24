@@ -1,10 +1,7 @@
 package com.example.server.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,27 +37,22 @@ public class Mentor {
 
     @Column(name="location")
     private String location;
-//
-//    @JsonBackReference(value="english-levels-mentors")
+
     @ElementCollection
     @CollectionTable(name="teaching_level_mentors", joinColumns=@JoinColumn(name = "mentor_id"))
     @Column(name="teaching_level")
     private List<String> teachingLevel;
 
-//    @Column(name="languages_spoken")
-//    private ArrayList<String> languagesSpoken;
     @ElementCollection
     @CollectionTable(name="languages_spoken_mentors", joinColumns=@JoinColumn(name = "mentor_id"))
     @Column(name="languages_spoken")
     private List<String> languagesSpoken;
 
-//    @JsonBackReference(value="availabilities-mentors")
     @ElementCollection
     @CollectionTable(name="availabilities_mentors", joinColumns=@JoinColumn(name = "mentor_id"))
     @Column(name="availabilities")
     private List<String> availability;
 
-//    @JsonBackReference(value="mentor")
     @JsonIgnoreProperties({"mentor", "mentee"})
     @OneToMany(mappedBy = "mentor", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
@@ -80,7 +72,7 @@ public class Mentor {
         this.location = location;
         this.teachingLevel = teachingLevel;
         this.languagesSpoken = languagesSpoken;
-        this.availability = availability;  // add as argument
+        this.availability = availability;
         this.meetings = new ArrayList<>();
         this.mentees = new ArrayList<>();
     }
