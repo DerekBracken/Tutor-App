@@ -1,12 +1,16 @@
 #header{
     font-family: 'Cabin', sans-serif;
+    font-weight: 200;
     background-color: #5C7AEA;
     font-size: 16px;
-    display: flex;
     padding-top: 8px;
     padding-bottom: 8px;
     color: white;
+    display: flex;
+}
 
+#navbar {
+    padding-left: 32px;
 }
 
 #logo{
@@ -14,18 +18,14 @@
     padding-left: 8px;
 }
 
-#navbar > a {
-    
+a {
     color: white;
-    
+    text-decoration: none;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-bottom: 16px;
 }
 
 a:active{
     color: white;
-    text-decoration: none;
 }
-
-/* can't access individual bits to change text color  */
-/* #nav-bar > li> Link {
-    text-decoration: none;
-} */
