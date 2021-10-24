@@ -6,12 +6,10 @@ import { useState, useEffect } from "react";
 
 const MenteeContainer = () => {
     const [user, setUser] = useState(null);
-    const [allUserMentees, setAllUserMentees] = useState(null);
 
     useEffect(() => {
                 getUser();
                 console.log(user);
-                getAllUserMentees();
     }, [])
 
     const getUser = function() {
@@ -21,26 +19,18 @@ const MenteeContainer = () => {
         .then(user => setUser(user))
     }
 
-
-    const getAllUserMentees = function() {
-        fetch(`http://localhost:8080/mentees`)
-        .then(res => res.json())
-        .then(allUserMentees => setAllUserMentees(allUserMentees))
+    if (user != null){
+        return(
+            <>
+            <h3> Mentee Container </h3>
+            <HeaderComponent/>
+            <SessionsList user={user} />
+            <Footer/>
+            </>
+        )
     }
-
-
-    if (allUserMentees != null){
-    return(
-        <>
-        <h3> Mentee Container </h3>
-        <HeaderComponent/>
-        <SessionsList user={user} allUserMentees={allUserMentees}/>
-        <Footer/>
-        </>
-    )}
-
     return (
-        <h1>No Mentees</h1>
+        <h3>Cant render</h3>
     )
 }
 
