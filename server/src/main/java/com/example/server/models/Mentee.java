@@ -59,6 +59,11 @@ public class Mentee {
     @OneToMany(mappedBy = "mentee", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
 
+    @JsonIgnoreProperties({"mentees"})
+    @ManyToOne
+    @JoinColumn(name = "mentor_id")
+    private Mentor mentor;
+
     //    @Column(name="questionnaire")
     //    private Questionnaire questionnaire;
 
@@ -75,7 +80,7 @@ public class Mentee {
         this.languagesSpoken = languagesSpoken;
         this.availability = availability;
         this.meetings = new ArrayList<>();
-        //        this.questionnaire = null;
+//        this.questionnaire = null;
     }
 
     public Mentee() {
@@ -193,7 +198,15 @@ public class Mentee {
         this.meetings.add(meeting);
     }
 
-    //    public Questionnaire getQuestionnaire() {
+    public Mentor getMentor() {
+        return mentor;
+    }
+
+    public void setMentor(Mentor mentor) {
+        this.mentor = mentor;
+    }
+
+//    public Questionnaire getQuestionnaire() {
 //        return questionnaire;
 //    }
 //

@@ -15,6 +15,7 @@ import LearningResourcesContainer from "./containers/LearningResourcesContainer"
 import Signup from "./components/authentication/SigninComponent";
 import Login from "./components/authentication/LoginComponent";
 import ForgotPassword from "./components/authentication/ForgotPassword";
+import SessionsList from "./components/SessionsList";
 
 
 function App() {
@@ -83,6 +84,10 @@ function App() {
 
           <Route path="/learningresources" exact>
             <LearningResourcesContainer/>
+          </Route>
+
+          <Route path="/meetingform" exact>
+            <MenteeContainer/>
           </Route>
 
                  <Route> 

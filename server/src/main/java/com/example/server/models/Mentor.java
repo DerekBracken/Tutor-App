@@ -65,6 +65,10 @@ public class Mentor {
     @OneToMany(mappedBy = "mentor", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
 
+    @JsonIgnoreProperties({"mentors"})
+    @OneToMany(mappedBy = "mentor", fetch = FetchType.LAZY)
+    private List<Mentee> mentees;
+
     public Mentor(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, List<String> teachingLevel, List<String> languagesSpoken, List<String> availability) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -78,6 +82,7 @@ public class Mentor {
         this.languagesSpoken = languagesSpoken;
         this.availability = availability;  // add as argument
         this.meetings = new ArrayList<>();
+        this.mentees = new ArrayList<>();
     }
 
     public Mentor() {
@@ -196,5 +201,17 @@ public class Mentor {
 
     public void addMeeting(Meeting meeting){
         this.meetings.add(meeting);
+    }
+
+    public List<Mentee> getMentees() {
+        return mentees;
+    }
+
+    public void setMentees(List<Mentee> mentees) {
+        this.mentees = mentees;
+    }
+
+    public void addMentee(Mentee mentee) {
+        this.mentees.add(mentee);
     }
 }
