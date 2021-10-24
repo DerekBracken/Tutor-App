@@ -37,7 +37,7 @@ export default function Signup(){
         <>
     
             <div className="auth-div-wrapper">
-                <h2 className='SignUp-Title'>Sign Up</h2>
+                <h2 className='form-title'>Sign Up</h2>
                 {error && <alert variant="danger">{error}</alert>}
                 <form className="auth-form" onSubmit={handleSubmit}>
                     <div className="form-label" id="email">
@@ -52,9 +52,9 @@ export default function Signup(){
                         <label >Confirm Password</label><br/>
                         <input className="form-field" type="password" ref={passwordConfirmRef} required />
                     </div>
-                    <button disabled={loading} type="submit">Sign Up</button>
+                    <button className="small-button" disabled={loading} type="submit">Sign Up</button>
                 </form> 
-                <h3>Already have an account? <Link to="/login">Log In</Link></h3>
+                <h4 >Already have an account? <a className="form-redirection-link" href="http://localhost:3000/login">Log In</a> </h4>  
             </div>
         </>
     )

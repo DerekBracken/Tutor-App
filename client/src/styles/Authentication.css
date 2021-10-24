@@ -11,7 +11,12 @@
     max-width: 500px;
 }
 
-.SignUp-Title{
+.form-title{
     font-family: 'Cabin', sans-serif;
     font-weight: 200;
+}
+
+.form-redirection-link{
+    color: #E43F5A;
+
 }
