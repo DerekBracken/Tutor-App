@@ -2,6 +2,9 @@ import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from "react-router-dom"
 import "../../styles/Authentication.css"
+import "../../styles/form.css"
+import "../../styles/button.css"
+
 
 export default function Signup(){
     const emailRef = useRef()
@@ -32,21 +35,22 @@ export default function Signup(){
 
     return (
         <>
+    
             <div className="auth-div-wrapper">
                 <h2 className='SignUp-Title'>Sign Up</h2>
                 {error && <alert variant="danger">{error}</alert>}
                 <form className="auth-form" onSubmit={handleSubmit}>
-                    <div id="email">
-                        <label>Email</label>
-                        <input type="email" ref={emailRef} required />
+                    <div className="form-label" id="email">
+                        <label >Email</label><br/>
+                        <input className="form-field" type="email" ref={emailRef} required />
                     </div>
-                    <div id="password">
-                        <label>Password</label>
-                        <input type="password" ref={passwordRef} required />
+                    <div className="form-label" id="password">
+                        <label >Password</label><br/>
+                        <input className="form-field" type="password" ref={passwordRef} required />
                     </div>
-                    <div id="password-confirm">
-                        <label>Confirm Password</label>
-                        <input type="password" ref={passwordConfirmRef} required />
+                    <div className="form-label" id="password-confirm">
+                        <label >Confirm Password</label><br/>
+                        <input className="form-field" type="password" ref={passwordConfirmRef} required />
                     </div>
                     <button disabled={loading} type="submit">Sign Up</button>
                 </form> 
