@@ -1,0 +1,22 @@
+#learning-resources-wrapper-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.learning-resources-img-wrapper {
+  box-sizing: border-box;
+  border: 10px solid hotpink;
+  display: 'flex';
+  align-items: center;
+}
+
+.learning-resources-img {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+h1 {
+    text-align: center;
+}
