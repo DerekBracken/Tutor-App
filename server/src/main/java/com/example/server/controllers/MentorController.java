@@ -18,14 +18,17 @@ public class MentorController {
     MentorRepository mentorRepository;
 
     @GetMapping(value = "/mentors")
-    public ResponseEntity<Mentor> getMentor(){
+    public ResponseEntity<Mentor> getMentor(
+            @RequestParam(value = "email", required = false) String email){
+        if (email != null){
+            return new ResponseEntity (mentorRepository.findByEmail(email), HttpStatus.OK);
+        }
         return new ResponseEntity (mentorRepository.findAll(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/mentors", consumes="application/json", method = RequestMethod.POST)
+    @PostMapping(value = "/mentors")
     public ResponseEntity<Mentor> postMentor(@RequestBody Mentor mentor){
-        Mentor updateMentor = new Mentor(mentor.getFirstName(), mentor.getLastName(), mentor.getDateOfBirth(), mentor.getEmail(), mentor.getContactNumber(), mentor.getGender(), mentor.getMotivation(), mentor.getLocation(), mentor.getTeachingLevel(), mentor.getLanguagesSpoken(), mentor.getAvailability());
-        mentorRepository.save(updateMentor);
+        mentorRepository.save(mentor);
         return new ResponseEntity<>(mentor, HttpStatus.CREATED);
     }
 

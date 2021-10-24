@@ -5,33 +5,32 @@ import Footer from "../components/FooterComponent";
 import { useState, useEffect } from "react";
 
 const MenteeContainer = () => {
-    
-    const [allMentees, setAllMentees] = useState(null);
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
-        getAllMentees();
-        console.log(allMentees)
+                getUser();
+                console.log(user);
     }, [])
 
-    const getAllMentees = function() {
-        fetch("http://localhost:8080/mentees")
+    const getUser = function() {
+        // fetch(`http://localhost:8080/mentees?email=${currentUser.email}`)
+        fetch(`http://localhost:8080/mentors?email=johny@gmail.com`)
         .then(res => res.json())
-        .then(allMentees => setAllMentees(allMentees))
+        .then(user => setUser(user))
     }
 
-
-    if (allMentees != null){
-    return(
-        <>
-        <h3> Mentee Container </h3>
-        <HeaderComponent/>
-        <SessionsList allMentees={allMentees}/>
-        <Footer/>
-        </>
-    )}
-
+    if (user != null){
+        return(
+            <>
+            <h3> Mentee Container </h3>
+            <HeaderComponent/>
+            <SessionsList user={user} />
+            <Footer/>
+            </>
+        )
+    }
     return (
-        <h1>No Mentees</h1>
+        <h3>Cant render</h3>
     )
 }
 

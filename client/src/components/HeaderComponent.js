@@ -56,7 +56,7 @@ const HeaderComponent = () => {
             </div> */}
 
             <div>
-            <Link to="/profile"><button>{profile}</button></Link>
+            <Link to="/signup "><button>{profile}</button></Link>
             {currentUser && <button variant='link' onClick={handleLogout}>Log Out</button>}
             </div>
            
