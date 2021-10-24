@@ -33,7 +33,7 @@ export default function Signup(){
     return (
         <>
             <div className="auth-div-wrapper">
-                <h2>Sign Up</h2>
+                <h2 className='SignUp-Title'>Sign Up</h2>
                 {error && <alert variant="danger">{error}</alert>}
                 <form className="auth-form" onSubmit={handleSubmit}>
                     <div id="email">
@@ -41,11 +41,11 @@ export default function Signup(){
                         <input type="email" ref={emailRef} required />
                     </div>
                     <div id="password">
-                        <label>password</label>
+                        <label>Password</label>
                         <input type="password" ref={passwordRef} required />
                     </div>
                     <div id="password-confirm">
-                        <label>password Conformation</label>
+                        <label>Confirm Password</label>
                         <input type="password" ref={passwordConfirmRef} required />
                     </div>
                     <button disabled={loading} type="submit">Sign Up</button>

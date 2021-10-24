@@ -1,3 +1,14 @@
 .auth-div-wrapper {
     text-align: center;
+    background-color: tomato;
+    border-width: 512px;
+    border-height: 618px;
+    border-width: 500px;
+
+
+}
+
+.SignUp-Title{
+    font-family: 'Cabin', sans-serif;
+    font-weight: 200;
 }
