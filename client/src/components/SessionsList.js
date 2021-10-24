@@ -1,12 +1,12 @@
 import Session from "./Session";
 import MeetingFormComponent from "./MeetingFormComponent"
 
-const SessionsList = () => {
+const SessionsList = ({allMentees}) => {
 
     return(
         <>
         <h3> Sessions List </h3>
-        <MeetingFormComponent/> 
+        <MeetingFormComponent allMentees={allMentees}/> 
         <Session/>
         </>
     )

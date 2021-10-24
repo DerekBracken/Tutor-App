@@ -1,26 +1,28 @@
 import { useAuth } from "../contexts/AuthContext";
 
 
-const MeetingFormComponent = ({mentees}) => {
+const MeetingFormComponent = ({allMentees}) => {
     const {currentUser} = useAuth()
 
     const handleFormSubmit = (event) =>{
         event.preventDefault();
-
+        
         const meeting = {
             date: event.target[0].value.substring(0,10),
-            time: event.target[0].value.substring(12,16),
+            time: event.target[0].value.substring(11,16),
             notes: event.target[1].value,
             meetingLink:event.target[2].value,
+            // need to update mentor and mentee to be the object of mentor not just email. 
             mentor: currentUser.email,
             mentee: event.target[3].value
         }
+        console.log(meeting);
     }
 
     // below should loop through the current mentors list of mentees
-    // const menteeOptions = mentees.map((mentee, index) =>{
-    //     return <option value={index} key={index}>{mentee}</option>
-    // })
+    const menteeOptions = allMentees.map((mentee, index) =>{
+        return <option value={index} key={index}>{mentee.firstName} {mentee.lastName}</option>
+    })
 
     return(
         <>
@@ -40,7 +42,7 @@ const MeetingFormComponent = ({mentees}) => {
             <label HTMLfor="mentee">Choose mentee: </label>
                 <select name='mentee' id='mentee' required>
                     <option disabled selected>Select mentee from list below</option>
-                    {/* {menteeOptions} */}
+                    {menteeOptions}
                 </select>
             <input type='submit' value='Submit'/>
         </form>
