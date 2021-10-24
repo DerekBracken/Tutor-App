@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface MenteeRepository extends JpaRepository<Mentee, Long> {
 
-    List<Mentee> findByEmail(String email);
+    List<Mentee> findByEmail(String email); // change from List to just mentee
 
-    List<Mentee> findByMentor(List<Mentor> mentor);
+    List<Mentee> findByMentor_id(Long id);
 
 }

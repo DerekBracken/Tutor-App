@@ -16,9 +16,9 @@ const PersonalInformation = () => {
     }
     if (user != null){
       console.log(user[0].firstName);
-      console.log(user[0]);
+      console.log(user[0].mentor.id);
     } 
-    
+
     return (
         <div>
           {currentUser && currentUser.email} Has Signed In

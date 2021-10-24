@@ -5,27 +5,36 @@ import Footer from "../components/FooterComponent";
 import { useState, useEffect } from "react";
 
 const MenteeContainer = () => {
-    
-    const [allMentees, setAllMentees] = useState(null);
+    const [user, setUser] = useState(null);
+    const [allUserMentees, setAllUserMentees] = useState(null);
 
     useEffect(() => {
-        getAllMentees();
-        console.log(allMentees)
+                getUser();
+                console.log(user);
+                getAllUserMentees();
     }, [])
 
-    const getAllMentees = function() {
-        fetch("http://localhost:8080/mentees")
+    const getUser = function() {
+        // fetch(`http://localhost:8080/mentees?email=${currentUser.email}`)
+        fetch(`http://localhost:8080/mentors?email=johny@gmail.com`)
         .then(res => res.json())
-        .then(allMentees => setAllMentees(allMentees))
+        .then(user => setUser(user))
     }
 
 
-    if (allMentees != null){
+    const getAllUserMentees = function() {
+        fetch(`http://localhost:8080/mentees`)
+        .then(res => res.json())
+        .then(allUserMentees => setAllUserMentees(allUserMentees))
+    }
+
+
+    if (allUserMentees != null){
     return(
         <>
         <h3> Mentee Container </h3>
         <HeaderComponent/>
-        <SessionsList allMentees={allMentees}/>
+        <SessionsList user={user} allUserMentees={allUserMentees}/>
         <Footer/>
         </>
     )}
