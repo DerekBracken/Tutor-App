@@ -1,6 +1,6 @@
 import HeaderComponent from "../components/HeaderComponent";
 import Footer from "../components/FooterComponent";
-import MatchedMentorList from "../components/MatchedMentorList";
+// import MatchedMentorList from "../components/MatchedMentorList";
 import MentorList from "../components/MentorList";
 import { withRouter } from 'react-router-dom';
 import { useEffect, useState } from "react";
@@ -36,7 +36,8 @@ const AllMentorsContainer = () => {
                 <h3> All Mentors Container </h3>
                 <HeaderComponent/>
                 <MentorList allMentors = {allMentors}/>
-                <MatchedMentorList allMentors = {allMentors}/>
+                {/* <MatchedMentorList allMentors = {allMentors}/> */}
+
                 <Footer/>
             
                 {/* <p>{allMentors[0].languagesSpoken} {allMentors[0].lastName}</p> */}
@@ -48,7 +49,7 @@ const AllMentorsContainer = () => {
         <>
         <h3> All Mentors Container </h3>
         <HeaderComponent/>
-        <MatchedMentorList/>
+        {/* <MatchedMentorList/> */}
         <Footer/>
         
         </>

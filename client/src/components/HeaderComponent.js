@@ -36,11 +36,11 @@ const HeaderComponent = () => {
                 <div id="navbar">
                  <img id="logo" src={image} type='image' alt='logo'/>
                     <a href="http://localhost:3000/">Home</a>
-                    <a href="http://localhost:3000/learningresources">Learning Resources</a>
+                    <a href="http://localhost:3000/learning-resources">Learning Resources</a>
                     <a href="http://localhost:3000/how-it-works">How It Works</a>
-                    <a href="http://localhost:3000/mentors">All Mentors</a>
+                    <a href="http://localhost:3000/view-mentors">All Mentors</a>
                 
-                    <Link to="/profile"><button>{profile}</button></Link> {currentUser && <button variant='link' onClick={handleLogout}>Log Out</button>} 
+                    <Link to="/login"><button>{profile}</button></Link> {currentUser && <button to="/" variant='link' onClick={handleLogout}>Log Out</button>} 
                 </div>
            
 
