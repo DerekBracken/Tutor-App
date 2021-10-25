@@ -15,6 +15,8 @@ class ServerApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	public void findMenteeByEmail(){
 
-
+	}
 }

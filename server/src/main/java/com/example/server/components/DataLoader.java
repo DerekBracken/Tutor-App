@@ -27,8 +27,8 @@ public class DataLoader implements ApplicationRunner {
 //    @Autowired
 //    AvailabilityRepository availabilityRepository;
 
-    @Autowired
-    EnglishLevelRepository englishLevelRepository;
+//    @Autowired
+//    EnglishLevelRepository englishLevelRepository;
 
     private ArrayList<String> englishLevel;
     private ArrayList<String> languagesSpoken;
@@ -117,6 +117,19 @@ public class DataLoader implements ApplicationRunner {
         Meeting meeting4 = new Meeting(meeting4date, meeting4time, "these are notes", "www", hannah, michael);
         meetingRepository.save(meeting4);
 
+        dwight.setMentor(johnny);
+        pam.setMentor(johnny);
+        daryl.setMentor(johnny);
+        sean.setMentor(roosa);
+        kelly.setMentor(hannah);
+        maggie.setMentor(colin);
+
+        menteeRepository.save(dwight);
+        menteeRepository.save(pam);
+        menteeRepository.save(daryl);
+        menteeRepository.save(sean);
+        menteeRepository.save(kelly);
+        menteeRepository.save(maggie);
         //Saving Instances of AVAILABILITY
 //        Availabilty one = new Availabilty("Monday-Friday Daytime");
 //        availability.add(one);

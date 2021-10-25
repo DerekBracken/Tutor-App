@@ -8,8 +8,8 @@ const MenteeSignupFormComponent = () =>{
 
     const handlePost = (mentee) => {
         const service = new Service();
-        service.postMentor("http://localhost:8080/mentees", mentee)
-        //    .then(() => window.location = '/mentees')
+        service.post("http://localhost:8080/mentees", mentee)
+           .then(() => window.location = '/profile')
     }
 
     const handleFormSubmit = (event)=>{

@@ -1,10 +1,7 @@
 package com.example.server.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,19 +45,19 @@ public class Mentee {
     @Column(name="languages_spoken")
     private List<String> languagesSpoken;
 
-//    @JsonBackReference
     @ElementCollection
     @CollectionTable(name="availabilities_mentees", joinColumns=@JoinColumn(name = "mentee_id"))
     @Column(name="availabilities")
     private List<String> availability;
 
-    //    @JsonBackReference
     @JsonIgnoreProperties({"mentee", "mentor"})
     @OneToMany(mappedBy = "mentee", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
 
-    //    @Column(name="questionnaire")
-    //    private Questionnaire questionnaire;
+    @JsonIgnoreProperties({"mentees"})
+    @ManyToOne
+    @JoinColumn(name = "mentor_id")
+    private Mentor mentor;
 
     public Mentee(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String aboutMe, String location, String englishLevel, ArrayList<String> languagesSpoken, ArrayList<String> availability) {
         this.firstName = firstName;
@@ -75,7 +72,6 @@ public class Mentee {
         this.languagesSpoken = languagesSpoken;
         this.availability = availability;
         this.meetings = new ArrayList<>();
-        //        this.questionnaire = null;
     }
 
     public Mentee() {
@@ -193,11 +189,11 @@ public class Mentee {
         this.meetings.add(meeting);
     }
 
-    //    public Questionnaire getQuestionnaire() {
-//        return questionnaire;
-//    }
-//
-//    public void setQuestionnaire(Questionnaire questionnaire) {
-//        this.questionnaire = questionnaire;
-//    }
+    public Mentor getMentor() {
+        return mentor;
+    }
+
+    public void setMentor(Mentor mentor) {
+        this.mentor = mentor;
+    }
 }
