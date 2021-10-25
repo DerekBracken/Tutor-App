@@ -8,7 +8,7 @@ const MentorSignupFormComponent = () =>{
 
     const handlePost = (mentor) => {
         const service = new Service();
-        service.postMentor("http://localhost:8080/mentors", mentor)
+        service.post("http://localhost:8080/mentors", mentor)
            .then(() => window.location = '/profile')
     }
  
