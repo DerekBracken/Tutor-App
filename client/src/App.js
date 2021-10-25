@@ -1,4 +1,3 @@
-import { AuthProvider } from "./contexts/AuthContext";
 import MentorSignupFormComponent from "./components/MentorSignupFormComponent";
 import MenteeSignupFormComponent from "./components/MenteeSignupFormComponent";
 import HomeContainer from "./containers/HomeContainer";
@@ -7,7 +6,7 @@ import MentorContainer from "./containers/MentorContainer";
 import Profile from "./containers/Profile";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import PageNotFound from "./components/404";
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import AllMentorsContainer from "./containers/AllMentorsContainer";
 import SignupContainer from "./containers/SignupContainer";
 import CalendarContainer from "./containers/CalendarContainer";
@@ -15,6 +14,7 @@ import LearningResourcesContainer from "./containers/LearningResourcesContainer"
 import Signup from "./components/authentication/SigninComponent";
 import Login from "./components/authentication/LoginComponent";
 import ForgotPassword from "./components/authentication/ForgotPassword";
+import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import SessionsList from "./components/SessionsList";
 // import "../styles/app.css"
 
@@ -22,6 +22,28 @@ import SessionsList from "./components/SessionsList";
 function App() {
   // TODO remove if not used
   const [username, setUserName] = useState("")
+
+  const { currentUser } = useAuth()
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+      getUser();
+  },[])
+
+  // Add error for catch
+  const getUser = function() {
+    try {
+      fetch(`http://localhost:8080/mentees?email=kathrynmcvitie@yahoo.co.uk`)
+      .then(res => res.json())
+      .then(user => setUser(user))
+    } catch {}
+    try {
+      fetch(`http://localhost:8080/mentors?email=kathrynmcvitie@yahoo.co.uk`)
+      .then(res => res.json())
+      .then(user => setUser(user))
+    } catch {}
+  }
+
   
   return (
 
@@ -37,7 +59,7 @@ function App() {
 
           <Route path="/login" component={Login} exact />
 
-          <Route path="/profile" component={Profile} exact />
+          <Route exact path="/profile" render={(props) => <Profile {...props} user={user} />}/>
 
           <Route path="/forgot-password" component={ForgotPassword} exact/>
 

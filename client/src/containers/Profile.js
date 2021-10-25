@@ -3,11 +3,11 @@ import Footer from "../components/FooterComponent";
 import PersonalInformation from "../components/PersonalInformation";
 import { withRouter } from 'react-router-dom';
 
-const Profile = () => {
+const Profile = ({user}) => {
 
     return(
         <>
-        <h2> Profile</h2>
+        <h2> Profile {user.firstName}</h2>
         <HeaderComponent/>
         <PersonalInformation/>
         <Footer/>
