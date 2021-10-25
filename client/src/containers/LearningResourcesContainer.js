@@ -10,12 +10,9 @@ const LearningResources = () => {
     const onClickDirect3 = (event) => (window.open('https://ororo.tv/en'));
     const onClickDirect4 = (event) => (window.open('https://quizlet.com/'));
 
-    
-
     return(
         <>
         <HeaderComponent/>
-
         <h1>Learning Resources</h1>
 
         <div id="learning-resources-wrapper-block">
@@ -45,7 +42,6 @@ const LearningResources = () => {
             </div>
         
         </div>
-
         <Footer/>
         </>
     )

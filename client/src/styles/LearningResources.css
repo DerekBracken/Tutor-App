@@ -4,36 +4,24 @@
     justify-content: space-around;
 }
 
-.resources-name{
-    font-family: 'Cabin', sans-serif;
-    font-weight: 100;
-    text-align: center;
-  
-}
-
 .container{
     margin: 16px;
     box-shadow: 30px, 30px, 30px, 0.5 black;
-   
 }
-
-/* 
-.learning-resources-img-wrapper {
-box-sizing: border-box;
-border: 10px solid hotpink;
-/* justify-content: center; */
-/* align-items: center; */
-/* } */ 
 
 .learning-resources-img {
     max-width: 350px;
     max-height: 400px;
     position: relative;
     text-align: center;
-    color: white;
-
 }
 
+.resources-name{
+    font-family: 'Cabin', sans-serif;
+    font-weight: 100;
+    text-align: center;
+  
+}
 h1 {
     text-align: center;
     font-family: 'Cabin', sans-serif;
