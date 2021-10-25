@@ -59,10 +59,15 @@ public class DataLoader implements ApplicationRunner {
         englishLevel.add("Intermediate");
 
         //Saving Instances of MENTEES
+
+        Mentee duncan = new Mentee("duncan", "Hollywood", "010101", "dsoutter@hotmail.co.uk", "0857107119", "male", "Hi", "Edinburgh", "Beginner", languagesSpoken, availability);
+        menteeRepository.save(duncan);
+      
         Mentee derek = new Mentee("Derek", "Bracken", "01-09-1987", "derekbracken@gmail.com", "07951357317", "male", "Want to learn", "Edinburgh", "Beginner", languagesSpoken, availability);
         menteeRepository.save(derek);
 
         Mentee sean = new Mentee("Sean", "Hollywood", "010101", "seanh@gmail.com", "0857107119", "male", "Hi", "Edinburgh", "Beginner", languagesSpoken, availability);
+
         menteeRepository.save(sean);
 
         Mentee maggie = new Mentee("Maggie", "Pent", "090908", "m.pen@hotmail.com", "07987 654 343", "female", "I like cats","Edinburgh", "Pre-Intermediate", languagesSpoken, availability);
@@ -126,14 +131,12 @@ public class DataLoader implements ApplicationRunner {
         dwight.setMentor(johnny);
         pam.setMentor(johnny);
         daryl.setMentor(johnny);
-        sean.setMentor(roosa);
         kelly.setMentor(hannah);
         maggie.setMentor(colin);
 
         menteeRepository.save(dwight);
         menteeRepository.save(pam);
         menteeRepository.save(daryl);
-        menteeRepository.save(sean);
         menteeRepository.save(kelly);
         menteeRepository.save(maggie);
         //Saving Instances of AVAILABILITY

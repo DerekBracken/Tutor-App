@@ -62,7 +62,7 @@ function App() {
 
           {/* Not private */}
 
-          <Route path="/mentors" exact>
+          <Route path="/view-mentors" exact>
             <AllMentorsContainer />
           </Route>
 
@@ -75,7 +75,7 @@ function App() {
             <CalendarContainer/>
           </Route>
 
-          <Route path="/learningresources" exact>
+          <Route path="/learning-resources" exact>
             <LearningResourcesContainer/>
           </Route>
 

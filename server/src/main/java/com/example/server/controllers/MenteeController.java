@@ -30,4 +30,18 @@ public class MenteeController {
         menteeRepository.save(mentee);
         return new ResponseEntity<>(mentee, HttpStatus.CREATED);
     }
+
+    @PutMapping(value = "/mentees/{email}")
+    public ResponseEntity<Mentee> updateMentee(@RequestBody Mentee mentee){
+        menteeRepository.save(mentee);
+        return new ResponseEntity<>(mentee, HttpStatus.OK);
+    }
+
 }
+
+//     @PatchMapping(value = "/raids/{id}")
+//    public ResponseEntity<Raid> updateRaid(@RequestBody Raid raid){
+//        raidRepository.save(raid);
+//        return new ResponseEntity<>(raid, HttpStatus.OK);
+//    }
+

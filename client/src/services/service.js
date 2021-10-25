@@ -24,13 +24,13 @@ class Service {
         })
     }
       
-    // patch(baseAppUrl, payload){
-    //     return fetch(baseAppUrl, {
-    //       method: "PATCH",
-    //       headers: {'Content-Type': 'application/json'},
-    //       body: JSON.stringify(payload)
-    //     })
-    // }
+    put(baseAppUrl, payload){
+        return fetch(baseAppUrl, {
+          method: "PUT",
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        })
+    }
 
 }
 
