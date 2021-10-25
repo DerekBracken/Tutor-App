@@ -61,7 +61,10 @@ public class Mentor {
     @OneToMany(mappedBy = "mentor", fetch = FetchType.LAZY)
     private List<Mentee> mentees;
 
+    private String type;
+
     public Mentor(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, List<String> teachingLevel, List<String> languagesSpoken, List<String> availability) {
+        this.type = "mentor";
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -86,6 +89,10 @@ public class Mentor {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public String getFirstName() {

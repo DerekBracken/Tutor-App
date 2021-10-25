@@ -59,6 +59,9 @@ public class DataLoader implements ApplicationRunner {
         englishLevel.add("Intermediate");
 
         //Saving Instances of MENTEES
+        Mentee derek = new Mentee("Derek", "Bracken", "01-09-1987", "derekbracken@gmail.com", "07951357317", "male", "Want to learn", "Edinburgh", "Beginner", languagesSpoken, availability);
+        menteeRepository.save(derek);
+
         Mentee sean = new Mentee("Sean", "Hollywood", "010101", "seanh@gmail.com", "0857107119", "male", "Hi", "Edinburgh", "Beginner", languagesSpoken, availability);
         menteeRepository.save(sean);
 
@@ -81,6 +84,9 @@ public class DataLoader implements ApplicationRunner {
         menteeRepository.save(michael);
 
         //Saving instances of MENTORS
+        Mentor kat = new Mentor("Kathryn", "McVitie", "1987-06-01", "kathrynmcvitie@yahoo.co.uk", "0851488103", "female", "want to help", "Edinburgh", englishLevel, languagesSpoken, availability);
+        mentorRepository.save(kat);
+
         Mentor johnny = new Mentor("John", "Johnson", "9090", "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", englishLevel, languagesSpoken, availability);
         mentorRepository.save(johnny);
 
