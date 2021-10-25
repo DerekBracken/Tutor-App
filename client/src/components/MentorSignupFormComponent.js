@@ -53,7 +53,7 @@ const MentorSignupFormComponent = () =>{
     return (
         <>
         <h1>Welcome Mentor</h1>
-        <h3 className="mentor-form-label">We're very exited to have you on board. Just a few details before we start</h3>
+        <h3 className="mentor-form-label">We're very excited to have you on board. Just a few details before we start</h3>
             <form onSubmit={handleFormSubmit} id="mentor-form-container">
                 
                 <label  className="mentor-form-label" HTMLfor="first_name">First name:</label> <br/>

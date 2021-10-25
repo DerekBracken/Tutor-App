@@ -41,3 +41,31 @@
     border-radius: 4px;
     max-width: 500px;
 }
+
+/* Mentee FORM  */
+
+.mentee-form-label {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 200;
+    color: #0D0B6D;
+}
+
+.mentee-form-small-options {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 100;
+    color: #0D0B6D;
+    font-size: 14px;
+    text-align: left;
+}
+#mentee-form-container {
+    text-align: center;
+    color: #0D0B6D;
+    border-width: 512px;
+    border-height: 618px;
+    border-width: 500px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border:  2px solid #14279B;
+    border-radius: 4px;
+    max-width: 500px;
+}
