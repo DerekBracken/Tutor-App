@@ -24,9 +24,9 @@ const PersonalInformation = () => {
       } catch {}
     }
 
-    if (user != null){
-      console.log(user);
-    } 
+    // if (user != null){
+    //   console.log(user);
+    // } 
 
     return (
         <div>

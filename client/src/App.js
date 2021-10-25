@@ -15,6 +15,7 @@ import Signup from "./components/authentication/SigninComponent";
 import Login from "./components/authentication/LoginComponent";
 import ForgotPassword from "./components/authentication/ForgotPassword";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
+import PrivateRoute from "./PrivateRoute";
 import SessionsList from "./components/SessionsList";
 // import "../styles/app.css"
 
@@ -23,9 +24,10 @@ function App() {
   // TODO remove if not used
   const [username, setUserName] = useState("")
 
-  const { currentUser } = useAuth()
+  const currentUser = useAuth()
   const [user, setUser] = useState(null);
 
+  console.log(currentUser);
   useEffect(() => {
       getUser();
   },[])
@@ -42,7 +44,7 @@ function App() {
       .then(res => res.json())
       .then(user => setUser(user))
     } catch {}
-  }
+  } 
 
   
   return (
