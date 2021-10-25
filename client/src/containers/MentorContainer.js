@@ -1,5 +1,6 @@
 import Calendar from "../components/Calendar";
 import HeaderComponent from "../components/HeaderComponent";
+import Footer from "../components/FooterComponent";
 import MenteeList from "../components/MenteeList";
 import { withRouter } from 'react-router-dom';
 import { useEffect, useState } from "react";
@@ -36,6 +37,7 @@ const MentorContainer = () => {
 
         <MenteeList/>
         <Calendar/>
+        <Footer/>
         </>
     )
 }

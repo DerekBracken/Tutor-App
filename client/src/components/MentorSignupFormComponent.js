@@ -1,46 +1,52 @@
 import Service from "../services/service";
-import {useState} from 'react';
+import { useAuth } from "../contexts/AuthContext"
 
 
 const MentorSignupFormComponent = () =>{
+    const { currentUser } = useAuth()
+
 
     const handlePost = (mentor) => {
         const service = new Service();
-        service.postMentor("http://localhost:8080/mentors", mentor)
-        //    .then(() => window.location = '/mentors')
-      }
+        service.post("http://localhost:8080/mentors", mentor)
+           .then(() => window.location = '/profile')
+    }
  
     const handleFormSubmit= (event)=>{
         event.preventDefault();
 
         const teachingLevel = []
-        for (let i = 7; i < 14; i ++){
-            if (event.target[i].checked){
-                teachingLevel.push(event.target[i].value)
-            }
-        }
+        const availability = []
 
         const mentor = {
-            "firstName" : event.target[0].value.trim(),
-            "lastName" : event.target[1].value.trim(),
+            "firstName" : event.target[0].value.trim().charAt(0).toUpperCase() + event.target[0].value.slice(1),
+            "lastName" : event.target[1].value.trim().charAt(0).toUpperCase() + event.target[1].value.slice(1),
             "dateOfBirth" : event.target[2].value,
+            "email" : currentUser.email,
             "contactNumber" : event.target[3].value.trim(),
             "gender" : event.target[4].value,
             "motivation" : event.target[5].value.trim(),
             "location" : event.target[6].value,
-            "languagesSpoken": ["English", "french"]
+            "teachingLevel" : teachingLevel,
+            "languagesSpoken": [event.target[13].value], // make some logic for comma separator
+            "availability" : availability
         }
 
-
-        const availability = []
         for (let i = 14; i < 18; i ++){
             if (event.target[i].checked){
                 availability.push(event.target[i].value)
             }
         }
+
+        for (let i = 7; i < 14; i ++){
+            if (event.target[i].checked){
+                teachingLevel.push(event.target[i].value)
+            }
+        }
         console.log(mentor);
+
         handlePost(mentor)
-}
+    }
 
 
 // put all the required back in the form...

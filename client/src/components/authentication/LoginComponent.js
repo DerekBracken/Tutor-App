@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from "react-router-dom"
-import "../../style/Authentication.css"
+import "../../styles/Authentication.css"
 
 export default function Login(){
     const emailRef = useRef()
@@ -18,7 +18,7 @@ export default function Login(){
             setError('')
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
-            history.push("/authentication-complete")
+            history.push("/profile")
         } catch {
             setError('Failed to sign in')
         }
@@ -28,21 +28,23 @@ export default function Login(){
     return (
         <>
             <div className="auth-div-wrapper">
-                <h2>Log In</h2>
+                <h2 className='form-title' >Log In</h2>
                 {error && <alert variant="danger">{error}</alert>}
                 <form className="auth-form" onSubmit={handleSubmit}>
-                    <div id="email">
-                        <label>Email</label>
+                    <div className="form-label" id="email">
+                        <label>Email</label> <br/>
                         <input type="email" ref={emailRef} required />
                     </div>
-                    <div id="password">
-                        <label>password</label>
+                    <div className="form-label" id="password">
+                        <label>Password</label> <br/>
                         <input type="password" ref={passwordRef} required />
                     </div>
-                    <button disabled={loading} type="submit">Log In</button>
+                    <button className="small-button" disabled={loading} type="submit">Log In</button>
                 </form> 
                 <Link to="/forgot-password">Forgot Password</Link>
-                <h3>Need an account? <Link to="/signup">Sign In </Link></h3>
+
+                
+                <h4> Need an account? <a className="form-redirection-link" href="http://localhost:3000/signup">Sign Up</a> </h4>
             </div>
         </>
     )

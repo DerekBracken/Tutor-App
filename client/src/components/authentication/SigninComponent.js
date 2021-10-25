@@ -1,7 +1,10 @@
 import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from "react-router-dom"
-import "../../style/Authentication.css"
+import "../../styles/Authentication.css"
+import "../../styles/form.css"
+import "../../styles/button.css"
+
 
 export default function Signup(){
     const emailRef = useRef()
@@ -11,9 +14,15 @@ export default function Signup(){
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const history = useHistory()
+    let formUrl;
 
     async function handleSubmit(e){
         e.preventDefault()
+        if (e.target[3].value == 'mentor'){
+            formUrl = "/mentor-form"
+        } else {
+            formUrl = "/mentee-form"
+        }
 
         if (passwordRef.current.value !== passwordConfirmRef.current.value){
             return setError("Passwords do not match")
@@ -23,34 +32,45 @@ export default function Signup(){
             setError('')
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            history.push(formUrl)
         } catch {
-            setError('Failed to create an account')
+            setError('Failed to create an account, email may already exist')
         }
-        setLoading(false)        
+        setLoading(false)
     }
 
     return (
         <>
+    
             <div className="auth-div-wrapper">
-                <h2>Sign Up</h2>
+                <h2 className='form-title'>Sign Up</h2>
                 {error && <alert variant="danger">{error}</alert>}
                 <form className="auth-form" onSubmit={handleSubmit}>
-                    <div id="email">
-                        <label>Email</label>
-                        <input type="email" ref={emailRef} required />
+                    <div className="form-label" id="email">
+                        <label >Email</label><br/>
+                        <input className="form-field" type="email" ref={emailRef} required />
                     </div>
-                    <div id="password">
-                        <label>password</label>
-                        <input type="password" ref={passwordRef} required />
+                    <div className="form-label" id="password">
+                        <label >Password</label><br/>
+                        <input className="form-field" type="password" ref={passwordRef} required />
                     </div>
-                    <div id="password-confirm">
-                        <label>password Conformation</label>
-                        <input type="password" ref={passwordConfirmRef} required />
+                    <div className="form-label" id="password-confirm">
+                        <label >Confirm Password</label><br/>
+                        <input className="form-field" type="password" ref={passwordConfirmRef} required />
                     </div>
-                    <button disabled={loading} type="submit">Sign Up</button>
+
+                    <div>
+                    <label>Membership :</label>
+                    <select name='account' id='account' required>
+                        <option disabled selected>Select from below</option>
+                            <option value="mentor">Mentor</option>
+                            <option value="mentee">Mentee</option>
+                    </select>
+                    </div>
+                   <button className="small-button" disabled={loading} type="submit">Sign Up</button>
+
                 </form> 
-                <h3>Already have an account? <Link to="/login">Log In</Link></h3>
+                <h4 >Already have an account? <a className="form-redirection-link" href="http://localhost:3000/login">Log In</a> </h4>  
             </div>
         </>
     )

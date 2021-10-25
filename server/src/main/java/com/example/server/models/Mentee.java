@@ -1,9 +1,7 @@
 package com.example.server.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,26 +40,26 @@ public class Mentee {
     @Column(name="english_level")
     private String englishLevel;
 
+    @ElementCollection
+    @CollectionTable(name="languages_spoken_mentee", joinColumns=@JoinColumn(name = "mentee_id"))
     @Column(name="languages_spoken")
-    private ArrayList<String> languagesSpoken;
+    private List<String> languagesSpoken;
 
-//    @JsonBackReference
-    @ManyToMany
-    @JoinTable(
-            name= "availabilities_mentees",
-            joinColumns = {@JoinColumn(name="availability_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name="mentee_id", nullable = false, updatable = false)}
-    )
-    private List<Availabilty> availability;
+    @ElementCollection
+    @CollectionTable(name="availabilities_mentees", joinColumns=@JoinColumn(name = "mentee_id"))
+    @Column(name="availabilities")
+    private List<String> availability;
 
-//    @JsonBackReference
+    @JsonIgnoreProperties({"mentee", "mentor"})
     @OneToMany(mappedBy = "mentee", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
 
-    //    @Column(name="questionnaire")
-    //    private Questionnaire questionnaire;
+    @JsonIgnoreProperties({"mentees"})
+    @ManyToOne
+    @JoinColumn(name = "mentor_id")
+    private Mentor mentor;
 
-    public Mentee(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String aboutMe, String location, String englishLevel, ArrayList<String> languagesSpoken) {
+    public Mentee(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String aboutMe, String location, String englishLevel, ArrayList<String> languagesSpoken, ArrayList<String> availability) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -72,9 +70,8 @@ public class Mentee {
         this.location = location;
         this.englishLevel = englishLevel;
         this.languagesSpoken = languagesSpoken;
-        this.availability = new ArrayList<Availabilty>();
+        this.availability = availability;
         this.meetings = new ArrayList<>();
-        //        this.questionnaire = null;
     }
 
     public Mentee() {
@@ -168,15 +165,15 @@ public class Mentee {
         this.languagesSpoken = languagesSpoken;
     }
 
-    public List<Availabilty> getAvailability() {
+    public List<String> getAvailability() {
         return availability;
     }
 
-    public void setAvailability(List<Availabilty> availability) {
+    public void setAvailability(List<String> availability) {
         this.availability = availability;
     }
 
-    public void addAvailability(Availabilty availabilty){
+    public void addAvailability(String availabilty){
         this.availability.add(availabilty);
     }
 
@@ -192,11 +189,11 @@ public class Mentee {
         this.meetings.add(meeting);
     }
 
-    //    public Questionnaire getQuestionnaire() {
-//        return questionnaire;
-//    }
-//
-//    public void setQuestionnaire(Questionnaire questionnaire) {
-//        this.questionnaire = questionnaire;
-//    }
+    public Mentor getMentor() {
+        return mentor;
+    }
+
+    public void setMentor(Mentor mentor) {
+        this.mentor = mentor;
+    }
 }
