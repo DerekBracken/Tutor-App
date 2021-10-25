@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "../styles/header.css"
 import {Link} from "react-router-dom"
 import { useAuth } from "../contexts/AuthContext";
+import image from "../imagehell/MeetEngLogo.svg";
 
 
 const HeaderComponent = () => {
@@ -30,38 +31,22 @@ const HeaderComponent = () => {
 
 
     return(
-        <>
-        <div id="main-nav">
-
-            <div>
-            <Link to="/"><button>
-              Home
-            </button>
-            </Link>
-            </div>
-
-            <div>
-            <Link to="/learningresources"><button>
-              Learning resources
-            </button>
-            </Link>
-            </div>
-
-            <div>
-                <button >Mentor/mentee</button>
-            </div>
-
-            {/* <div>
-                <button >Chat</button>
-            </div> */}
-
-            <div>
-            <Link to="/signup "><button>{profile}</button></Link>
-            {currentUser && <button variant='link' onClick={handleLogout}>Log Out</button>}
-            </div>
+    <>
+        <div id="header">
+                <div id="navbar">
+                 <img id="logo" src={image} type='image' alt='logo'/>
+                    <a href="http://localhost:3000/">Home</a>
+                    <a href="http://localhost:3000/learningresources">Learning Resources</a>
+                    <a href="http://localhost:3000/how-it-works">How It Works</a>
+                    <a href="http://localhost:3000/mentors">All Mentors</a>
+                
+                    <Link to="/profile"><button>{profile}</button></Link> {currentUser && <button variant='link' onClick={handleLogout}>Log Out</button>} 
+                </div>
            
+
         </div>
-        </>
+
+    </>
     )
 }
 

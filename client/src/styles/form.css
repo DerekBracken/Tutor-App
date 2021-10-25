@@ -1,0 +1,14 @@
+.form-label{
+    font-family: 'Cabin', sans-serif;
+    font-weight: 200;
+    color: #0D0B6D;
+    text-align: left;
+    /* align the forms to middle */
+    padding-left: 170px;
+}
+
+.form-field{
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: none;
+}
