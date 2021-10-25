@@ -4,6 +4,7 @@ const baseMeetingUrl = 'http://localhost:8080/'
 
 class Service {
 
+    // TODO needed?
     getMentor(){
         return fetch(baseMentorUrl).then(res => res.json());
     }
@@ -15,7 +16,7 @@ class Service {
     //     })
     // }
   
-    postMentor(baseMentorUrl, payload){
+    post(baseMentorUrl, payload){
         return fetch(baseMentorUrl, {
           method: "POST",
           headers: {'Content-Type': 'application/json'},

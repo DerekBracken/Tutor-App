@@ -11,7 +11,7 @@ const MeetingFormComponent = ({user}) => {
 
     const handlePost = (meeting) => {
         const service = new Service();
-        service.postMentor("http://localhost:8080/meetings", meeting)
+        service.post("http://localhost:8080/meetings", meeting)
         //    .then(() => window.location = '/profile')
     }
 

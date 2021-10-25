@@ -19,39 +19,34 @@ import SessionsList from "./components/SessionsList";
 
 
 function App() {
+  // TODO remove if not used
   const [username, setUserName] = useState("")
   
   return (
 
-        <Router>
+    <Router>
 
-        {/* <Layout userName={userName} setUserName={setUserName}> */}
-
-
-        {/* Derek's authentication */}
-        <AuthProvider>
+    {/* <Layout userName={userName} setUserName={setUserName}> */}
+      <AuthProvider>
         <Switch>
-           
-              {/* <PrivateRoute exact path="/" component={Dashboard} /> */}
+          
+          {/* <PrivateRoute path="/update-profile" component={updateProfile} /> */}
 
-              {/* <PrivateRoute path="/update-profile" component={updateProfile} /> */}
+          <Route path="/signup" component={Signup} exact />
 
-              <Route path="/signup" component={Signup} exact />
+          <Route path="/login" component={Login} exact />
 
-              <Route path="/login" component={Login} exact />
+          <Route path="/profile" component={Profile} exact />
 
-              <Route path="/profile" component={Profile} exact />
+          <Route path="/forgot-password" component={ForgotPassword} exact/>
 
-              <Route path="/forgot-password" component={ForgotPassword} exact/>
+          <Route path="/mentor-form" component={MentorSignupFormComponent} exact/>
 
-              <Route path="/mentor-form" component={MentorSignupFormComponent} exact/>
+          <Route path="/mentee-form" component={MenteeSignupFormComponent} exact/>
 
-              <Route path="/mentee-form" component={MenteeSignupFormComponent} exact/>
+          <Route path="/" exact><HomeContainer/></Route>
 
-              <Route path="/" exact><HomeContainer/></Route>
-
-
-                     {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
+          {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
           <Route path="/mentee" exact>
             <MenteeContainer />
           </Route>
@@ -64,10 +59,7 @@ function App() {
             <AllMentorsContainer/>
           </Route>
 
-
           {/* Not private */}
-    
-  
 
           <Route path="/mentors" exact>
             <AllMentorsContainer />
@@ -90,21 +82,13 @@ function App() {
             <MenteeContainer/>
           </Route>
 
-                 <Route> 
-                  <PageNotFound/>
-                </Route>
-   
-      
-          </Switch>
-          </AuthProvider>
+          <Route> 
+            <PageNotFound/>
+          </Route>
 
-
-   
-
-          {/* </Layout> */}
-        
-
-        </Router>
+        </Switch>
+      </AuthProvider>
+    </Router>
   
   );
 }

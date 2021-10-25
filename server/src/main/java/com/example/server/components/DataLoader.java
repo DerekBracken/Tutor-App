@@ -27,8 +27,8 @@ public class DataLoader implements ApplicationRunner {
 //    @Autowired
 //    AvailabilityRepository availabilityRepository;
 
-    @Autowired
-    EnglishLevelRepository englishLevelRepository;
+//    @Autowired
+//    EnglishLevelRepository englishLevelRepository;
 
     private ArrayList<String> englishLevel;
     private ArrayList<String> languagesSpoken;
