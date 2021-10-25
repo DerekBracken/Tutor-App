@@ -1,10 +1,7 @@
 package com.example.server.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,32 +37,34 @@ public class Mentor {
 
     @Column(name="location")
     private String location;
-//
-//    @JsonBackReference(value="english-levels-mentors")
+
     @ElementCollection
     @CollectionTable(name="teaching_level_mentors", joinColumns=@JoinColumn(name = "mentor_id"))
     @Column(name="teaching_level")
     private List<String> teachingLevel;
 
-//    @Column(name="languages_spoken")
-//    private ArrayList<String> languagesSpoken;
     @ElementCollection
     @CollectionTable(name="languages_spoken_mentors", joinColumns=@JoinColumn(name = "mentor_id"))
     @Column(name="languages_spoken")
     private List<String> languagesSpoken;
 
-//    @JsonBackReference(value="availabilities-mentors")
     @ElementCollection
     @CollectionTable(name="availabilities_mentors", joinColumns=@JoinColumn(name = "mentor_id"))
     @Column(name="availabilities")
     private List<String> availability;
 
-//    @JsonBackReference(value="mentor")
     @JsonIgnoreProperties({"mentor", "mentee"})
     @OneToMany(mappedBy = "mentor", fetch = FetchType.LAZY)
     private List<Meeting> meetings;
 
+    @JsonIgnoreProperties({"mentors"})
+    @OneToMany(mappedBy = "mentor", fetch = FetchType.LAZY)
+    private List<Mentee> mentees;
+
+    private String type;
+
     public Mentor(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, List<String> teachingLevel, List<String> languagesSpoken, List<String> availability) {
+        this.type = "mentor";
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -76,8 +75,9 @@ public class Mentor {
         this.location = location;
         this.teachingLevel = teachingLevel;
         this.languagesSpoken = languagesSpoken;
-        this.availability = availability;  // add as argument
+        this.availability = availability;
         this.meetings = new ArrayList<>();
+        this.mentees = new ArrayList<>();
     }
 
     public Mentor() {
@@ -89,6 +89,10 @@ public class Mentor {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public String getFirstName() {
@@ -196,5 +200,17 @@ public class Mentor {
 
     public void addMeeting(Meeting meeting){
         this.meetings.add(meeting);
+    }
+
+    public List<Mentee> getMentees() {
+        return mentees;
+    }
+
+    public void setMentees(List<Mentee> mentees) {
+        this.mentees = mentees;
+    }
+
+    public void addMentee(Mentee mentee) {
+        this.mentees.add(mentee);
     }
 }

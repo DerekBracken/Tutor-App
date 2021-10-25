@@ -4,8 +4,9 @@ import { AuthProvider, useAuth } from "../contexts/AuthContext";
 
 
 
-function Authentication() {
+function Authentication() {  // TODO needed?
   const { currentUser } = useAuth()
+
 
   return (
       <div>

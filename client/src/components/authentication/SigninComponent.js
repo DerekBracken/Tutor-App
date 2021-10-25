@@ -14,9 +14,15 @@ export default function Signup(){
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const history = useHistory()
+    let formUrl;
 
     async function handleSubmit(e){
         e.preventDefault()
+        if (e.target[3].value == 'mentor'){
+            formUrl = "/mentor-form"
+        } else {
+            formUrl = "/mentee-form"
+        }
 
         if (passwordRef.current.value !== passwordConfirmRef.current.value){
             return setError("Passwords do not match")
@@ -26,11 +32,11 @@ export default function Signup(){
             setError('')
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            history.push(formUrl)
         } catch {
             setError('Failed to create an account, email may already exist')
         }
-        setLoading(false)        
+        setLoading(false)
     }
 
     return (
@@ -52,7 +58,17 @@ export default function Signup(){
                         <label >Confirm Password</label><br/>
                         <input className="form-field" type="password" ref={passwordConfirmRef} required />
                     </div>
-                    <button className="small-button" disabled={loading} type="submit">Sign Up</button>
+
+                    <div>
+                    <label>Membership :</label>
+                    <select name='account' id='account' required>
+                        <option disabled selected>Select from below</option>
+                            <option value="mentor">Mentor</option>
+                            <option value="mentee">Mentee</option>
+                    </select>
+                    </div>
+                   <button className="small-button" disabled={loading} type="submit">Sign Up</button>
+
                 </form> 
                 <h4 >Already have an account? <a className="form-redirection-link" href="http://localhost:3000/login">Log In</a> </h4>  
             </div>
