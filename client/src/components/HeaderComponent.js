@@ -40,7 +40,7 @@ const HeaderComponent = () => {
                     <a href="http://localhost:3000/how-it-works">How It Works</a>
                     <a href="http://localhost:3000/mentors">All Mentors</a>
                 
-                    <Link to="/profile"><button>{profile}</button></Link> {currentUser && <button variant='link' onClick={handleLogout}>Log Out</button>} 
+                    <Link to="/login"><button>{profile}</button></Link> {currentUser && <button to="/" variant='link' onClick={handleLogout}>Log Out</button>} 
                 </div>
            
 
