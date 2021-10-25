@@ -63,6 +63,8 @@ public class Mentor {
 
     private String type;
 
+    private int suitabilityScore;
+
     public Mentor(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, List<String> teachingLevel, List<String> languagesSpoken, List<String> availability) {
         this.type = "mentor";
         this.firstName = firstName;
@@ -212,5 +214,13 @@ public class Mentor {
 
     public void addMentee(Mentee mentee) {
         this.mentees.add(mentee);
+    }
+
+    public int getSuitabilityScore() {
+        return suitabilityScore;
+    }
+
+    public void increaseSuitabilityScore(int value) {
+        this.suitabilityScore += value;
     }
 }
