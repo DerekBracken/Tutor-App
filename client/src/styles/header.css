@@ -1,4 +1,4 @@
-#header{
+#header {
     font-family: 'Cabin', sans-serif;
     font-weight: 200;
     background-color: #5C7AEA;
@@ -11,11 +11,18 @@
 
 #navbar {
     padding-left: 32px;
+    display: flex;
 }
 
-#logo{
+#logo {
     max-height: 36px;
     padding-left: 8px;
+}
+
+#line {
+    height: 1px;
+    width: 100%;
+    background-color: black;
 }
 
 a {
@@ -23,9 +30,10 @@ a {
     text-decoration: none;
     padding-left: 4px;
     padding-right: 4px;
-    margin-bottom: 16px;
+    padding-top: 8px;
+    justify-content: space-evenly;
 }
 
-a:active{
+a:active {
     color: white;
 }

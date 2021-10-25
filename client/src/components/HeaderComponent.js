@@ -43,6 +43,7 @@ const HeaderComponent = () => {
                     <Link to="/profile"><button>{profile}</button></Link> {currentUser && <button variant='link' onClick={handleLogout}>Log Out</button>} 
                 </div>
         </div>
+        <div id="line"/>
 
     </>
     )
