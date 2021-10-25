@@ -14,10 +14,10 @@ public class Meeting {
     private Long id;
 
     @Column(name="date")
-    private Date date;
+    private String date;
 
     @Column(name="time")
-    private Time time;
+    private String time;
 
     @Column(name="notes")
     private String notes;
@@ -35,7 +35,7 @@ public class Meeting {
     @JoinColumn(name= "mentee_id", nullable = false)
     private Mentee mentee;
 
-    public Meeting(Date date, Time time, String notes, String meetingLink, Mentor mentor, Mentee mentee) {
+    public Meeting(String date, String time, String notes, String meetingLink, Mentor mentor, Mentee mentee) {
         this.date = date;
         this.time = time;
         this.notes = notes;
@@ -55,19 +55,19 @@ public class Meeting {
         this.id = id;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Time getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(String time) {
         this.time = time;
     }
 

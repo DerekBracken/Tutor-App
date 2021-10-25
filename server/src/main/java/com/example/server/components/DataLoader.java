@@ -59,7 +59,15 @@ public class DataLoader implements ApplicationRunner {
         englishLevel.add("Intermediate");
 
         //Saving Instances of MENTEES
-        Mentee sean = new Mentee("Sean", "Hollywood", "010101", "dsoutter@hotmail.co.uk", "0857107119", "male", "Hi", "Edinburgh", "Beginner", languagesSpoken, availability);
+
+        Mentee duncan = new Mentee("duncan", "Hollywood", "010101", "dsoutter@hotmail.co.uk", "0857107119", "male", "Hi", "Edinburgh", "Beginner", languagesSpoken, availability);
+        menteeRepository.save(duncan);
+      
+        Mentee derek = new Mentee("Derek", "Bracken", "01-09-1987", "derekbracken@gmail.com", "07951357317", "male", "Want to learn", "Edinburgh", "Beginner", languagesSpoken, availability);
+        menteeRepository.save(derek);
+
+        Mentee sean = new Mentee("Sean", "Hollywood", "010101", "seanh@gmail.com", "0857107119", "male", "Hi", "Edinburgh", "Beginner", languagesSpoken, availability);
+
         menteeRepository.save(sean);
 
         Mentee maggie = new Mentee("Maggie", "Pent", "090908", "m.pen@hotmail.com", "07987 654 343", "female", "I like cats","Edinburgh", "Pre-Intermediate", languagesSpoken, availability);
@@ -81,6 +89,9 @@ public class DataLoader implements ApplicationRunner {
         menteeRepository.save(michael);
 
         //Saving instances of MENTORS
+        Mentor kat = new Mentor("Kathryn", "McVitie", "1987-06-01", "kathrynmcvitie@yahoo.co.uk", "0851488103", "female", "want to help", "Edinburgh", englishLevel, languagesSpoken, availability);
+        mentorRepository.save(kat);
+
         Mentor johnny = new Mentor("John", "Johnson", "9090", "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", englishLevel, languagesSpoken, availability);
         mentorRepository.save(johnny);
 
@@ -94,15 +105,15 @@ public class DataLoader implements ApplicationRunner {
         mentorRepository.save(colin);
 
 //        Date and time - THESE DON"T WORK
-        Date meeting1date = new Date(2021-2-1);
-        Date meeting2date = new Date(2021-5-2);
-        Date meeting3date = new Date(2021-3-4);
-        Date meeting4date = new Date(2021-1-1);
+        String meeting1date = "2021-2-1";
+        String meeting2date = "2021-5-2";
+        String meeting3date = "2021-3-4";
+        String meeting4date = "2021-1-1";
 //
-        Time meeting1time = new Time(9-30);
-        Time meeting2time = new Time(17-30);
-        Time meeting3time = new Time(19);
-        Time meeting4time = new Time(13-30);
+        String meeting1time = "9:30";
+        String meeting2time = "17:30";
+        String meeting3time = "19:00";
+        String meeting4time = "13:30";
 
         //MEETINGS - NEED NEW DATE AND TIME INSTANCES TO CONFIRM IT WORKS
         Meeting meeting1 = new Meeting(meeting1date, meeting1time, "these are notes", "www", johnny, sean);

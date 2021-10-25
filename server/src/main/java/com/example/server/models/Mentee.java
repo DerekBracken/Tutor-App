@@ -59,7 +59,10 @@ public class Mentee {
     @JoinColumn(name = "mentor_id")
     private Mentor mentor;
 
+    private String type;
+
     public Mentee(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String aboutMe, String location, String englishLevel, ArrayList<String> languagesSpoken, ArrayList<String> availability) {
+        this.type = "mentee";
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -83,6 +86,10 @@ public class Mentee {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public String getFirstName() {

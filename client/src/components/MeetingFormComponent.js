@@ -19,8 +19,8 @@ const MeetingFormComponent = ({user}) => {
         event.preventDefault();
         
         const meeting = {
-            // "date": event.target[0].value.substring(0,10),
-            // "time": event.target[0].value.substring(11,16),
+            "date": event.target[0].value.substring(0,10),
+            "time": event.target[0].value.substring(11,16),
             "notes": event.target[1].value,
             "meetingLink":event.target[2].value,
             // need to update mentor and mentee to be the object of mentor not just email. 
