@@ -66,7 +66,7 @@ public class DataLoader implements ApplicationRunner {
         Mentee derek = new Mentee("Derek", "Bracken", "01-09-1987", "derekbracken@gmail.com", "07951357317", "male", "Want to learn", "Edinburgh", "Beginner", languagesSpoken, availability);
         menteeRepository.save(derek);
 
-        Mentee sean = new Mentee("Sean", "Hollywood", "010101", "seanh@gmail.com", "0857107119", "male", "Hi", "Edinburgh", "Beginner", languagesSpoken, availability);
+        Mentee sean = new Mentee("Sean", "Hollywood", "010101", "sofiaakbar@hotmail.co.uk", "0857107119", "male", "Hi", "Edinburgh", "Beginner", languagesSpoken, availability);
 
         menteeRepository.save(sean);
 

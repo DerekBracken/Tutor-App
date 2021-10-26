@@ -28,23 +28,29 @@ const PersonalInformation = () => {
       console.log(user);
     } 
 
+    if (user != null){
     return (
         <div>
-          {currentUser && currentUser.email} Has Signed In
           <br/>
+          {/* delete  */}
+          {currentUser && currentUser.email} is signed in 
           <p>First Name: {user.firstName}</p>
           <p>Last Name: {user.lastName}</p>
           <p>Date of Birth: {user.dateOfBirth}</p>
           <p>Email: {user.email}</p>
           <p>Contact Number: {user.contactNumber}</p>
           <p>Gender: {user.gender}</p>
-          <p>About: {user.aboutMe}</p>
+          <p>About Me: {user.aboutMe}</p>
           <p>Location: {user.location}</p>
           <p>English Level: {user.englishLevel}</p>
           <p>Languages Spoken: {user.languagesSpoken}</p>
           <p>Availability: {user.availability}</p>
+          <button>Update your profile</button>
         </div>
     );
-  }
+  } return (
+    <h3>Can't render page</h3>
+  )}
+
 
 export default PersonalInformation;
