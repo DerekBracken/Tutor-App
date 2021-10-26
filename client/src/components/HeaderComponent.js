@@ -41,7 +41,9 @@ const HeaderComponent = () => {
                       <a href="http://localhost:3000/how-it-works">How It Works</a>
                       <a href="http://localhost:3000/view-mentors">All Mentors</a>
                   
-                      <Link to="/login"><button>{profile}</button></Link> {currentUser && <button to="/" variant='link' onClick={handleLogout}>Log Out</button>} 
+                    <a href="http://localhost:3000/login">{profile}</a> 
+                    {/* figure out LINK underneath */}
+                      {/* <Link to="/login"><button>{profile}</button></Link> {currentUser && <button to="/" variant='link' onClick={handleLogout}>Log Out</button>}  */}
                   </div>
                 </div>
            

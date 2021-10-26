@@ -26,11 +26,17 @@
     background-color: black;
 }
 
+#header-links {
+    right: 0;
+    padding-left: 160px;
+    padding-top: 9px;
+}
+
 a {
     color: white;
     text-decoration: none;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
     padding-top: 8px;
     justify-content: space-evenly;
 }
@@ -39,7 +45,3 @@ a:active {
     color: white;
 }
 
-#header-links {
-    right: 0;
-    padding-left: 160px;
-}

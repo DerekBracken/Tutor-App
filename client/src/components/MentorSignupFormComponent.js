@@ -52,40 +52,51 @@ const MentorSignupFormComponent = () =>{
 // put all the required back in the form...
     return (
         <>
-        <h1>Welcome Mentor</h1>
-        <h3 className="mentor-form-label">We're very excited to have you on board. Just a few details before we start</h3>
+        <h1 id="signup-form-heading">Welcome Mentor</h1>
+        <h3 id="signup-form-heading">We're very excited to have you on board. Just a few details before we start</h3>
             <form onSubmit={handleFormSubmit} id="mentor-form-container">
-                
+                <div className="form-field-container">
                 <label  className="mentor-form-label" HTMLfor="first_name">First name:</label> <br/>
                 <input className="form-field" type='text' id='first-name' name="first_name" placeholder="Enter first name" /> <br/>
-                
+                </div>
+
+                <div className="form-field-container">
                 <label className="mentor-form-label" HTMLfor="last_name">Last name:</label> <br/>
                 <input className="form-field" type='text' id='last-name' name="last_name" placeholder="Enter last name" /><br/>
- 
+                </div>
+
+                <div className="form-field-container">
                 <label className="mentor-form-label" HTMLfor='dob'>Enter date of birth:</label><br/>
                 <input className="form-field" type="date" id='dob' name='dob'/><br/>
-                    
+                </div>
                 {/* <label>
                 will pre-populate with email from Derek's bit
 
                     Enter email address: 
                     <input type='email' id='email' name='email' placeholder="Enter email address" required/>
                 </label> */}
-                
+                <div className="form-field-container">
                 <label className="mentor-form-label" HTMLfor="contact_number">Enter contact number:</label><br/>
                 <input className="form-field" type='tel' id='contact-number' name='contact_number' placeholder="Enter contact number" /><br/>
-                    
+                </div>  
+
+                <div className="form-field-container">
                 <label className="mentor-form-label" HTMLfor="gender">Gender identity:</label><br/>
                     <select  className="form-field" name='gender' id='gender' ><br/>
                     <option disabled selected>Select from below</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="other">Other</option>
-                    </select><br/>
-                
-                <label className="mentor-form-label" HTMLfor="motivation">What made you want to become a mentor?</label><br/>
-                    <textarea className="form-field" id='motivation' name='motivation' placeholder='Answer here' /><br/>
-                
+                    </select>
+                </div>
+                <br/>
+
+                <div className="form-field-container">
+                <label className="mentor-form-label" HTMLfor="motivation">Why do you want to become a mentor?</label><br/>
+                <textarea className="form-field" id='motivation' name='motivation' placeholder='Answer here' /><br/>
+                </div>
+
+                <div className="form-field-container">
                 <label className="mentor-form-label" HTMLfor="location">Where are you based?</label><br/>
                     <select className="form-field" name='location' id='location' >
                     <option disabled selected>Select from below</option><br/>
@@ -96,10 +107,11 @@ const MentorSignupFormComponent = () =>{
                         <option value="Inverness">Inverness</option>
                         <option value="Stirling">Stirling</option>
                     </select>
-                
+                </div>
+                <br/>
 
-                <div>
-                    <label className="mentor-form-label" >What level would you like to teach?</label><br/>
+                    <div className="form-field-container">
+                    <label className="mentor-form-label" >What level would you like to teach?</label>
                         <div>
                             <input  type="checkbox" name="beginner" value="beginner" id="beginner"/>
                             <label className="mentor-form-small-options" HTMLfor="beginner">Beginner</label>
@@ -130,15 +142,20 @@ const MentorSignupFormComponent = () =>{
                             <label className="mentor-form-small-options" HTMLfor="advanced">Advanced</label>
                         </div>
 
-                </div><br/>
+                </div> <br/>
+
+                    <div className="form-field-container">
                     <label className="mentor-form-label" HTMLfor="languages_spoken"> What languages to do you speak?</label> <br/>
                     <input className="form-field" type='text' id='languages_spoken' name="languages_spoken" placeholder="Input languages spoken" />
-                
-                <div className="mentor-form-label"> Select availability:
+                    </div> <br/>
+
+                    <div className="form-field-container">
+                    <div className="mentor-form-label"> Select availability:
                         <div>
                             <input type="checkbox" name="mon_fri_day" value="mon_fri_day" id="mon_fri_day"/>
                             <label className="mentor-form-small-options" HTMLfor="mon_fri_day">Mon-Fri Daytime</label>
                         </div>
+                        
 
                         <div>
                             <input type="checkbox" name="mon_fri_eve" value="mon_fri_eve" id="mon_fri_eve"/>
@@ -154,8 +171,11 @@ const MentorSignupFormComponent = () =>{
                             <input type="checkbox" name="weekend_eve" value="weekend_eve" id="weekend_eve"/>
                             <label className="mentor-form-small-options" HTMLfor="weekend_eve">Weekend Evening</label>
                         </div>
+                    </div>
                 </div>
+                <div className="form-field-container">
                 <input className="small-button" type='submit' value='Submit' />
+                </div>
             </form>
         </>
     )
