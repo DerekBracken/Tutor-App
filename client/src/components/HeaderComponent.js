@@ -30,25 +30,25 @@ const HeaderComponent = ({user}) => {
       }
   }
     return(
-    <>
-        <div id="header">
-                <div id="navbar">
-                 <img id="logo" src={image} type='image' alt='logo'/>
+        <>
+            <div id="header">
+                    <div id="navbar">
+                    <img id="logo" src={image} type='image' alt='logo'/>
 
-                 <div id="header-links">
-                    <a href="http://localhost:3000/">Home</a>
-                    <a href="http://localhost:3000/learning-resources">Learning Resources</a>
-                    <a href="http://localhost:3000/how-it-works">How It Works</a>
-                    <a href="http://localhost:3000/view-mentors">{userTitle}</a>
-                    {!currentUser &&  <a href="/login"><button>Log In</button></a> }
-                    {currentUser &&  <a href="/profile"><button>Profile</button></a> }
-                    {currentUser && <button to="/" variant='link' onClick={handleLogout}>Log Out</button>} 
-                 </div>
+                    <div id="header-links">
+                        <a href="http://localhost:3000/">Home</a>
+                        <a href="http://localhost:3000/learning-resources">Learning Resources</a>
+                        <a href="http://localhost:3000/how-it-works">How It Works</a>
+                        <a href="http://localhost:3000/view-mentors">{userTitle}</a>
+                        {!currentUser &&  <a href="/login"><button>Log In</button></a> }
+                        {currentUser &&  <a href="/profile"><button>Profile</button></a> }
+                        {currentUser && <button to="/" variant='link' onClick={handleLogout}>Log Out</button>} 
+                    </div>
+            </div>
+            </div>
 
-        </div>
-        <div id="line"/>
-
-    </>
+            <div id="line"/>
+        </>
     )
 }
 

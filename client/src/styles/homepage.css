@@ -8,8 +8,10 @@ html {
     color:white;
     min-width: 100%;
     min-height: 100%;
-    display: grid;
-    background: #5C7AEA;
+    /* background: #5C7AEA; */
+    background-image: url('../imagehell/home_background.jpg');
+    width: 100%;
+    height: 100%;
 }
 
 #home-layout{

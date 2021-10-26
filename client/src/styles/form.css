@@ -4,7 +4,6 @@
     font-weight: 200;
     color: #0D0B6D;
     text-align: left;
-    /* align the forms to middle */
     padding-left: 170px;
 }
 
@@ -18,8 +17,6 @@
     display: flex;
     flex-direction: column;
     max-width: 50%;
-    
-
 }
 
 /* MENTOR FORM  */
