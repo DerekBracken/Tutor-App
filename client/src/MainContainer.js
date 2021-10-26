@@ -78,13 +78,13 @@ function MainContainer() {
               <Route exact path="/view-mentors" component={() => <AllMentorsContainer user={user} allMentors={allMentors}/>}/>
                
 
-              <Route path="/mentee" exact>
+              <Route path="/my-mentees" exact>
                 <MenteeContainer />
               </Route>
               {/* Needed? */}
-              <Route path="/meetingform" exact>
+              {/* <Route path="/meetingform" exact>
                 <MenteeContainer/>
-              </Route>
+              </Route> */}
 
               {/* needs a container and content */}
               <Route path="/how-it-works" exact>
@@ -93,7 +93,7 @@ function MainContainer() {
 
 
               {/* mentor displays all sessions */}
-              <Route path="/mentor" exact>
+              <Route path="/my-mentor" exact>
                 <MentorContainer />
               </Route>
 
