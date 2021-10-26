@@ -1,6 +1,7 @@
 import { AuthProvider } from "./contexts/AuthContext";
 import MentorSignupFormComponent from "./components/MentorSignupFormComponent";
 import MenteeSignupFormComponent from "./components/MenteeSignupFormComponent";
+import UpdateFormComponent from "./components/UpdateFormComponent";
 import HomeContainer from "./containers/HomeContainer";
 import MenteeContainer from "./containers/MenteeContainer";
 import MentorContainer from "./containers/MentorContainer";
@@ -32,6 +33,8 @@ function App() {
         <Switch>
           
           {/* <PrivateRoute path="/update-profile" component={updateProfile} /> */}
+
+          <Route path="users/update/:id" component={UpdateFormComponent} exact/>
 
           <Route path="/signup" component={Signup} exact />
 

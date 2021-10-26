@@ -1,5 +1,6 @@
 import { AuthProvider, useAuth } from "../contexts/AuthContext";
 import { useEffect, useState } from "react";
+import {Link} from 'react-router-dom';
 
 const PersonalInformation = () => {
     const { currentUser } = useAuth()
@@ -28,7 +29,9 @@ const PersonalInformation = () => {
       console.log(user);
     } 
 
+
     if (user != null){
+      const updateUrl = "/users/update/" + user.id
     return (
         <div>
           <br/>
@@ -45,7 +48,7 @@ const PersonalInformation = () => {
           <p>English Level: {user.englishLevel}</p>
           <p>Languages Spoken: {user.languagesSpoken}</p>
           <p>Availability: {user.availability}</p>
-          <button>Update your profile</button>
+          <Link to= {updateUrl}><button type="button">Update</button></Link>
         </div>
     );
   } return (
