@@ -12,6 +12,7 @@
 #navbar {
     padding-left: 32px;
     display: flex;
+    align-content: space-between;
 }
 
 #logo {
@@ -36,4 +37,9 @@ a {
 
 a:active {
     color: white;
+}
+
+#header-links {
+    right: 0;
+    padding-left: 160px;
 }

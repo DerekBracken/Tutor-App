@@ -6,7 +6,7 @@
 
 .container{
     margin: 16px;
-    box-shadow: 30px, 30px, 30px, 0.5 black;
+    /* box-shadow: 30px, 30px, 30px, .5 black; */
 }
 
 .learning-resources-img {
@@ -14,8 +14,13 @@
     max-height: 400px;
     position: relative;
     text-align: center;
+    filter: drop-shadow(0 0 0.4rem #14279B);
+    cursor: pointer;
 }
 
+.learning-resources-img:hover{
+    filter: drop-shadow(0 0 0.8rem #14279B);
+}
 .resources-name{
     font-family: 'Cabin', sans-serif;
     font-weight: 100;
