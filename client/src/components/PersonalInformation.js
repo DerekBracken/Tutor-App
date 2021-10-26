@@ -32,7 +32,17 @@ const PersonalInformation = () => {
         <div>
           {currentUser && currentUser.email} Has Signed In
           <br/>
-          {user && user.firstName} Is my name 
+          <p>First Name: {user.firstName}</p>
+          <p>Last Name: {user.lastName}</p>
+          <p>Date of Birth: {user.dateOfBirth}</p>
+          <p>Email: {user.email}</p>
+          <p>Contact Number: {user.contactNumber}</p>
+          <p>Gender: {user.gender}</p>
+          <p>About: {user.aboutMe}</p>
+          <p>Location: {user.location}</p>
+          <p>English Level: {user.englishLevel}</p>
+          <p>Languages Spoken: {user.languagesSpoken}</p>
+          <p>Availability: {user.availability}</p>
         </div>
     );
   }
