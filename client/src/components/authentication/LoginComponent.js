@@ -2,6 +2,8 @@ import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from "react-router-dom"
 import "../../styles/Authentication.css"
+import HeaderComponent from '../HeaderComponent';
+import Footer from '../FooterComponent';
 
 export default function Login(){
     const emailRef = useRef()
@@ -27,6 +29,7 @@ export default function Login(){
 
     return (
         <>
+        <HeaderComponent/>
             <div className="auth-div-wrapper">
                 <h2 className='form-title' >Log In</h2>
                 {error && <alert variant="danger">{error}</alert>}
@@ -41,11 +44,12 @@ export default function Login(){
                     </div>
                     <button className="small-button" disabled={loading} type="submit">Log In</button>
                 </form> 
-                <Link to="/forgot-password">Forgot Password</Link>
+                <a className="form-redirection-link" href="/forgot-password">Forgot Password</a>
 
                 
                 <h4> Need an account? <a className="form-redirection-link" href="http://localhost:3000/signup">Sign Up</a> </h4>
             </div>
+            <Footer/>
         </>
     )
 }

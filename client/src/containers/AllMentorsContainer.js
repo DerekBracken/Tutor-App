@@ -3,10 +3,10 @@ import Footer from "../components/FooterComponent";
 // import MatchedMentorList from "../components/MatchedMentorList";
 import MentorList from "../components/MentorList";
 import { withRouter } from 'react-router-dom';
-import { useEffect, useState } from "react";
 
+const AllMentorsContainer = ({user, allMentors}) => {
 
-const AllMentorsContainer = () => {
+// const AllMentorsContainer = () => {//
 
     const [allMentors, setAllMentors] = useState(null);
     const [teachingLevel, setTeachingLevel] = useState(null);
@@ -45,14 +45,12 @@ const AllMentorsContainer = () => {
 
     return(
         <>
-        <h3> All Mentors Container </h3>
-        <HeaderComponent/>
-        {/* <MatchedMentorList/> */}
-        <Footer/>
-        
+            <HeaderComponent user={user}/>
+            <h3> All Mentors Container </h3>
+            <MentorList allMentors={allMentors} user={user}/>
+            <Footer/>
         </>
     )
-
 }
 
 export default withRouter(AllMentorsContainer);

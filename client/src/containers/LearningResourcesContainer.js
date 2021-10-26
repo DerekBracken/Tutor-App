@@ -2,7 +2,7 @@ import HeaderComponent from "../components/HeaderComponent";
 import { withRouter } from 'react-router-dom';
 import Footer from "../components/FooterComponent";
 import "../styles/LearningResources.css"
-const LearningResources = () => {
+const LearningResources = ({user}) => {
 
     const onClickDirect = (event) => (window.open('https://www.bbc.co.uk/learningenglish/'));
     const onClickDirect1 = (event) => (window.open('http://esol.britishcouncil.org/'));
@@ -12,7 +12,9 @@ const LearningResources = () => {
 
     return(
         <>
-        <HeaderComponent/>
+      
+        <HeaderComponent user={user}/>
+
         <h1>Learning Resources</h1>
 
         <div id="learning-resources-wrapper-block">
