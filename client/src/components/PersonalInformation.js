@@ -2,32 +2,8 @@ import { AuthProvider, useAuth } from "../contexts/AuthContext";
 import { useEffect, useState } from "react";
 import {Link} from 'react-router-dom';
 
-const PersonalInformation = () => {
+const PersonalInformation = ({user}) => {
     const { currentUser } = useAuth()
-    const [user, setUser] = useState(null);
-
-    useEffect(() => {
-        getUser();
-    },[])
-
-    // Will need to add fetch for mentees too, and add a enum type to mentor/mentee to control flow.
-    // Add error for catch
-    const getUser = function() {
-      try {
-        fetch(`http://localhost:8080/mentees?email=${currentUser.email}`)
-        .then(res => res.json())
-        .then(user => setUser(user))
-      } catch {}
-      try {
-        fetch(`http://localhost:8080/mentors?email=${currentUser.email}`)
-        .then(res => res.json())
-        .then(user => setUser(user))
-      } catch {}
-    }
-
-    if (user != null){
-      console.log(user);
-    } 
 
 
     if (user != null){
