@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import "../../styles/Authentication.css"
 import "../../styles/form.css"
 import "../../styles/button.css"

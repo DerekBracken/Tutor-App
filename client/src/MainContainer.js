@@ -15,6 +15,7 @@ import Signup from "./components/authentication/SigninComponent";
 import Login from "./components/authentication/LoginComponent";
 import ForgotPassword from "./components/authentication/ForgotPassword";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
+import PrivateRoute from "./PrivateRoute"
 
 
 function MainContainer() {
@@ -49,13 +50,13 @@ function MainContainer() {
     
               <Route path="/login" component={Login} exact />
     
-              <Route exact path="/profile" render={(props) => <Profile {...props} user={user} />}/>
+              <PrivateRoute exact path="/profile" render={({user}) => <Profile user={user} />}/>
     
               <Route path="/forgot-password" component={ForgotPassword} exact/>
     
-              <Route path="/mentor-form" component={MentorSignupFormComponent} exact/>
+              <PrivateRoute path="/mentor-form" component={MentorSignupFormComponent} exact/>
     
-              <Route path="/mentee-form" component={MenteeSignupFormComponent} exact/>
+              <PrivateRoute path="/mentee-form" component={MenteeSignupFormComponent} exact/>
     
               <Route path="/" exact><HomeContainer/></Route>
     
