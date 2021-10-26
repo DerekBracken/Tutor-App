@@ -26,21 +26,20 @@ function App() {
 
   const currentUser = useAuth()
   const [user, setUser] = useState(null);
-
-  console.log(currentUser);
+  console.log("app.js",currentUser);
   useEffect(() => {
       getUser();
-  },[])
+  },[currentUser])
 
   // Add error for catch
   const getUser = function() {
     try {
-      fetch(`http://localhost:8080/mentees?email=kathrynmcvitie@yahoo.co.uk`)
+      fetch(`http://localhost:8080/mentees?email=${currentUser.email}`)
       .then(res => res.json())
       .then(user => setUser(user))
     } catch {}
     try {
-      fetch(`http://localhost:8080/mentors?email=kathrynmcvitie@yahoo.co.uk`)
+      fetch(`http://localhost:8080/mentors?email=${currentUser.email}`)
       .then(res => res.json())
       .then(user => setUser(user))
     } catch {}
