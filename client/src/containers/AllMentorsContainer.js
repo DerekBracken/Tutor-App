@@ -6,22 +6,12 @@ import { withRouter } from 'react-router-dom';
 import { useEffect, useState } from "react";
 
 
-const AllMentorsContainer = () => {
+const AllMentorsContainer = ({user, allMentors}) => {
 
-    const [allMentors, setAllMentors] = useState(null);
-    const [teachingLevel, setTeachingLevel] = useState(null);
+    console.log('1, 2', allMentors)
+    console.log('2', user);
 
-    useEffect(() => {
-        getAllMentors();
-        console.log(allMentors)
-    },[])
-
-    const getAllMentors = function() {
-        fetch("http://localhost:8080/mentors")
-        .then(res => res.json())
-        .then(allMentors => setAllMentors(allMentors))
-    }
-
+    
     // 2 step fetch process, first gets the id's of the people passing to second fetch which gets their availability
     // const getAvailabilities = function() {
     //     fetch("http://localhost:8080/availability/mentors/{id}")
@@ -30,31 +20,26 @@ const AllMentorsContainer = () => {
 
 
 
-    if (allMentors !=null){
+    // if (allMentors != null && user != null){
         return(
             <>
-                <h3> All Mentors Container </h3>
                 <HeaderComponent/>
-                <MentorList allMentors = {allMentors}/>
-                {/* <MatchedMentorList allMentors = {allMentors}/> */}
-
+                <h3> All Mentors Container </h3>
+                <MentorList allMentors={allMentors} user={user}/>
                 <Footer/>
-            
-                {/* <p>{allMentors[0].languagesSpoken} {allMentors[0].lastName}</p> */}
             </>
         )
     }
 
-    return(
-        <>
-        <h3> All Mentors Container </h3>
-        <HeaderComponent/>
-        {/* <MatchedMentorList/> */}
-        <Footer/>
+    // return(
+    //     <>
+    //     <h3> All Mentors Container </h3>
+    //     <HeaderComponent/>
+    //     <MentorList allMentors = {allMentors}/>
+    //     <Footer/>
         
-        </>
-    )
+    //     </>
+    // )
 
-}
 
 export default withRouter(AllMentorsContainer);

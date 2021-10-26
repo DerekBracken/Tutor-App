@@ -11,12 +11,13 @@ const HeaderComponent = () => {
     // const [profile, setProfile] = useState()
     // const [loggedin, setLoggedin] = useState(false)
 
-    let profile;
+    let profile = "Login";
+    let mentorTitle = "All Mentors"
+    let menteeTitle;
     if (currentUser){
       profile = "Profile"
-    } else {
-      profile = "login" 
-    }
+      mentorTitle = "My Mentors"
+    } 
 
     async function handleLogout() {
       setError('')
@@ -38,9 +39,10 @@ const HeaderComponent = () => {
                     <a href="http://localhost:3000/">Home</a>
                     <a href="http://localhost:3000/learning-resources">Learning Resources</a>
                     <a href="http://localhost:3000/how-it-works">How It Works</a>
-                    <a href="http://localhost:3000/view-mentors">All Mentors</a>
-                
-                    <Link to="/login"><button>{profile}</button></Link> {currentUser && <button to="/" variant='link' onClick={handleLogout}>Log Out</button>} 
+                    <a href="http://localhost:3000/view-mentors">{mentorTitle}</a>
+                    {!currentUser &&  <a href="/login"><button>Log In</button></a> }
+                    {currentUser &&  <a href="/profile"><button>{profile}</button></a> }
+                    {currentUser && <button to="/" variant='link' onClick={handleLogout}>Log Out</button>} 
                 </div>
            
 

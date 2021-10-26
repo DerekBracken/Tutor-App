@@ -16,15 +16,19 @@ import Login from "./components/authentication/LoginComponent";
 import ForgotPassword from "./components/authentication/ForgotPassword";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import PrivateRoute from "./PrivateRoute"
+import HowItWorksContainer from "./containers/HowItWorksContainer";
 
 
 function MainContainer() {
     const { currentUser } = useAuth()
     const [user, setUser] = useState(null);
-    console.log("app.js",currentUser);
+    const [allMentors, setAllMentors] = useState(null);
+
+
     useEffect(() => {
         getUser();
-    },[currentUser])
+        getAllMentors();
+    },[])
   
     // Add error for catch
     const getUser = function() {
@@ -39,6 +43,12 @@ function MainContainer() {
         .then(user => setUser(user))
       } catch {}
     } 
+
+    const getAllMentors = function() {
+        fetch("http://localhost:8080/mentors")
+        .then(res => res.json())
+        .then(allMentors => setAllMentors(allMentors))
+    }
 
     return (
         <Router>
@@ -64,6 +74,10 @@ function MainContainer() {
               {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
 
               {/* mentee displays all sessions and meeting form */}
+
+              <Route exact path="/view-mentors" component={() => <AllMentorsContainer user={user} allMentors={allMentors}/>}/>
+               
+
               <Route path="/mentee" exact>
                 <MenteeContainer />
               </Route>
@@ -91,9 +105,7 @@ function MainContainer() {
     
               {/* Not private */}
     
-              <Route path="/view-mentors" exact>
-                <AllMentorsContainer />
-              </Route>
+    
     
               {/* <Route path="/signupform" exact>
                 <SignupContainer/>
