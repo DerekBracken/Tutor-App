@@ -1,6 +1,7 @@
 
 const UpdateProfile = ({user}) => {
 
+    if ( user != null){
     return (
         <>
             <p>Hello</p>
@@ -13,12 +14,12 @@ const UpdateProfile = ({user}) => {
                     <input type='text' id='last-name' name="last_name" value={user.lastName}/>
 
             <label HTMLfor="dob"> Enter date of birth: </label>
-                <input type="date" id='dob' name='dob'/>
+                <input type="date" id='dob' name='dob' value={user.dateOfBirth}/>
 
             {/* EMAIL ADDRESS */}
 
             <label HTMLfor="contact_number">Enter contact number: </label>
-                    <input type='tel' id='contact-number' name='contact_number'/>
+                    <input type='tel' id='contact-number' name='contact_number'value={user.contactNumber}/>
 
             <label HTMLfor="gender">Gender identity: </label>
             <select name='gender' id='gender'>
@@ -29,7 +30,7 @@ const UpdateProfile = ({user}) => {
             </select>
 
             <label HTMLfor="about_me">About you: </label>
-                    <textarea id='about_me' name='about_me'/>
+                    <textarea id='about_me' name='about_me' value={user.aboutMe}/>
 
             <label HTMLfor="location"> Where are you based? </label>
             <select name='location' id='location'>
@@ -54,7 +55,7 @@ const UpdateProfile = ({user}) => {
                     </select>
 
             <label HTMLfor="languages_spoken">What languages to do you speak? </label>
-                <input type='text' id='languages_spoken' name="languages_spoken" />
+                <input type='text' id='languages_spoken' name="languages_spoken" value={user.languagesSpoken}/>
 
                     <div>
                         <label> Select availability: </label>
@@ -74,6 +75,11 @@ const UpdateProfile = ({user}) => {
             <input type='submit' value='submit'/>
 
             </form>
+        </>
+    )}
+    return (
+        <>
+        this does not work
         </>
     )
 }
