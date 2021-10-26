@@ -50,7 +50,7 @@ function MainContainer() {
     
               <Route path="/login" component={Login} exact />
     
-              <PrivateRoute exact path="/profile" render={({user}) => <Profile user={user} />}/>
+              <PrivateRoute exact path="/profile" component={() => <Profile user={user} />}/>
     
               <Route path="/forgot-password" component={ForgotPassword} exact/>
     
@@ -61,17 +61,26 @@ function MainContainer() {
               <Route path="/" exact><HomeContainer/></Route>
     
               {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
+
+              {/* mentee displays all sessions and meeting form */}
               <Route path="/mentee" exact>
                 <MenteeContainer />
               </Route>
-    
+              {/* Needed? */}
+              <Route path="/meetingform" exact>
+                <MenteeContainer/>
+              </Route>
+
+              {/* mentor displays all sessions */}
               <Route path="/mentor" exact>
                 <MentorContainer />
               </Route>
-    
-              <Route path="/mentee/mentors" exact>
+
+              <Route path="/view-mentors" exact>
                 <AllMentorsContainer/>
               </Route>
+              
+
     
               {/* Not private */}
     
@@ -90,10 +99,6 @@ function MainContainer() {
     
               <Route path="/learning-resources" exact>
                 <LearningResourcesContainer/>
-              </Route>
-    
-              <Route path="/meetingform" exact>
-                <MenteeContainer/>
               </Route>
     
               <Route> 
