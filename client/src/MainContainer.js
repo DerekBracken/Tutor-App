@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import PageNotFound from "./components/404";
 import React, {useState, useEffect} from 'react';
 import AllMentorsContainer from "./containers/AllMentorsContainer";
-import SignupContainer from "./containers/SignupContainer";
 import CalendarContainer from "./containers/CalendarContainer";
 import LearningResourcesContainer from "./containers/LearningResourcesContainer";
 import Signup from "./components/authentication/SigninComponent";
@@ -23,11 +22,14 @@ function MainContainer() {
     const { currentUser } = useAuth()
     const [user, setUser] = useState(null);
     const [allMentors, setAllMentors] = useState(null);
+    const [allMentees, setAllMentees] = useState(null);
+
 
 
     useEffect(() => {
         getUser();
         getAllMentors();
+        getAllMentees();
     },[])
   
     // Add error for catch
@@ -50,6 +52,12 @@ function MainContainer() {
         .then(allMentors => setAllMentors(allMentors))
     }
 
+    const getAllMentees = function() {
+        fetch("http://localhost:8080/mentees")
+        .then(res => res.json())
+        .then(allMentees => setAllMentees(allMentees))
+    }
+
     return (
         <Router>
             <Switch>
@@ -69,55 +77,26 @@ function MainContainer() {
               <PrivateRoute path="/mentor-form" component={MentorSignupFormComponent} exact/>
     
               <PrivateRoute path="/mentee-form" component={MenteeSignupFormComponent} exact/>
-  
-    
+              
+              {/* displays all a mentors view of their mentees */}
+              <PrivateRoute exact path="/my-mentees" component={() => <MenteeContainer user={user} />}/>
+ 
+              {/* mentor displays all sessions */}
+              <PrivateRoute exact path="/my-mentor" component={() => <MentorContainer user={user} allMentees={allMentees}/>}/>
+
               {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
 
-              {/* mentee displays all sessions and meeting form */}
-
+              {/* public route */}
               <Route exact path="/view-mentors" component={() => <AllMentorsContainer user={user} allMentors={allMentors}/>}/>
                
+              {/* needs content */}
+              <Route exact path="/how-it-works" component={() => <HowItWorksContainer user={user}/>}/>
 
-              <Route path="/my-mentees" exact>
-                <MenteeContainer />
-              </Route>
-              {/* Needed? */}
-              {/* <Route path="/meetingform" exact>
-                <MenteeContainer/>
-              </Route> */}
-
-              {/* needs a container and content */}
-              <Route path="/how-it-works" exact>
-                <HowItWorksContainer/>
-              </Route>
-
-
-              {/* mentor displays all sessions */}
-              <Route path="/my-mentor" exact>
-                <MentorContainer />
-              </Route>
-
-              <Route path="/view-mentors" exact>
-                <AllMentorsContainer/>
-              </Route>
+              <Route exact path="/learning-resources" component={() => <LearningResourcesContainer user={user}/>}/>
               
-
-    
-              {/* Not private */}
-    
-    
-    
-              {/* <Route path="/signupform" exact>
-                <SignupContainer/>
-              </Route> */}
-    
               {/* calendar just for access, not the final route */}
               <Route path="/calendar" exact>
                 <CalendarContainer/>
-              </Route>
-    
-              <Route path="/learning-resources" exact>
-                <LearningResourcesContainer/>
               </Route>
     
               <Route> 

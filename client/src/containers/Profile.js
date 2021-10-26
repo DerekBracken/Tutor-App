@@ -10,7 +10,7 @@ const Profile = ({user}) => {
     return(
         <>
         <h2> Profile </h2>
-        <HeaderComponent/>
+        <HeaderComponent user={user}/>
         <PersonalInformation user={user}/>
         <Footer/>
         </>

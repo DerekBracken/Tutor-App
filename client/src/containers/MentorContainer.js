@@ -5,38 +5,29 @@ import MenteeList from "../components/MenteeList";
 import { withRouter } from 'react-router-dom';
 import { useEffect, useState } from "react";
 
-const MentorContainer = () => {
+const MentorContainer = ({user, allMentees}) => {
     
-    const [allMentees, setAllMentees] = useState(null);
 
-    useEffect(() => {
-        getAllMentees();
-    },[])
 
-    const getAllMentees = function() {
-        fetch("http://localhost:8080/mentees")
-        .then(res => res.json())
-        .then(allMentees => setAllMentees(allMentees))
-    }
-
-    if (allMentees != null){
-        
+    if (allMentees != null){  
         return(
             <>
+            <HeaderComponent user={user}/>
+
             <h1> Mentor Container</h1>
-            <HeaderComponent/>
-          
-            <MenteeList allMentees={allMentees}/>
+            <MenteeList allMentees={allMentees}/> 
+
+            <Footer/>
             </>
         )
     }
     return(
         <>
-        <h1> Mentor Container</h1>
-        <HeaderComponent/>
+        <HeaderComponent user={user}/>
 
+        <h1> Mentor Container</h1>
         <MenteeList/>
-        
+
         <Footer/>
         </>
     )

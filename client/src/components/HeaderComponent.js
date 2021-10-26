@@ -15,33 +15,20 @@ const HeaderComponent = ({user}) => {
 
     useEffect( ()=> {
       if (user !=null) {
-        setUserTitle("My " + user.type[0].toUpperCase() + user.type.slice(1))
+        setUserTitle("My " + user.type[0].toUpperCase() + user.type.slice(1) + "s")
        }
     }, [user])
     
-    
-
-
-
-    let profile = "Login";
-    
-    // let menteeTitle;
-    // if (currentUser){
-    //   profile = "Profile"
-    // } 
-
     async function handleLogout() {
       setError('')
 
       try {
           await logout()
-          // history.pushState('/login')
+          // history.push('/login')
       } catch {
           setError('Failed to log out')
       }
   }
-
-
     return(
     <>
         <div id="header">
@@ -52,7 +39,7 @@ const HeaderComponent = ({user}) => {
                     <a href="http://localhost:3000/how-it-works">How It Works</a>
                     <a href="http://localhost:3000/view-mentors">{userTitle}</a>
                     {!currentUser &&  <a href="/login"><button>Log In</button></a> }
-                    {currentUser &&  <a href="/profile"><button>{profile}</button></a> }
+                    {currentUser &&  <a href="/profile"><button>Profile</button></a> }
                     {currentUser && <button to="/" variant='link' onClick={handleLogout}>Log Out</button>} 
                 </div>
            

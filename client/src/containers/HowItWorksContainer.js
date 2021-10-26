@@ -3,11 +3,11 @@ import Footer from '../components/FooterComponent';
 import HeaderComponent from '../components/HeaderComponent';
 
 
-const HowItWorksContainer = () => {
+const HowItWorksContainer = ({user}) => {
 
     return(
         <>
-        <HeaderComponent/>
+        <HeaderComponent user={user}/>
 
         <p>I am the How It Works Container</p>
 
