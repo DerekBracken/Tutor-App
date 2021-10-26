@@ -7,8 +7,6 @@ import Footer from "../components/FooterComponent";
 import illustration from "../imagehell/HomePageIllustration.svg";
 import { useHistory } from "react-router";
 
-
-
 const HomeContainer = ({user}) => {
 
     const history = useHistory();
@@ -19,19 +17,20 @@ const HomeContainer = ({user}) => {
     }
 
     return(
-        <> 
         <div id="home-page">
+
         <HeaderComponent user={user}/>
-        <h1>Connecting Mentors with Learners all over the UK</h1>
-            <p id="text-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-            <button id="SignUp-Button" onClick={handleSignUpButton}>Sign Up</button>
-            
-            <img id="home-page-image" alt="pic of people meeting" src={illustration}/>
-            
-        {/* <LoginComponent/> */}
-        <Footer/>
+          <div id="home-layout">
+            <h1 id="text-description"> <h4>Connecting Mentors with Learners all over the UK</h4>
+                <h5 id="main-paragraph"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</h5>
+                <button id="SignUp-Button" onClick={handleSignUpButton}>Sign Up</button>
+             </h1> 
+                <img id="home-page-image" alt="pic of people meeting" src={illustration}/>
+           </div>
+          {/* <LoginComponent/> */}
+          <Footer/>
+          
         </div>
-        </>
     )
 }
 

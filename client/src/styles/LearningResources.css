@@ -1,30 +1,35 @@
 #learning-resources-wrapper-block {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: space-between;
-    /* justify-content: center; */
-    /* flex-direction: row; */ 
-  
+    flex-wrap: wrap;  
+    justify-content: space-around;
 }
 
-
-/* 
-.learning-resources-img-wrapper {
-box-sizing: border-box;
-border: 10px solid hotpink;
-/* justify-content: center; */
-/* align-items: center; */
-/* } */ 
+.container{
+    margin: 16px;
+    /* box-shadow: 30px, 30px, 30px, .5 black; */
+}
 
 .learning-resources-img {
-    max-width: 400px;
+    max-width: 350px;
     max-height: 400px;
-   
-
-
+    position: relative;
+    text-align: center;
+    filter: drop-shadow(0 0 0.4rem #14279B);
+    cursor: pointer;
 }
 
+.learning-resources-img:hover{
+    filter: drop-shadow(0 0 0.8rem #14279B);
+}
+.resources-name{
+    font-family: 'Cabin', sans-serif;
+    font-weight: 100;
+    text-align: center;
+  
+}
 h1 {
     text-align: center;
-}
+    font-family: 'Cabin', sans-serif;
+    font-weight: 200;
+    color: #14279B;
+} 
