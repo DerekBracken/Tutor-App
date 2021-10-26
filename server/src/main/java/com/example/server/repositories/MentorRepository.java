@@ -10,5 +10,5 @@ public interface MentorRepository extends JpaRepository<Mentor, Long> {
 
     Mentor findByEmail(String email);
 
-    List<Mentor> findByOrderBySuitabilityScoreDesc(Mentee mentee);
+//    List<Mentor> findByOrderBySuitabilityScoreDesc(Long id);
 }
