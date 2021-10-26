@@ -46,6 +46,8 @@ function MainContainer() {
               
               {/* <PrivateRoute path="/update-profile" component={updateProfile} /> */}
     
+              <Route path="/" exact><HomeContainer/></Route>
+              
               <Route path="/signup" component={Signup} exact />
     
               <Route path="/login" component={Login} exact />
@@ -57,8 +59,7 @@ function MainContainer() {
               <PrivateRoute path="/mentor-form" component={MentorSignupFormComponent} exact/>
     
               <PrivateRoute path="/mentee-form" component={MenteeSignupFormComponent} exact/>
-    
-              <Route path="/" exact><HomeContainer/></Route>
+  
     
               {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
 
@@ -70,6 +71,12 @@ function MainContainer() {
               <Route path="/meetingform" exact>
                 <MenteeContainer/>
               </Route>
+
+              {/* needs a container and content */}
+              <Route path="/how-it-works" exact>
+                <HowItWorksContainer/>
+              </Route>
+
 
               {/* mentor displays all sessions */}
               <Route path="/mentor" exact>
