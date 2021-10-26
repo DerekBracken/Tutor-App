@@ -46,11 +46,12 @@ const MentorList = ({allMentors}) => {
    if (user === null){
        return <h1>hello</h1>
    }
+   
     const chooseMentor = allMentors.map((mentor, index) => {
 
         getTotalScores(user, allMentors, 5,5,5,5,5)
-        console.log("This is the mentee: ", user)
-        console.log("This is the mentors: ", allMentors)
+        // console.log("This is the mentee: ", user)
+        // console.log("This is the mentors: ", allMentors)
         return (
             <div>
                 <Mentor mentor = {mentor} key = {index}/>

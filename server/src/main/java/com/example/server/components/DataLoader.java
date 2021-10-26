@@ -31,8 +31,20 @@ public class DataLoader implements ApplicationRunner {
 //    EnglishLevelRepository englishLevelRepository;
 
     private ArrayList<String> englishLevel;
+    private ArrayList<String> englishLevel2;
+    private ArrayList<String> englishLevel3;
+    private ArrayList<String> englishLevel4;
+    private ArrayList<String> englishLevel5;
+    private ArrayList<String> englishLevel6;
     private ArrayList<String> languagesSpoken;
+    private ArrayList<String> languagesSpoken2;
+    private ArrayList<String> languagesSpoken3;
     private ArrayList<String> availability;
+    private ArrayList<String> availability2;
+    private ArrayList<String> availability3;
+    private ArrayList<String> availability4;
+    private ArrayList<String> availability5;
+    private ArrayList<String> availability6;
 //    private String date1;
 //    private String date2;
 //    private String date3;
@@ -42,21 +54,83 @@ public class DataLoader implements ApplicationRunner {
     public DataLoader (){
         //NEED TO FLESH OUT LANGUAGES SPOKEN AND ENGLISH LEVEL TO ADD THINGS TO IT
         this.englishLevel = new ArrayList();
+        this.englishLevel2 = new ArrayList();
+        this.englishLevel3 = new ArrayList();
+        this.englishLevel4 = new ArrayList();
+        this.englishLevel5 = new ArrayList();
+        this.englishLevel6 = new ArrayList();
         this.languagesSpoken = new ArrayList();
+        this.languagesSpoken2 = new ArrayList();
+        this.languagesSpoken3 = new ArrayList();
         this.availability = new ArrayList();
+        this.availability2 = new ArrayList();
+        this.availability3 = new ArrayList();
+        this.availability4 = new ArrayList();
+        this.availability5 = new ArrayList();
+        this.availability6 = new ArrayList();
     }
 
     public void run(ApplicationArguments args){
         languagesSpoken.add("English");
         languagesSpoken.add("Polish");
         languagesSpoken.add("Bulgarian");
+
+        languagesSpoken2.add("English");
+        languagesSpoken2.add("French");
+        languagesSpoken2.add("German");
+
+        languagesSpoken3.add("English");
+        languagesSpoken3.add("Spanish");
+        languagesSpoken3.add("Polish");
+
         availability.add("Monday-Friday Daytime");
         availability.add("Weekend Daytime");
         availability.add("Weekend Evening");
+
+        availability2.add("Monday-Friday Evening");
+        availability2.add("Weekend Daytime");
+
+        availability3.add("Monday-Friday Daytime");
+        availability3.add("Weekend Evening");
+
+        availability4.add("Weekend Daytime");
+        availability4.add("Weekend Evening");
+
+        availability5.add("Monday-Friday Daytime");
+        availability5.add("Weekend Daytime");
+
+        availability6.add("Monday-Friday Daytime");
+        availability6.add("Monday-Friday Evening");
+
         englishLevel.add("Beginner");
         englishLevel.add("Elementary");
         englishLevel.add("Pre-Intermediate");
         englishLevel.add("Intermediate");
+        englishLevel.add("Upper-Intermediate");
+        englishLevel.add("Advanced");
+
+        englishLevel2.add("Beginner");
+        englishLevel2.add("Elementary");
+        englishLevel2.add("Upper-Intermediate");
+
+        englishLevel3.add("Beginner");
+        englishLevel3.add("Elementary");
+
+        englishLevel4.add("Beginner");
+        englishLevel4.add("Elementary");
+        englishLevel4.add("Pre-Intermediate");
+        englishLevel4.add("Intermediate");
+
+        englishLevel5.add("Beginner");
+        englishLevel5.add("Elementary");
+        englishLevel5.add("Pre-Intermediate");
+        englishLevel5.add("Intermediate");
+
+        englishLevel6.add("Intermediate");
+        englishLevel6.add("Upper-Intermediate");
+        englishLevel6.add("Advanced");
+
+
 
         //Saving Instances of MENTEES
 
@@ -89,23 +163,41 @@ public class DataLoader implements ApplicationRunner {
         menteeRepository.save(michael);
 
         //Saving instances of MENTORS
-        Mentor kat = new Mentor("Kathryn", "McVitie", "1987-06-01", "kathrynmcvitie@yahoo.co.uk", "0851488103", "female", "want to help", "Edinburgh", englishLevel, languagesSpoken, availability);
+        Mentor kat = new Mentor("Kathryn", "McVitie", "1987-06-01", "kathrynmcvitie@yahoo.co.uk", "0851488103", "female", "I want to help people improve their English skills.", "Edinburgh", englishLevel, languagesSpoken, availability);
         mentorRepository.save(kat);
 
-        Mentor johnny = new Mentor("John", "Johnson", "9090", "johny@gmail.com", "009898989", "male", "want to help", "Edinburgh", englishLevel, languagesSpoken, availability);
+        Mentor johnny = new Mentor("John", "Johnson", "1984-06-01", "johny@gmail.com", "009898989", "male", "I want to share my language skills with others.", "Dundee", englishLevel2, languagesSpoken2, availability2);
         mentorRepository.save(johnny);
 
-        Mentor roosa = new Mentor("Roosa", "Roserry", "111", "roosa@gmail.com", "0892384792", "female", "I enjoy teaching", "Edinbrugh", englishLevel, languagesSpoken, availability);
+        Mentor roosa = new Mentor("Roosa", "Roserry", "1983-06-01", "roosa@gmail.com", "0892384792", "female", "I enjoy teaching people.", "Edinburgh", englishLevel3, languagesSpoken3, availability3);
         mentorRepository.save(roosa);
 
-        Mentor hannah = new Mentor("Hannah", "Hannerson", "2767", "hanna@gmail.com", "088736478", "female", "I like helping people", "Glasgow", englishLevel, languagesSpoken, availability);
+        Mentor hannah = new Mentor("Hannah", "Hannerson", "1981-06-01", "hanna@gmail.com", "088736478", "female", "I like helping people and get a good feeling from doing it.", "Glasgow", englishLevel4, languagesSpoken, availability4);
         mentorRepository.save(hannah);
 
-        Mentor colin = new Mentor( "Colin", "Colington", "65765", "colin@teach.com","018263543947", "male", "Good opertunity to meet new people", "Dundee", englishLevel, languagesSpoken, availability);
+        Mentor colin = new Mentor( "Colin", "Colington", "1989-06-01", "colin@teach.com","018263543947", "male", "Good opportunity to meet new people", "Inverness", englishLevel5, languagesSpoken2, availability5);
         mentorRepository.save(colin);
 
-        Mentor duncanM = new Mentor("Duncan", "SoutterMentor", "1993-01-04", "duncan.soutter@gmail.com", "0921323", "male", "to teach people", "Edinburgh", englishLevel, languagesSpoken, availability);
+        Mentor duncanM = new Mentor("Duncan", "SoutterMentor", "1993-01-04", "duncan.soutter@gmail.com", "0921323", "male", "To teach people to learn English and help them get a job.", "Aberdeen", englishLevel6, languagesSpoken3, availability6);
         mentorRepository.save(duncanM);
+
+        Mentor dirk = new Mentor("Dirk", "Birkenstock", "1950-03-01", "dirkbirk@yahoo.co.uk", "0851488103", "male", "I am looking for a new challenge and think I can make a difference", "Stirling", englishLevel, languagesSpoken, availability);
+        mentorRepository.save(dirk);
+
+        Mentor sally = new Mentor("Sally", "Rally", "1930-03-01", "sallyrally@gmail.com", "009898989", "female", "For a new fun challenge and to see the smiles on peoples faces learning English.", "Edinburgh", englishLevel2, languagesSpoken2, availability2);
+        mentorRepository.save(sally);
+
+        Mentor helen = new Mentor("Helen", "Melon", "1960-09-10", "helenmelon@gmail.com", "0892384792", "female", "I am not overly sure but got told to do it by a friend...", "Edinburgh", englishLevel3, languagesSpoken3, availability3);
+        mentorRepository.save(helen);
+
+        Mentor george = new Mentor("Georgie", "Porgie", "2000-06-07", "georgiepor@gmail.com", "088736478", "male", "I like helping people and get a good feeling from doing it.", "Glasgow", englishLevel4, languagesSpoken, availability4);
+        mentorRepository.save(george);
+
+        Mentor humpty = new Mentor( "Humpty", "Dumpty", "1980-03-01", "humptydump@teach.com","018263543947", "female", "Through the use of nursery rhymes I want to teach some people English.", "Dundee", englishLevel5, languagesSpoken2, availability5);
+        mentorRepository.save(humpty);
+
+        Mentor shrek = new Mentor("Shrek", "Ogre", "1998-03-04", "shrekogre@gmail.com", "0921323", "male", "To make some new friends, no one likes Ogres...", "Edinburgh", englishLevel6, languagesSpoken3, availability6);
+        mentorRepository.save(shrek);
 
         //        Date and time - THESE DON"T WORK
         String meeting1date = "2021-02-01";
