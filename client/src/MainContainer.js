@@ -2,6 +2,7 @@ import MentorSignupFormComponent from "./components/MentorSignupFormComponent";
 import MenteeSignupFormComponent from "./components/MenteeSignupFormComponent";
 import HomeContainer from "./containers/HomeContainer";
 import MenteeContainer from "./containers/MenteeContainer";
+import UpdateProfile from "./components/UpdateProfile";
 import MentorContainer from "./containers/MentorContainer";
 import Profile from "./containers/Profile";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -45,6 +46,8 @@ function MainContainer() {
             <Switch>
               
               {/* <PrivateRoute path="/update-profile" component={updateProfile} /> */}
+
+              <Route exact path="/users/update/:id" component={() => <UpdateProfile user={user}/>}/>
     
               <Route path="/signup" component={Signup} exact />
     

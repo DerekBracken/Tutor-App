@@ -1,5 +1,5 @@
 
-const UpdateProfile = () => {
+const UpdateProfile = ({user}) => {
 
     return (
         <>
@@ -7,10 +7,10 @@ const UpdateProfile = () => {
             <form>
 
             <label HTMLfor="first_name">First name: </label>
-                    <input type='text' id='first-name' name="first_name"/>
+                    <input type='text' id='first-name' name="first_name" value={user.firstName}/>
 
             <label HTMLfor="last_name">Last name:</label>
-                    <input type='text' id='last-name' name="last_name"/>
+                    <input type='text' id='last-name' name="last_name" value={user.lastName}/>
 
             <label HTMLfor="dob"> Enter date of birth: </label>
                 <input type="date" id='dob' name='dob'/>
@@ -54,7 +54,8 @@ const UpdateProfile = () => {
                     </select>
 
             <label HTMLfor="languages_spoken">What languages to do you speak? </label>
-                <input type='text' id='languages_spoken' name="languages_spoken" placeholder="Input languages spoken" required/>
+                <input type='text' id='languages_spoken' name="languages_spoken" />
+
                     <div>
                         <label> Select availability: </label>
                         <label for="mon_fri_day">Monday-Friday Daytime</label>
@@ -69,6 +70,7 @@ const UpdateProfile = () => {
                         <label for="weekend_eve">Weekend Evening</label>
                         <input type="checkbox" name="weekend_eve" value="weekend_eve" id="weekend_eve"/>                                   
                     </div>
+
             <input type='submit' value='submit'/>
 
             </form>
