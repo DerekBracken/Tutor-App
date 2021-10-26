@@ -4,29 +4,36 @@ const Mentor = ({mentor}) => {
 
     return(
         <>
+       
         <div id="individual-mentor-container">
-            <h4 id="name" > {mentor.firstName} {mentor.lastName}</h4>
-            <h4 id="motivation"> "{mentor.motivation}"</h4>
-                <div id="optional-info">
-                    <h4 className="mentor-tags">Location</h4>  <h4 className="mentor-info"> {mentor.location}</h4> 
+            <p id="name" > {mentor.firstName} {mentor.lastName}</p>
+            <p id="motivation"> "{mentor.motivation}"</p>
+            {/* <div className="row"> */}
+                <div className="column1">
+                    <div id="optional-info">
+                    <p className="mentor-tags">Location</p>  <p className="mentor-info"> {mentor.location}</p> 
+                    </div>
+                    <div id="optional-info">
+                    <p className="mentor-tags">Gender </p> <p className="mentor-info"> {mentor.gender} </p>
+                    </div>
+                    <div id="optional-info">
+                    <p className="mentor-tags">Spoken Languages </p> <p className="mentor-info" > {mentor.languagesSpoken}</p>
+                    </div>
                 </div>
-                <div id="optional-info">
-                    <h4 className="mentor-tags">Gender </h4> <h4 className="mentor-info"> {mentor.gender} </h4>
-                    </div>
-                    <div id="optional-info">
-                    <h4 className="mentor-tags">Spoken Languages </h4> <h4 className="mentor-info" > {mentor.languagesSpoken}</h4>
-                    </div>
+
+                <div className="column2">
                     <div id="optional-info">
                     </div>
                     <div id="optional-info">
-                    <h4 className="mentor-tags">Teaching Level</h4> <h4 className="mentor-info"> {mentor.teachingLevel} </h4>
+                    <p className="mentor-tags">Teaching Level</p> <p className="mentor-info"> {mentor.teachingLevel} </p>
                     </div>
                     <div id="optional-info">
-                    <h4 className="mentor-tags">Availability</h4> <h4 className="mentor-info" >{mentor.availability}</h4>
+                    <p className="mentor-tags">Availability</p> <p className="mentor-info" >{mentor.availability}</p>
                     </div>
-               
+                </div>
+            {/* </div> */}
         </div>
-        
+  
         </>
     )
 }
