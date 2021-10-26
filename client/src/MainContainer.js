@@ -56,7 +56,7 @@ function MainContainer() {
               
               {/* <PrivateRoute path="/update-profile" component={updateProfile} /> */}
     
-              <Route path="/" exact><HomeContainer/></Route>
+              <Route path="/" exact component={() => <HomeContainer user={user}/>}/>
               
               <Route path="/signup" component={Signup} exact />
     

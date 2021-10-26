@@ -1,23 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect} from 'react'
 import "../styles/header.css"
 import {Link} from "react-router-dom"
 import { useAuth } from "../contexts/AuthContext";
 import image from "../imagehell/MeetEngLogo.svg";
 
 
-const HeaderComponent = () => {
+const HeaderComponent = ({user}) => {
     const { currentUser, logout } = useAuth()
     const [error, setError] = useState("")
+    const [userTitle, setUserTitle] = useState("All Mentors")
+    
     // const [profile, setProfile] = useState()
     // const [loggedin, setLoggedin] = useState(false)
 
+    useEffect( ()=> {
+      if (user !=null) {
+        setUserTitle("My " + user.type[0].toUpperCase() + user.type.slice(1))
+       }
+    }, [user])
+    
+    
+
+
+
     let profile = "Login";
-    let mentorTitle = "All Mentors"
-    let menteeTitle;
-    if (currentUser){
-      profile = "Profile"
-      mentorTitle = "My Mentors"
-    } 
+    
+    // let menteeTitle;
+    // if (currentUser){
+    //   profile = "Profile"
+    // } 
 
     async function handleLogout() {
       setError('')
@@ -39,7 +50,7 @@ const HeaderComponent = () => {
                     <a href="http://localhost:3000/">Home</a>
                     <a href="http://localhost:3000/learning-resources">Learning Resources</a>
                     <a href="http://localhost:3000/how-it-works">How It Works</a>
-                    <a href="http://localhost:3000/view-mentors">{mentorTitle}</a>
+                    <a href="http://localhost:3000/view-mentors">{userTitle}</a>
                     {!currentUser &&  <a href="/login"><button>Log In</button></a> }
                     {currentUser &&  <a href="/profile"><button>{profile}</button></a> }
                     {currentUser && <button to="/" variant='link' onClick={handleLogout}>Log Out</button>} 
