@@ -14,7 +14,7 @@ const MenteeContainer = () => {
 
     const getUser = function() {
         // fetch(`http://localhost:8080/mentees?email=${currentUser.email}`)
-        fetch(`http://localhost:8080/mentors?email=johny@gmail.com`)
+        fetch(`http://localhost:8080/mentors?email=duncan.soutter@gmail.com`)
         .then(res => res.json())
         .then(user => setUser(user))
     }
