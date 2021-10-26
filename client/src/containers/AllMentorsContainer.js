@@ -46,7 +46,6 @@ const AllMentorsContainer = ({user, allMentors}) => {
     return(
         <>
             <HeaderComponent user={user}/>
-            <h3> All Mentors Container </h3>
             <MentorList allMentors={allMentors} user={user}/>
             <Footer/>
         </>
