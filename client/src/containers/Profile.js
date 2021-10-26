@@ -11,7 +11,7 @@ const Profile = ({user}) => {
         <>
         <h2> Profile </h2>
         <HeaderComponent/>
-        <PersonalInformation/>
+        <PersonalInformation user={user}/>
         <Footer/>
         </>
     )
