@@ -2,7 +2,7 @@ import Mentor from "./Mentor";
 import { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import Service from "../services/service";
-
+import getTotalScores from "../models/Matchmaking";
 
 
 const MentorList = ({allMentors}) => {
@@ -43,9 +43,14 @@ const MentorList = ({allMentors}) => {
             </>
         )
     })
-   
+   if (user === null){
+       return <h1>hello</h1>
+   }
     const chooseMentor = allMentors.map((mentor, index) => {
 
+        getTotalScores(user, allMentors, 5,5,5,5,5)
+        console.log("This is the mentee: ", user)
+        console.log("This is the mentors: ", allMentors)
         return (
             <div>
                 <Mentor mentor = {mentor} key = {index}/>
