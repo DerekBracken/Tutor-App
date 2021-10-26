@@ -104,13 +104,18 @@ public class DataLoader implements ApplicationRunner {
         Mentor colin = new Mentor( "Colin", "Colington", "65765", "colin@teach.com","018263543947", "male", "Good opertunity to meet new people", "Dundee", englishLevel, languagesSpoken, availability);
         mentorRepository.save(colin);
 
-//        Date and time - THESE DON"T WORK
-        String meeting1date = "2021-2-1";
-        String meeting2date = "2021-5-2";
-        String meeting3date = "2021-3-4";
-        String meeting4date = "2021-1-1";
+        Mentor duncanM = new Mentor("Duncan", "SoutterMentor", "1993-01-04", "duncan.soutter@gmail.com", "0921323", "male", "to teach people", "Edinburgh", englishLevel, languagesSpoken, availability);
+        mentorRepository.save(duncanM);
+
+        //        Date and time - THESE DON"T WORK
+        String meeting1date = "2021-02-01";
+        String meeting2date = "2021-05-02";
+        String meeting3date = "2021-06-04";
+        String meeting4date = "2021-07-09";
+        String meeting5date = "2021-08-11";
+        String meeting6date = "2021-9-10";
 //
-        String meeting1time = "9:30";
+        String meeting1time = "09:30";
         String meeting2time = "17:30";
         String meeting3time = "19:00";
         String meeting4time = "13:30";
@@ -128,17 +133,37 @@ public class DataLoader implements ApplicationRunner {
         Meeting meeting4 = new Meeting(meeting4date, meeting4time, "these are notes", "www", hannah, michael);
         meetingRepository.save(meeting4);
 
-        dwight.setMentor(johnny);
+        Meeting meeting5 = new Meeting(meeting1date, meeting1time, "these are notes for meeting 1", "https://github.com/", duncanM, dwight);
+        meetingRepository.save(meeting5);
+
+        Meeting meeting6 = new Meeting(meeting2date, meeting2time, "these are notes for meeting 2", "https://github.com/", duncanM, dwight);
+        meetingRepository.save(meeting6);
+
+        Meeting meeting7 = new Meeting(meeting3date, meeting3time, "these are notes for meeting 3", "https://github.com/",  duncanM, daryl);
+        meetingRepository.save(meeting7);
+
+        Meeting meeting8 = new Meeting(meeting4date, meeting4time, "these are notes for meeting 4", "https://github.com/", duncanM, maggie);
+        meetingRepository.save(meeting8);
+
+        Meeting meeting9 = new Meeting(meeting5date, meeting3time, "these are notes for meeting 5", "https://github.com/", duncanM, dwight);
+        meetingRepository.save(meeting9);
+
+        Meeting meeting10 = new Meeting(meeting6date, meeting4time, "these are notes for meeting 6", "https://github.com/", duncanM, maggie);
+        meetingRepository.save(meeting10);
+
+        dwight.setMentor(duncanM);
         pam.setMentor(johnny);
-        daryl.setMentor(johnny);
+        daryl.setMentor(duncanM);
         kelly.setMentor(hannah);
-        maggie.setMentor(colin);
+        maggie.setMentor(duncanM);
 
         menteeRepository.save(dwight);
         menteeRepository.save(pam);
         menteeRepository.save(daryl);
         menteeRepository.save(kelly);
         menteeRepository.save(maggie);
+        mentorRepository.save(duncanM);
+
         //Saving Instances of AVAILABILITY
 //        Availabilty one = new Availabilty("Monday-Friday Daytime");
 //        availability.add(one);
