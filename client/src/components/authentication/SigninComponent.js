@@ -1,9 +1,11 @@
 import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import "../../styles/Authentication.css"
 import "../../styles/form.css"
 import "../../styles/button.css"
+import HeaderComponent from '../HeaderComponent';
+import Footer from '../FooterComponent';
 
 
 export default function Signup(){
@@ -41,7 +43,7 @@ export default function Signup(){
 
     return (
         <>
-    
+            <HeaderComponent/>
             <div className="auth-div-wrapper">
                 <h2 className='form-title'>Sign Up</h2>
                 {error && <alert variant="danger">{error}</alert>}
@@ -72,6 +74,8 @@ export default function Signup(){
                 </form> 
                 <h4 >Already have an account? <a className="form-redirection-link" href="http://localhost:3000/login">Log In</a> </h4>  
             </div>
+
+        <Footer/>
         </>
     )
 }
