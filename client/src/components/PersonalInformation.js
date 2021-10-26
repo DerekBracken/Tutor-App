@@ -52,5 +52,9 @@ const PersonalInformation = () => {
     <h3>Can't render page</h3>
   )}
 
+  // create a form - contains all these fields
+  // on submit - call a function to update the user
+  // create a function to post a user to the update route
+
 
 export default PersonalInformation;
