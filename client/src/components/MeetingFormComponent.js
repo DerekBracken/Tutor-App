@@ -7,7 +7,6 @@ import Service from "../services/service";
 const MeetingFormComponent = ({user}) => {
     const {currentUser} = useAuth()
 
-    console.log("user", user.mentees);
 
     const handlePost = (meeting) => {
         const service = new Service();
@@ -23,11 +22,9 @@ const MeetingFormComponent = ({user}) => {
             "time": event.target[0].value.substring(11,16),
             "notes": event.target[1].value,
             "meetingLink":event.target[2].value,
-            // need to update mentor and mentee to be the object of mentor not just email. 
             "mentor": user,
             "mentee": user.mentees[parseInt(event.target[3].value)]
         }
-        console.log(meeting);
 
         handlePost(meeting) 
 
