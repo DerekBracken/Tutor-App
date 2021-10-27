@@ -21,6 +21,7 @@
     color: #14279B;
     margin: 0;
     padding-left: 8px;
+    margin-top: 4px;
 }
 
 #motivation {
@@ -52,4 +53,9 @@
 .column2 {
     width: 50%;
     float: right;
+}
+
+#mentor-headline {
+    display: flex;
+    justify-content: space-between;
 }

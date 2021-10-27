@@ -17,8 +17,9 @@ const Mentor = ({mentor, user, handleButtonClick}) => {
     return(
         <>
         <div id="individual-mentor-container">
+            <div id="mentor-headline">
             <p id="name" > {mentor.firstName} {mentor.lastName}</p>
-            {matchButton && <button type="submit" value={mentor.id-1} onClick={handleButtonClick}>Connect with mentor</button>}
+            {matchButton && <button  className="connect-with-mentor"type="submit" value={mentor.id-1} onClick={handleButtonClick}>Connect</button>} </div>
             <p id="motivation"> "{mentor.motivation}"</p>
             {/* <div className="row"> */}
                 <div className="column1">
