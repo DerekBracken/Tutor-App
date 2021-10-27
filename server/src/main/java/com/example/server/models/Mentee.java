@@ -61,6 +61,11 @@ public class Mentee {
 
     private String type;
 
+    private int locationWeighting;
+    private int languagesWeighting;
+    private String genderPref;
+    private int genderWeight;
+
     public Mentee(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String aboutMe, String location, String englishLevel, ArrayList<String> languagesSpoken, ArrayList<String> availability) {
         this.type = "mentee";
         this.firstName = firstName;
@@ -202,5 +207,39 @@ public class Mentee {
 
     public void setMentor(Mentor mentor) {
         this.mentor = mentor;
+    }
+
+//    below are the properties for matchmaking
+
+    public int getLocationWeighting() {
+        return locationWeighting;
+    }
+
+    public void setLocationWeighting(int locationWeighting) {
+        this.locationWeighting = locationWeighting;
+    }
+
+    public int getLanguagesWeighting() {
+        return languagesWeighting;
+    }
+
+    public void setLanguagesWeighting(int languagesWeighting) {
+        this.languagesWeighting = languagesWeighting;
+    }
+
+    public String getGenderPref() {
+        return genderPref;
+    }
+
+    public void setGenderPref(String genderPref) {
+        this.genderPref = genderPref;
+    }
+
+    public int getGenderWeight() {
+        return genderWeight;
+    }
+
+    public void setGenderWeight(int genderWeight) {
+        this.genderWeight = genderWeight;
     }
 }

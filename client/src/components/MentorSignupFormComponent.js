@@ -52,42 +52,54 @@ const MentorSignupFormComponent = () =>{
 // put all the required back in the form...
     return (
         <>
-            <h1>MentorSignupFormComponent</h1>
-            <form onSubmit={handleFormSubmit}>
-                
-                <label HTMLfor="first_name">First name:</label>
-                    <input type='text' id='first-name' name="first_name" placeholder="Enter first name" />
-                
-                <label HTMLfor="last_name">Last name:</label>
-                    <input type='text' id='last-name' name="last_name" placeholder="Enter last name" />
- 
-                <label HTMLfor='dob'>Enter date of birth:</label>
-                    <input type="date" id='dob' name='dob' />
-                    
+        <h1 id="signup-form-heading">Welcome Mentor</h1>
+        <h3 id="signup-form-heading">We're very excited to have you on board. Just a few details before we start</h3>
+            <form onSubmit={handleFormSubmit} id="mentor-form-container">
+                <div className="form-field-container">
+                <label  className="mentor-form-label" HTMLfor="first_name">First name:</label> <br/>
+                <input className="form-field" type='text' id='first-name' name="first_name" placeholder="Enter first name" /> <br/>
+                </div>
+
+                <div className="form-field-container">
+                <label className="mentor-form-label" HTMLfor="last_name">Last name:</label> <br/>
+                <input className="form-field" type='text' id='last-name' name="last_name" placeholder="Enter last name" /><br/>
+                </div>
+
+                <div className="form-field-container">
+                <label className="mentor-form-label" HTMLfor='dob'>Enter date of birth:</label><br/>
+                <input className="form-field" type="date" id='dob' name='dob'/><br/>
+                </div>
                 {/* <label>
                 will pre-populate with email from Derek's bit
 
                     Enter email address: 
                     <input type='email' id='email' name='email' placeholder="Enter email address" required/>
                 </label> */}
-                
-                <label HTMLfor="contact_number">Enter contact number:</label>
-                    <input type='tel' id='contact-number' name='contact_number' placeholder="Enter contact number" />
-                    
-                <label HTMLfor="gender">Gender identity:</label>
-                    <select name='gender' id='gender' >
+                <div className="form-field-container">
+                <label className="mentor-form-label" HTMLfor="contact_number">Enter contact number:</label><br/>
+                <input className="form-field" type='tel' id='contact-number' name='contact_number' placeholder="Enter contact number" /><br/>
+                </div>  
+
+                <div className="form-field-container">
+                <label className="mentor-form-label" HTMLfor="gender">Gender identity:</label><br/>
+                    <select  className="form-field" name='gender' id='gender' ><br/>
                     <option disabled selected>Select from below</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="other">Other</option>
                     </select>
-                
-                <label HTMLfor="motivation">What made you want to become a mentor?</label>
-                    <textarea id='motivation' name='motivation' placeholder='Answer here' />
-                
-                <label HTMLfor="location">Where are you based?</label>
-                    <select name='location' id='location' >
-                    <option disabled selected>Select from below</option>
+                </div>
+                <br/>
+
+                <div className="form-field-container">
+                <label className="mentor-form-label" HTMLfor="motivation">Why do you want to become a mentor?</label><br/>
+                <textarea className="form-field" id='motivation' name='motivation' placeholder='Answer here' /><br/>
+                </div>
+
+                <div className="form-field-container">
+                <label className="mentor-form-label" HTMLfor="location">Where are you based?</label><br/>
+                    <select className="form-field" name='location' id='location' >
+                    <option disabled selected>Select from below</option><br/>
                         <option value="Aberdeen">Aberdeen</option>
                         <option value="Dundee">Dundee</option>
                         <option value="Edinburgh">Edinburgh</option>
@@ -95,60 +107,75 @@ const MentorSignupFormComponent = () =>{
                         <option value="Inverness">Inverness</option>
                         <option value="Stirling">Stirling</option>
                     </select>
-                
+                </div>
+                <br/>
 
-                <div>
-                    <label>What are you willing to teach?</label>
-                        <div><label HTMLfor="beginner">Beginner</label>
-                        <input type="checkbox" name="beginner" value="beginner" id="beginner"/>
+                    <div className="form-field-container">
+                    <label className="mentor-form-label" >What level would you like to teach?</label>
+                        <div>
+                            <input  type="checkbox" name="beginner" value="beginner" id="beginner"/>
+                            <label className="mentor-form-small-options" HTMLfor="beginner">Beginner</label>
                         </div>
 
-                        <div><label HTMLfor="elementary">Elementary</label>
-                        <input type="checkbox" name="elementary" value="elementary" id="elementary"/>
+                        <div>
+                            <input type="checkbox" name="elementary" value="elementary" id="elementary"/>
+                            <label className="mentor-form-small-options" HTMLfor="elementary">Elementary</label>
                         </div>
 
-                        <div><label HTMLfor="pre_intermediate">Pre-Intermediate</label>
-                        <input type="checkbox" name="pre_intermediate" value="pre_intermediate" id="pre_intermediate"/>
+                        <div>
+                            <input type="checkbox" name="pre_intermediate" value="pre_intermediate" id="pre_intermediate"/>
+                            <label className="mentor-form-small-options" HTMLfor="pre_intermediate">Pre-Intermediate</label>
                         </div>
 
-                        <div><label HTMLfor="intermediate">Intermediate</label>
-                        <input type="checkbox" name="intermediate" value="intermediate" id="intermediate"/>
+                        <div>
+                            <input type="checkbox" name="intermediate" value="intermediate" id="intermediate"/>
+                            <label className="mentor-form-small-options" HTMLfor="intermediate">Intermediate</label>
                         </div>
 
-                        <div><label HTMLfor="upper_intermediate">Upper-Intermediate</label>
-                        <input type="checkbox" name="upper_intermediate" value="upper_intermediate" id="upper_intermediate"/>
+                        <div>
+                            <input type="checkbox" name="upper_intermediate" value="upper_intermediate" id="upper_intermediate"/>
+                            <label className="mentor-form-small-options" HTMLfor="upper_intermediate">Upper-Intermediate</label>
                         </div>
                         
-                        <div><label HTMLfor="advanced">Advanced</label>
-                        <input type="checkbox" name="advanced" value="advanced" id="advanced"/>
+                        <div>
+                            <input type="checkbox" name="advanced" value="advanced" id="advanced"/>
+                            <label className="mentor-form-small-options" HTMLfor="advanced">Advanced</label>
                         </div>
 
+                </div> <br/>
+
+                    <div className="form-field-container">
+                    <label className="mentor-form-label" HTMLfor="languages_spoken"> What languages to do you speak?</label> <br/>
+                    <input className="form-field" type='text' id='languages_spoken' name="languages_spoken" placeholder="Input languages spoken" />
+                    </div> <br/>
+
+                    <div className="form-field-container">
+                    <div className="mentor-form-label"> Select availability:
+                        <div>
+                            <input type="checkbox" name="mon_fri_day" value="mon_fri_day" id="mon_fri_day"/>
+                            <label className="mentor-form-small-options" HTMLfor="mon_fri_day">Mon-Fri Daytime</label>
+                        </div>
+                        
+
+                        <div>
+                            <input type="checkbox" name="mon_fri_eve" value="mon_fri_eve" id="mon_fri_eve"/>
+                            <label className="mentor-form-small-options" HTMLfor="mon_fri_eve">Mon-Fri Evening</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="weekend_day" value="weekend_day" id="weekend_day"/>
+                            <label className="mentor-form-small-options" HTMLfor="weekend_day">Weekend Daytime</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="weekend_eve" value="weekend_eve" id="weekend_eve"/>
+                            <label className="mentor-form-small-options" HTMLfor="weekend_eve">Weekend Evening</label>
+                        </div>
+                    </div>
                 </div>
-                <label HTMLfor="languages_spoken">
-                    What languages to do you speak?</label>
-                    <input type='text' id='languages_spoken' name="languages_spoken" placeholder="Input languages spoken" />
-                
-                <div>
-                    Select availability:
-                        <div><label HTMLfor="mon_fri_day">Mon-Fri Daytime</label>
-                        <input type="checkbox" name="mon_fri_day" value="mon_fri_day" id="mon_fri_day"/>
-                        </div>
-
-                        <div><label HTMLfor="mon_fri_eve">Mon-Fri Evening</label>
-                        <input type="checkbox" name="mon_fri_eve" value="mon_fri_eve" id="mon_fri_eve"/>
-                        </div>
-
-                        <div><label HTMLfor="weekend_day">Weekend Daytime</label>
-                        <input type="checkbox" name="weekend_day" value="weekend_day" id="weekend_day"/>
-                        </div>
-
-                        <div><label HTMLfor="weekend_eve">Weekend Evening</label>
-                        <input type="checkbox" name="weekend_eve" value="weekend_eve" id="weekend_eve"/>
-                        </div>
-
+                <div className="form-field-container">
+                <input className="small-button" type='submit' value='Submit' />
                 </div>
-                
-                <input type='submit' value='submit' />
             </form>
         </>
     )

@@ -1,5 +1,6 @@
 import Session from "./Session";
-import MeetingFormComponent from "./MeetingFormComponent"
+import MeetingFormComponent from "./MeetingFormComponent";
+import styles from "../styles/meeting.css"
 
 const SessionsList = ({user}) => {
 
@@ -10,9 +11,10 @@ const SessionsList = ({user}) => {
                 if (user.mentees[i].meetings[j].time == meeting.time && user.mentees[i].meetings[j].date){
                     return (
                         <>
+                        <div className="meeting-component">
                             <h3>Meeting on {meeting.date} at {meeting.time} with {user.mentees[i].firstName} {user.mentees[i].lastName}</h3>
                             <p>{meeting.notes}</p>
-                            
+                        </div>
                             {/* <h2>{meeting.mentee.firstName}</h2> */}
                         </>
                         )
@@ -22,9 +24,10 @@ const SessionsList = ({user}) => {
 
         return (
         <>
+        <div className="meeting-component">
             <h3>Meeting on {meeting.date} at {meeting.time} with X</h3>
             <p>{meeting.notes}</p>
-            
+        </div>
             {/* <h2>{meeting.mentee.firstName}</h2> */}
         </>
         )

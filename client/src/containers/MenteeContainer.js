@@ -4,26 +4,13 @@ import { withRouter } from 'react-router-dom';
 import Footer from "../components/FooterComponent";
 import { useState, useEffect } from "react";
 
-const MenteeContainer = () => {
-    const [user, setUser] = useState(null);
-
-    useEffect(() => {
-                getUser();
-                console.log(user);
-    }, [])
-
-    const getUser = function() {
-        // fetch(`http://localhost:8080/mentees?email=${currentUser.email}`)
-        fetch(`http://localhost:8080/mentors?email=duncan.soutter@gmail.com`)
-        .then(res => res.json())
-        .then(user => setUser(user))
-    }
+const MenteeContainer = ({user}) => {
 
     if (user != null){
         return(
             <>
-            <h3> Mentee Container </h3>
             <HeaderComponent/>
+            <h3> Mentee Container </h3>
             <SessionsList user={user} />
             <Footer/>
             </>
