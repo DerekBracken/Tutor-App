@@ -1,6 +1,6 @@
 import { useAuth } from "../contexts/AuthContext";
 import {useState, useEffect} from 'react'
-import Service from "../services/service";
+import Service from "../services/Service";
 
 
 

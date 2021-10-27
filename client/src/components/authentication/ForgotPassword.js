@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
 import { Link } from "react-router-dom"
-import "../../styles/Authentication.css"
+import "../../styles/authentication.css"
 
 
 
