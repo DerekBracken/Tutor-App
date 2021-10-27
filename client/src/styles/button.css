@@ -24,6 +24,11 @@
     width: 127px;
     height: 40px;
     margin-top: 16px;
+    margin: auto;
+   /* display: flex; */
+   text-align: center;
+   margin: 0 auto; 
+   display: block;
 }
 
 .small-button:hover{
