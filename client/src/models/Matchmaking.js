@@ -26,7 +26,7 @@ function teachingScore(mentee, mentorArray, teachingWeighting){
         }
     }
 }
-
+ 
 function languagesScore(mentee, mentorArray, languagesWeighting){
     for (let i=0; i<mentorArray.length; i++ ){
         for (let j=0; j<mentee.languagesSpoken.length; j++ ){
