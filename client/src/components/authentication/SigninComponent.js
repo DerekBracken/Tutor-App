@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
 import { useHistory } from "react-router-dom"
-import "../../styles/authentication.css"
+import "../../styles/Authentication.css"
 import "../../styles/form.css"
 import "../../styles/button.css"
 import HeaderComponent from '../HeaderComponent';

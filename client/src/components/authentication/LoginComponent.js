@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from "react-router-dom"
-import "../../styles/authentication.css"
+import "../../styles/Authentication.css"
 import HeaderComponent from '../HeaderComponent';
 import Footer from '../FooterComponent';
 

@@ -1,7 +1,7 @@
 import Mentor from "./Mentor";
 import { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import Service from "../services/Service";
+import Service from "../services/service";
 import getTotalScores from "../models/Matchmaking";
 
 

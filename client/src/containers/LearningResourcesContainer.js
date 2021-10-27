@@ -1,7 +1,7 @@
 import HeaderComponent from "../components/HeaderComponent";
 import { withRouter } from 'react-router-dom';
 import Footer from "../components/FooterComponent";
-import "../styles/learning_resources.css"
+import "../styles/LearningResources.css"
 const LearningResources = ({user}) => {
 
     const onClickDirect = (event) => (window.open('https://www.bbc.co.uk/learningenglish/'));
