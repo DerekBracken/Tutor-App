@@ -24,6 +24,6 @@ public class MeetingController {
     @PostMapping(value = "/meetings")
     public ResponseEntity<Meeting> postMeeting(@RequestBody Meeting meeting){
         meetingRepository.save(meeting);
-        return new ResponseEntity<>(meeting, HttpStatus.OK);
+        return new ResponseEntity<>(meeting, HttpStatus.CREATED);
     }
 }

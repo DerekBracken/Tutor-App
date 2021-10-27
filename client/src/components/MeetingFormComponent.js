@@ -11,7 +11,7 @@ const MeetingFormComponent = ({user}) => {
     const handlePost = (meeting) => {
         const service = new Service();
         service.post("http://localhost:8080/meetings", meeting)
-        //    .then(() => window.location = '/sessions')
+        .then(() => window.location = '/sessions')
     }
 
     const handleFormSubmit = (event) =>{
@@ -21,22 +21,16 @@ const MeetingFormComponent = ({user}) => {
             "date": event.target[0].value.substring(0,10),
             "time": event.target[0].value.substring(11,16),
             "notes": event.target[1].value,
-            "meetingLink":event.target[2].value,
+            "meetingLink":event.target[2].value.toString(),
             "mentor": user,
-            // "mentee": user.mentees[parseInt(event.target[3].value)]
+            "mentee": user.mentees[parseInt(event.target[3].value)]
         }
-        console.log(user.mentees[parseInt(event.target[3].value)]);
-        console.log(parseInt(event.target[3].value));
-
-        console.log(user);
-
         handlePost(meeting) 
 
     }
 
     // below should loop through the current mentors list of mentees
     if (user && user.mentees != null){
-        console.log("HHHHHHH", user.mentees);
     const menteeOptions = user.mentees.map((mentee, index) =>{
         return <option value={index} key={index}>{mentee.firstName} {mentee.lastName}</option>
     })

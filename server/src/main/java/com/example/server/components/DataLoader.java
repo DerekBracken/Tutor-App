@@ -150,7 +150,7 @@ public class DataLoader implements ApplicationRunner {
         Mentee kelly = new Mentee("Kelly", "Kapour", "09097", "k.capour@hotmail.com", "098989 65678","female", "I'm really smart you guys", "Dundee", "Advanced", languagesSpoken, availability);
         menteeRepository.save(kelly);
 
-        Mentee dwight = new Mentee("Dwight", "Shrute", "98780", "dksmaster@hotmail.com", "0131 09083735", "male", "Getting told 'Don't me an idiot' changed my life", "Intermediate", "high", languagesSpoken, availability);
+        Mentee dwight = new Mentee("Dwight", "Shrute", "98780", "dksmaster@hotmail.com", "0131 09083735", "male", "Getting told 'Don't me an idiot' changed my life", "Intermediate", "Pre-Intermediate", languagesSpoken, availability);
         menteeRepository.save(dwight);
 
         Mentee daryl = new Mentee("Daryl", "Foula", "98796", "daryl@gmail.com", "09908083735", "male", "I'm a mystery of a person", "Glasgow", "Upper-Intermediate", languagesSpoken, availability);
