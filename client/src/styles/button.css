@@ -11,7 +11,7 @@
 }
 
 #SignUp-Button:hover{
-    background-color: #e67789;
+    background-color: #781D2C;
     cursor: pointer;
 }
 
@@ -25,10 +25,11 @@
     margin-top: 16px;
     text-align: center;
     margin-top: 8px;
+    margin-bottom: 12px;
 }
 
 .small-button:hover{
-    background-color: #e67789;
+    background-color: #781D2C;
     cursor: pointer;
 }
 .header-button {
@@ -39,7 +40,11 @@
     padding: 8px;
     font-size: 16px;
     margin-bottom: 4px;
+}
 
+.header-button:hover {
+    background-color: #781D2C;
+    cursor: pointer;
 }
 
 .update-button {
@@ -51,10 +56,47 @@
     height: 40px;
     margin-top: 16px;
     margin: auto;
-  
     text-align: center;
     margin: auto; 
     display: block;
     margin-top: 8px;
+}
 
+.connect-with-mentor {
+    background-color: #ffffff;
+    color: #E43F5A;
+    border-radius: 4px;
+    border: 2px solid #E43F5A;
+    width: 120px;
+    height: 40px;
+    margin-top: 16px;
+    text-align: center;
+    margin: 8px;
+    font-size: 16px;
+}
+
+.connect-with-mentor:hover { 
+   background-color: #E43F5A;
+   color: white;
+   border-radius: 4px;
+   border-style: none;
+   cursor: pointer;
+}
+
+.session-button{
+    background-color: #E43F5A;
+    color: white;
+    border-radius: 4px;
+    border-style: none;
+    width: 127px;
+    height: 40px;
+    margin-top: 16px;
+    /* text-align: center; */
+    margin-bottom: 12px;
+    margin-left: 180px;
+}
+
+.session-button:hover {
+    background-color: #781D2C;
+    cursor: pointer;
 }

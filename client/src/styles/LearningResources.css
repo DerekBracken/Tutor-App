@@ -33,3 +33,16 @@ h1 {
     font-weight: 200;
     color: #14279B;
 } 
+
+.how-it-works {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.how-it-works-steps {
+    text-align: center;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 200;
+    color: #14279B;
+    font-size: 24px;
+}

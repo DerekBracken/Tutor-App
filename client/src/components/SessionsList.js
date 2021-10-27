@@ -14,9 +14,10 @@ const SessionsList = ({user}) => {
                     if (user.mentees[i].meetings[j].time == meeting.time && user.mentees[i].meetings[j].date){
                         return (
                             <>
-                            <div className="meeting-component">
-                                <h3>Meeting on {meeting.date} at {meeting.time} with {user.mentees[i].firstName} {user.mentees[i].lastName}</h3>
-                                <p>{meeting.notes}</p>
+                            <div className="session-display-container">
+                                <h3 className="session-label"> Session {meeting.id}  with {user.mentees[i].firstName} {user.mentees[i].lastName}</h3>
+                                <p className="session-notes">{meeting.notes}</p>
+                                <p className="session-date-time">{meeting.date} on {meeting.time} </p>
                             </div>
                                 {/* <h2>{meeting.mentee.firstName}</h2> */}
                             </>
@@ -28,10 +29,13 @@ const SessionsList = ({user}) => {
             return (
             <>
                 <HeaderComponent user={user}/>
-            <div className="meeting-component">
-                <h3>Meeting on {meeting.date} at {meeting.time} with X</h3>
-                <p>{meeting.notes}</p>
-            </div>
+                <div className="session-display-container">
+                    <div className="meeting-component">
+                        <h3 className="session-label" >Meeting with X</h3>
+                        <p className="session-notes">{meeting.notes}</p>
+                        <p className="session-date-time">{meeting.date} on {meeting.time} </p>
+                    </div>
+                </div>
             </>
             )
         })
@@ -41,14 +45,13 @@ const SessionsList = ({user}) => {
     return(
         <>
         <HeaderComponent user={user}/>
-        <h3> Sessions List </h3>
+        <h1> Sessions List </h1>
         {meetings}
         </>
     )}
     return(
         <>
         <HeaderComponent user={user}/>
-        <h3> Sessions List </h3>
         <MeetingFormComponent user={user} /> 
         {meetings}
         </>

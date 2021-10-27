@@ -47,7 +47,7 @@ const AllMentorsContainer = ({user, allMentors}) => {
         <>
             <HeaderComponent user={user}/>
             <MentorList allMentors={allMentors} user={user}/>
-            <Footer/>
+    
         </>
     )
 }
