@@ -61,12 +61,12 @@ export default function Signup(){
                         <input className="form-field" type="password" ref={passwordConfirmRef} required />
                     </div>
 
-                    <div>
-                    <label>Membership :</label>
-                    <select name='account' id='account' required>
-                        <option disabled selected>Select from below</option>
-                            <option value="mentor">Mentor</option>
-                            <option value="mentee">Mentee</option>
+                    <div className="form-label" >
+                    <label >Membership :</label> <br/>
+                    <select  className="form-field"  name='account' id='account' required>
+                        <option className="form-field" disabled selected>Select from below</option>
+                            <option className="form-field" value="mentor">Mentor</option>
+                            <option className="form-field" value="mentee">Mentee</option>
                     </select>
                     </div>
                    <button className="small-button" disabled={loading} type="submit">Sign Up</button>

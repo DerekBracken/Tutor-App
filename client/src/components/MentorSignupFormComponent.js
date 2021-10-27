@@ -174,9 +174,9 @@ const MentorSignupFormComponent = () =>{
                         </div>
                     </div>
                 </div>
-                <div className="form-field-container">
+                {/* <div className="form-field-container"> */}
                 <input className="small-button" type='submit' value='Submit' />
-                </div>
+                {/* </div> */}
             </form>
         </>
     )

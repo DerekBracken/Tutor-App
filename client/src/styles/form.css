@@ -5,18 +5,21 @@
     color: #0D0B6D;
     text-align: left;
     padding-left: 170px;
+    padding-top: 8px;
 }
 
 .form-field {
     border: 1px solid black;
     border-radius: 4px;
     box-shadow: none;
+    width: 180px;
 }
 
 .form-field-container {
-    display: flex;
-    flex-direction: column;
     max-width: 50%;
+    margin: 0px;
+    margin: auto;
+    padding-bottom: 8px;
 }
 
 /* MENTOR FORM  */
@@ -39,12 +42,13 @@
     text-align: left;
     color: #0D0B6D;
     border-width: 512px;
-    margin-left: 200px;
-    margin-right: 100px;
+    /* margin-left: 200px;
+    margin-right: 100px; */
     border:  2px solid #14279B;
     border-radius: 4px;
-    padding-left: 200px;
-
+    /* padding-left: 200px; */
+    max-width: 400px;
+    margin: auto;
 }
 
 /* Mentee FORM  */
@@ -53,6 +57,7 @@
     font-family: 'Cabin', sans-serif;
     font-weight: 200;
     color: #0D0B6D;
+    flex-direction: column;
 }
 
 .mentee-form-small-options {
@@ -64,21 +69,22 @@
 }
 
 #mentee-form-container {
-    /* text-align: center; */
+    text-align: left;
     color: #0D0B6D;
     border-width: 512px;
-    border-height: 618px;
-    border-width: 500px;
-    margin-left: 100px;
-    margin-right: 100px;
+    /* margin-left: 200px;
+    margin-right: 100px; */
     border:  2px solid #14279B;
     border-radius: 4px;
-    max-width: 500px;
+    /* padding-left: 200px; */
+    max-width: 400px;
+    margin: auto;
 }
 
 #signup-form-heading {
     text-align: center;
     color: #0D0B6D;
+    font-weight: 300;
 }
 
 #user-form-container {

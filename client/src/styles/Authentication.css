@@ -4,11 +4,13 @@
     border-width: 512px;
     border-height: 618px;
     border-width: 500px;
-    margin-left: 100px;
-    margin-right: 100px;
+    /* margin-left: 100px;
+    margin-right: 100px; */
     border:  2px solid #14279B;
     border-radius: 4px;
     max-width: 500px;
+    margin: auto;
+    margin-top: 32px;
 }
 
 .form-title{
