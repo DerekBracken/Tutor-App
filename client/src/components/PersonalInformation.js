@@ -13,7 +13,7 @@ const PersonalInformation = ({user}) => {
       const updateUrl = "/users/update/" + user.id
     return (
         <div>
-          <h2 id="signup-form-heading">Profile</h2>
+          <h1>Profile</h1>
           <p className="profile-container">
          
           <div className="information-container"><p className="profile-label">First Name </p> <p className="profile-information">{user.firstName}</p></div>
@@ -28,7 +28,7 @@ const PersonalInformation = ({user}) => {
           <div className="information-container"><p className="profile-label">Languages Spoken</p><p className="profile-information">{user.languagesSpoken}</p></div>
           <div className="information-container"><p className="profile-label">Availability </p><p className="profile-information">{user.availability} </p></div>
             {/* <Link to= {updateUrl}><button type="button">Update</button></Link> */}
-            <div className="information-container"><button className="small-button">Update</button></div>
+            <div i><button d="update-button">Update</button></div>
           </p>
         </div>
     );
