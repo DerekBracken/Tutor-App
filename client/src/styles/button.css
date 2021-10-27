@@ -23,12 +23,8 @@
     width: 127px;
     height: 40px;
     margin-top: 16px;
-    margin: auto;
-   /* display: flex; */
     text-align: center;
-    margin: auto; 
-    display: block;
-    margin: 8px;
+    margin-top: 8px;
 }
 
 .small-button:hover{
