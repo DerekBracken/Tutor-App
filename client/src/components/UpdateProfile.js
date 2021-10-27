@@ -8,33 +8,33 @@ const UpdateProfile = ({user}) => {
             <form>
 
             <label HTMLfor="first_name">First name: </label>
-                    <input type='text' id='first-name' name="first_name" value={user.firstName}/>
+                    <input type='text' id='first-name' name="first_name" placeholder={user.firstName}/>
 
             <label HTMLfor="last_name">Last name:</label>
-                    <input type='text' id='last-name' name="last_name" value={user.lastName}/>
+                    <input type='text' id='last-name' name="last_name" placeholder={user.lastName}/>
 
             <label HTMLfor="dob"> Enter date of birth: </label>
-                <input type="date" id='dob' name='dob' value={user.dateOfBirth}/>
+                <input type="date" id='dob' name='dob' placeholder={user.dateOfBirth}/>
 
             {/* EMAIL ADDRESS */}
-
+            
             <label HTMLfor="contact_number">Enter contact number: </label>
-                    <input type='tel' id='contact-number' name='contact_number'value={user.contactNumber}/>
+                    <input type='tel' id='contact-number' name='contact_number' placeholder={user.contactNumber}/>
 
             <label HTMLfor="gender">Gender identity: </label>
             <select name='gender' id='gender'>
-                <option disabled selected>Select from below</option>
+                <option >{user.gender}</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
             </select>
 
             <label HTMLfor="about_me">About you: </label>
-                    <textarea id='about_me' name='about_me' value={user.aboutMe}/>
+                    <textarea id='about_me' name='about_me' placeholder={user.aboutMe}/>
 
             <label HTMLfor="location"> Where are you based? </label>
             <select name='location' id='location'>
-            <option disabled selected>Select from below</option>
+            <option >{user.location}</option>
                 <option value="Aberdeen">Aberdeen</option>
                 <option value="Dundee">Dundee</option>
                 <option value="Edinburgh">Edinburgh</option>
@@ -45,7 +45,7 @@ const UpdateProfile = ({user}) => {
 
             <label>What English level are you?</label>
                     <select name='english_level' id='english_level' required>
-                        <option disabled selected>Select from below</option>
+                        <option >{user.englishLevel}</option>
                             <option value="beginner">Beginner</option>
                             <option value="elementary">Elementary</option>
                             <option value="pre_intermediate">Pre-Intermediate</option>
@@ -55,7 +55,7 @@ const UpdateProfile = ({user}) => {
                     </select>
 
             <label HTMLfor="languages_spoken">What languages to do you speak? </label>
-                <input type='text' id='languages_spoken' name="languages_spoken" value={user.languagesSpoken}/>
+                <input type='text' id='languages_spoken' name="languages_spoken" placeholder={user.languagesSpoken}/>
 
                     <div>
                         <label> Select availability: </label>
