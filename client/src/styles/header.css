@@ -40,3 +40,7 @@ a:active {
     color: white;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+

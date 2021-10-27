@@ -3,8 +3,8 @@
     bottom: 0;
     width: 100%;
     position: fixed;
-    background: rgb(240, 240, 240);
-    border-top: 3.5px solid rgb(213, 213, 213);
+    background: #5C7AEA;
+    /* border-top: 3.5px solid rgb(213, 213, 213); */
     height: 1.75rem;
 }
 #footer-wrapper {
@@ -12,7 +12,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    color: rgb(82, 82, 82);
+    color: white;
     font-size: 0.85rem;
     height: 100%;
     width: 85%;

@@ -11,7 +11,7 @@
 }
 
 #SignUp-Button:hover{
-    background-color: #e67789;
+    background-color: #781D2C;
     cursor: pointer;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .small-button:hover{
-    background-color: #e67789;
+    background-color: #781D2C;
     cursor: pointer;
 }
 .header-button {
@@ -40,7 +40,11 @@
     padding: 8px;
     font-size: 16px;
     margin-bottom: 4px;
+}
 
+.header-button:hover {
+    background-color: #781D2C;
+    cursor: pointer;
 }
 
 .update-button {
@@ -93,6 +97,6 @@
 }
 
 .session-button:hover {
-    background-color: #e67789;
+    background-color: #781D2C;
     cursor: pointer;
 }
