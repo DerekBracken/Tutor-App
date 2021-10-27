@@ -69,7 +69,7 @@ const MentorList = ({allMentors, user}) => {
     //     {chooseMentor}
     //     </>
     // )
-
+    console.log("This is the users mentors", user.mentor);
     return(
         <>
             <h1>Your current mentor</h1>
