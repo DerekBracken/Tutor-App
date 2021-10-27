@@ -85,9 +85,9 @@ const MentorSignupFormComponent = () =>{
                 <label className="mentor-form-label" HTMLfor="gender">Gender identity:</label><br/>
                     <select  className="form-field" name='gender' id='gender' ><br/>
                     <option disabled selected>Select from below</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="other">Other</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
                 <br/>
@@ -114,32 +114,32 @@ const MentorSignupFormComponent = () =>{
                     <div className="form-field-container">
                     <label className="mentor-form-label" >What level would you like to teach?</label>
                         <div>
-                            <input  type="checkbox" name="beginner" value="beginner" id="beginner"/>
+                            <input  type="checkbox" name="beginner" value="Beginner" id="beginner"/>
                             <label className="mentor-form-small-options" HTMLfor="beginner">Beginner</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" name="elementary" value="elementary" id="elementary"/>
+                            <input type="checkbox" name="elementary" value="Elementary" id="elementary"/>
                             <label className="mentor-form-small-options" HTMLfor="elementary">Elementary</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" name="pre_intermediate" value="pre_intermediate" id="pre_intermediate"/>
+                            <input type="checkbox" name="pre_intermediate" value="Pre-Intermediate" id="pre_intermediate"/>
                             <label className="mentor-form-small-options" HTMLfor="pre_intermediate">Pre-Intermediate</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" name="intermediate" value="intermediate" id="intermediate"/>
+                            <input type="checkbox" name="intermediate" value="Intermediate" id="intermediate"/>
                             <label className="mentor-form-small-options" HTMLfor="intermediate">Intermediate</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" name="upper_intermediate" value="upper_intermediate" id="upper_intermediate"/>
+                            <input type="checkbox" name="upper_intermediate" value="Upper-Intermediate" id="upper_intermediate"/>
                             <label className="mentor-form-small-options" HTMLfor="upper_intermediate">Upper-Intermediate</label>
                         </div>
                         
                         <div>
-                            <input type="checkbox" name="advanced" value="advanced" id="advanced"/>
+                            <input type="checkbox" name="advanced" value="Advanced" id="advanced"/>
                             <label className="mentor-form-small-options" HTMLfor="advanced">Advanced</label>
                         </div>
 
@@ -153,23 +153,23 @@ const MentorSignupFormComponent = () =>{
                     <div className="form-field-container">
                     <div className="mentor-form-label"> Select availability:
                         <div>
-                            <input type="checkbox" name="mon_fri_day" value="mon_fri_day" id="mon_fri_day"/>
-                            <label className="mentor-form-small-options" HTMLfor="mon_fri_day">Mon-Fri Daytime</label>
+                            <input type="checkbox" name="mon_fri_day" value="Monday-Friday Daytime" id="mon_fri_day"/>
+                            <label className="mentor-form-small-options" HTMLfor="mon_fri_day">Monday-Friday Daytime</label>
                         </div>
                         
 
                         <div>
-                            <input type="checkbox" name="mon_fri_eve" value="mon_fri_eve" id="mon_fri_eve"/>
-                            <label className="mentor-form-small-options" HTMLfor="mon_fri_eve">Mon-Fri Evening</label>
+                            <input type="checkbox" name="mon_fri_eve" value="Monday-Friday Evening" id="mon_fri_eve"/>
+                            <label className="mentor-form-small-options" HTMLfor="mon_fri_eve">Monday-Friday Evening</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" name="weekend_day" value="weekend_day" id="weekend_day"/>
+                            <input type="checkbox" name="weekend_day" value="Weekend Daytime" id="weekend_day"/>
                             <label className="mentor-form-small-options" HTMLfor="weekend_day">Weekend Daytime</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" name="weekend_eve" value="weekend_eve" id="weekend_eve"/>
+                            <input type="checkbox" name="weekend_eve" value="Weekend Evening" id="weekend_eve"/>
                             <label className="mentor-form-small-options" HTMLfor="weekend_eve">Weekend Evening</label>
                         </div>
                     </div>
