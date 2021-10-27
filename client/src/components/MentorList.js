@@ -56,13 +56,14 @@ const MentorList = ({allMentors, user}) => {
         getTotalScores(user, allMentors, 5,5,5,5,5)
         // console.log("This is the mentee: ", user)
         // console.log("This is the mentors: ", allMentors)
-        return (
-            <div>
-                <Mentor mentor = {mentor} key = {index}/>
-                <button type="submit" value={index} onClick={handleButtonClick}>Connect with mentor</button>
-            </div>
-        )
-    })
+        // return (
+        //     <div>
+        //         <Mentor mentor = {mentor} key = {index}/>
+        //         <button type="submit" value={index} onClick={handleButtonClick}>Connect with mentor</button>
+        //     </div>
+        // )
+    
+
 
 
     // if (user.type == "Mentee"){ do the below}
