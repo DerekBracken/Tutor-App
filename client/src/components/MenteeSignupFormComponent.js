@@ -1,4 +1,4 @@
-import Service from "../services/service";
+import Service from "../services/Service";
 import { useAuth } from "../contexts/AuthContext"
 
 
