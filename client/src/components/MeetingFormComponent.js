@@ -46,28 +46,26 @@ const MeetingFormComponent = ({user}) => {
                 <div className="session-form-field-container">
                 <label className="session-form-label" HTMLfor="date_time">Select date and time: </label>
                     <input className="session-form-field" type='datetime-local' id="date_time" name="date_time" required/>
-                </div>
+                </div> <br/>
 
                 <div className="session-form-field-container">
-                <label className="session-form-label" HTMLfor='notes'>What will be discussed? </label><br/>
+                <label className="session-form-label" HTMLfor='notes'>What will be discussed? </label>
                     <textarea  className="session-form-field"  id="notes" name = "notes" placeholder='Enter meeting notes here' />
-                </div>
+                </div><br/>
 
                 <div className="session-form-field-container">
-                <label className="session-form-label" HTMLfor='meeting_link'>Enter meeting link: </label><br/>
+                <label className="session-form-label" HTMLfor='meeting_link'>Enter meeting link: </label>
                     <input className="session-form-field"  type='url' id='meeting_link' name='meeting_link' placeholder="Meeting URL"/>
-                </div>
+                </div><br/>
 
                 <div className="session-form-field-container" >
-                <label className="session-form-label"  HTMLfor="mentee">Choose mentee: </label><br/>
+                <label className="session-form-label"  HTMLfor="mentee">Choose mentee: </label>
                     <select className="session-form-field"  name='mentee' id='mentee' required>
                         <option disabled selected>Select mentee from list below</option>
                         {menteeOptions}
                     </select>
-                </div>
-                {/* <div className="session-form-field-container" > */}
+                </div><br/>
                 <input className="session-button" type='submit' value='Submit'/>
-                {/* </div> */}
             </form>
         </>
     )
