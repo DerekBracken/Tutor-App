@@ -3,16 +3,17 @@ import "../styles/mentor.css"
 const Mentor = ({mentor, user, handleButtonClick}) => {
     console.log("WOOOO", user)
 
-    let matchButton =true;
+    let matchButton =false;
 
-    if (user.type == "Mentee" && user.mentor){
-        if (user.mentor.id == mentor.id){
-            matchButton = false
+    if (user && user.type == "Mentee"){
+        if (user.mentor == null){
+            matchButton = true
+        } else if (user.mentor.id != mentor.id){
+            matchButton = true
         }
     } 
-        // else if (user.type == "Mentee"){
-        //         matchButton = true
-        // }
+
+
 
     return(
         <>

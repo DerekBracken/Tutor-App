@@ -37,6 +37,14 @@ const SessionsList = ({user}) => {
         })
     }
 
+    if (user && user.type == "Mentee"){
+    return(
+        <>
+        <HeaderComponent user={user}/>
+        <h3> Sessions List </h3>
+        {meetings}
+        </>
+    )}
     return(
         <>
         <HeaderComponent user={user}/>
