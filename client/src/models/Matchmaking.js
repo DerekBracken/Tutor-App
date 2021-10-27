@@ -1,7 +1,8 @@
 
 const dict = {};
-let arr = [];
-let sortedArr = [];
+let nestedArray = [];
+let sortedNestedArr = [];
+let finalArr = [];
 
 function dictionarySetup(mentorArray){
     for (let i=0; i<mentorArray.length; i++){
@@ -9,6 +10,7 @@ function dictionarySetup(mentorArray){
         }
     }
 
+    // start of the matching logic
 function locationScore(mentee, mentorArray, locationWeighting){
     for (let i=0; i<mentorArray.length; i++ ){
         if (mentorArray[i].location == mentee.location){
@@ -52,35 +54,54 @@ function availabilityScore(mentee, mentorArray, availabilityWeighting){
         }
     }
 }
-
+// end of logic
+// converts the dictionary to an array of arrays, index 0 is id, index 1 is the compatibility score.
 function convertToArray(dict){
-    arr = Object.entries(dict)
+    nestedArray = Object.entries(dict)
 }
 
-function sortArray(arr){
-    sortedArr = arr.sort((a,b)=>b[1]-a[1])
+// sorts the array by the first index
+function sortArray(unsortedArray){
+    sortedNestedArr = unsortedArray.sort((a,b)=>b[1]-a[1])
 }
 
-function obtainObjectsFromSortedArray(sortedArr){
-    return sortedArr.map(element=>element[0])
+function obtainObjectsFromSortedArray(sortedNestedArr){
+    finalArr = sortedNestedArr.map(element=>element[0])
 }
 
-// let map1 = []
-// for (let i=0; i<array1.length; i++){
-//            map1.push(array1[i][1])
-//                   }
+function sortedAllMentors(array){
+    let final = [];
+    for (let i=0; i<array.length; i++){
+        final.push(array[i]);
+    }
+    return final;
+}
+function newSortedMentorsArray(mentorArray, sortedArrayId){
+    let sortedMentors = [];
+    for (let i = 0; i < mentorArray.length; i++){
+        for (let j = 0; j < mentorArray.length; j++){
+            if (mentorArray[j].id == sortedArrayId[i]){
+                sortedMentors.push(mentorArray[j])
+            }
+        }
+    }
+    return sortedMentors
+}
+
 
 export function getTotalScores(mentee, mentorArray, locationWeighting, teachingWeighting, languagesWeighting, genderWeighting, availabilityWeighting){
-dictionarySetup(mentorArray);
-locationScore(mentee, mentorArray, locationWeighting);
-teachingScore(mentee, mentorArray, teachingWeighting);
-languagesScore(mentee, mentorArray, languagesWeighting);
-genderScore(mentee, mentorArray, genderWeighting);
-availabilityScore(mentee, mentorArray, availabilityWeighting);
-convertToArray(dict);
-sortArray(arr);
-obtainObjectsFromSortedArray(sortedArr)
-console.log(sortedArr)
+    dictionarySetup(mentorArray);
+    locationScore(mentee, mentorArray, locationWeighting);
+    teachingScore(mentee, mentorArray, teachingWeighting);
+    languagesScore(mentee, mentorArray, languagesWeighting);
+    genderScore(mentee, mentorArray, genderWeighting);
+    availabilityScore(mentee, mentorArray, availabilityWeighting);
+    convertToArray(dict);
+    sortArray(nestedArray);
+    obtainObjectsFromSortedArray(sortedNestedArr)
+
+    newSortedMentorsArray(mentorArray, sortedAllMentors(finalArr))
+    console.log(newSortedMentorsArray(mentorArray, sortedAllMentors(finalArr)))
 }
 
 export default getTotalScores;
