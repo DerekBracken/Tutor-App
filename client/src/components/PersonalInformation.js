@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import {Link} from 'react-router-dom';
 import "../styles/profile.css"
 import "../styles/form.css"
-
+import "../styles/button.css"
 
 const PersonalInformation = ({user}) => {
     const { currentUser } = useAuth()
@@ -27,7 +27,8 @@ const PersonalInformation = ({user}) => {
           <div className="information-container"><p className="profile-label">English Level </p><p className="profile-information"> {user.englishLevel}</p></div>
           <div className="information-container"><p className="profile-label">Languages Spoken</p><p className="profile-information">{user.languagesSpoken}</p></div>
           <div className="information-container"><p className="profile-label">Availability </p><p className="profile-information">{user.availability} </p></div>
-            <Link to= {updateUrl}><button type="button">Update</button></Link>
+            {/* <Link to= {updateUrl}><button type="button">Update</button></Link> */}
+            <div className="information-container"><button className="small-button">Update</button></div>
           </p>
         </div>
     );
