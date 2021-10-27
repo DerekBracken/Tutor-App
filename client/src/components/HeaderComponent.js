@@ -34,7 +34,7 @@ const HeaderComponent = ({user}) => {
         <>
             <div id="header">
                     <div id="navbar">
-                    <img id="logo" src={image} type='image' alt='logo'/>
+                    <a href="http://localhost:3000/"><img id="logo" src={image} type='image' alt='logo'/></a>
 
                     <div id="header-links">
                         <a href="http://localhost:3000/">Home</a>
