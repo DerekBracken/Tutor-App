@@ -28,7 +28,8 @@ const MenteeSignupFormComponent = () =>{
             "location" : event.target[6].value,
             "englishLevel" : event.target[7].value,
             "languagesSpoken": [event.target[8].value, "English"],
-            "availability" : availability
+            "availability" : availability,
+            "type": "mentee"
         }
 
         for (let i = 8; i < 13; i ++){
