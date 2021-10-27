@@ -2,6 +2,7 @@ import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
 import { Link } from "react-router-dom"
 import "../../styles/Authentication.css"
+import HeaderComponent from '../HeaderComponent';
 
 
 
@@ -29,6 +30,7 @@ export default function ForgotPassword(){
 
     return (
         <>
+        <HeaderComponent/>
             <div className="auth-div-wrapper">
                 <h2 className='form-title'>Password Reset</h2>
                 {error && <alert variant="danger">{error}</alert>}
