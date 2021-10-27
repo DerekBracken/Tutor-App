@@ -40,13 +40,7 @@ const MentorList = ({allMentors, user}) => {
         ) 
     })
 
-    const usersMentor = () =>{
-        if (user.mentor != null){
-            <Mentor mentor = {user.mentor}/>
-        } else {
-            <h3>No current mentor</h3>
-        }
-    }
+
     // const chooseMentor = allMentors.map((mentor, index) => {
 
 
@@ -69,11 +63,21 @@ const MentorList = ({allMentors, user}) => {
     //     {chooseMentor}
     //     </>
     // )
-    console.log("This is the users mentors", user.mentor);
+
+    if (user.mentor != null){
+        return(
+            <>
+                <h1>Your current mentor</h1>
+                <Mentor mentor = {user.mentor}/>
+                <h1>All Mentors </h1>
+                {individualMentor}
+            </>
+        ) 
+    }
     return(
         <>
             <h1>Your current mentor</h1>
-            {<Mentor mentor = {user.mentor}/>}
+            <h2>No current mentors</h2>
             <h1>All Mentors </h1>
             {individualMentor}
         </>
