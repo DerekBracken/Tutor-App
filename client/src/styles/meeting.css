@@ -1,5 +1,38 @@
 /* Sessions List / Meeting List */
 .meeting-component {
     border: 1px black;
-    background-color: blue;
+    /* background-color: blue; */
+}
+.session-display-container {
+    border: 2px solid #0D0B6D;
+    background-color: #F0F3FD;
+    border-radius: 4px;
+    box-shadow: none;
+    max-width: 500px;
+    margin: auto;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 8px;
+}
+
+.session-label {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 500;
+    color: #0D0B6D;
+    font-size: 24px;
+    margin: 16px;
+}
+
+.session-notes {
+    padding-left: 16px;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+}
+
+.session-date-time {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    padding-left: 16px;
+
 }
