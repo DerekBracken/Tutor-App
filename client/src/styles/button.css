@@ -30,3 +30,11 @@
     background-color: #e67789;
     cursor: pointer;
 }
+.header-button {
+    background-color: #E43F5A;
+    color: white;
+    border-style: none;
+    border-radius: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+}

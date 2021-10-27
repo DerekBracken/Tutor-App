@@ -67,7 +67,7 @@ const MentorList = ({allMentors, user}) => {
 
     return(
         <>
-            <h2>I'm the view for everyone else</h2>
+            <h1>Current Mentors </h1>
             {individualMentor}
         </>
     )
