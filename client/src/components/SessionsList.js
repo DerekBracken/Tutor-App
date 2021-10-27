@@ -28,10 +28,10 @@ const SessionsList = ({user}) => {
             return (
             <>
                 <HeaderComponent user={user}/>
-            <div className="meeting-component">
+                <div className="meeting-component">
                 <h3>Meeting on {meeting.date} at {meeting.time} with X</h3>
                 <p>{meeting.notes}</p>
-            </div>
+                </div>
             </>
             )
         })
@@ -40,7 +40,6 @@ const SessionsList = ({user}) => {
     return(
         <>
         <HeaderComponent user={user}/>
-        <h3> Sessions List </h3>
         <MeetingFormComponent user={user} /> 
         {meetings}
         </>

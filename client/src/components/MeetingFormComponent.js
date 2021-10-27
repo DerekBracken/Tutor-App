@@ -39,7 +39,7 @@ const MeetingFormComponent = ({user}) => {
 
     return(
         <>
-        <h2>Create new session </h2>
+        <h1>Create new session </h1>
             {/* include date, time, notes, meeting_link, mentor and mentee */}
             <form onSubmit={handleFormSubmit}>
 
@@ -64,7 +64,7 @@ const MeetingFormComponent = ({user}) => {
 } 
 return(
     <>
-    <h2>Create new session </h2>
+    <h1>Create new session </h1>
     {/* include date, time, notes, meeting_link, mentor and mentee */}
     <form onSubmit={handleFormSubmit}>
 
