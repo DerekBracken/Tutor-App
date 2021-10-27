@@ -30,18 +30,19 @@ export default function ForgotPassword(){
     return (
         <>
             <div className="auth-div-wrapper">
-                <h2 className="text-center mb-4">Password Reset</h2>
+                <h2 className='form-title'>Password Reset</h2>
                 {error && <alert variant="danger">{error}</alert>}
                 {message && <alert variant="success">{message}</alert>}
                 <form className="auth-form" onSubmit={handleSubmit}>
-                    <div id="email">
-                        <label>Email</label>
+                    <div className="form-label" id="email">
+                        <label  >Email</label><br/>
                         <input type="email" ref={emailRef} required />
                     </div>
-                    <button disabled={loading} type="submit">Reset Password</button>
+                    <button className="small-button" disabled={loading} type="submit">Reset Password</button>
                 </form>
-                <Link to="/login">Login </Link>
-                <h3>Need an account? <Link to="/signup">Sign Up</Link></h3>
+                {/* <button className="small-button" href="/login" >Log In</button> */}
+                {/* <Link href="/login">Login </Link> */}
+                <h3>Need an account? <a className="form-redirection-link" href="http://localhost:3000/signup">Sign Up</a></h3>
             </div>
         </>
     )
