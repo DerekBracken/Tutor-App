@@ -10,6 +10,7 @@ const HeaderComponent = ({user}) => {
     const { currentUser, logout } = useAuth()
     const [error, setError] = useState("")
     const [userTitle, setUserTitle] = useState("All Mentors")
+    const [url, setUrl] = useState('/view-mentors')
     
     // const [profile, setProfile] = useState()
     // const [loggedin, setLoggedin] = useState(false)
@@ -19,11 +20,17 @@ const HeaderComponent = ({user}) => {
     useEffect( ()=> {
         if (user != null) {
             if (user.type !=null) {
-                setUserTitle("My " + user.type + "s")
+                if (user.type == "Mentor"){
+                setUrl("/my-mentees")
+                setUserTitle("My Mentees")
+                } else {
+                    setUserTitle("My Mentors")
+                    setUrl("/my-mentor")
+                }
             } 
-            } else {
-                setUserTitle("All Mentors")
-            }
+        } else {
+            setUserTitle("All Mentors")
+        }
         }, [user])
     
     async function handleLogout() {
@@ -31,6 +38,7 @@ const HeaderComponent = ({user}) => {
 
       try {
           await logout()
+          .then(() => window.location = '/')
           // history.push('/login')
       } catch {
           setError('Failed to log out')
@@ -46,7 +54,7 @@ const HeaderComponent = ({user}) => {
                         <a href="http://localhost:3000/">Home</a>
                         <a href="http://localhost:3000/learning-resources">Learning Resources</a>
                         <a href="http://localhost:3000/how-it-works">How It Works</a>
-                        <a href="http://localhost:3000/view-mentors">{userTitle}</a>
+                        <a href={url}>{userTitle}</a>
                         {!currentUser &&  <a href="/login"><button className="header-button">Log In</button></a> }
                         {currentUser &&  <a  href="/profile"><button className="header-button" >Profile</button></a> }
                         {currentUser && <button className="header-button" to="/" variant='link' onClick={handleLogout}>Log Out</button>} 

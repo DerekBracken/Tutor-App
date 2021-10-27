@@ -20,7 +20,7 @@ export default function Login(){
             setError('')
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
-            history.push("/profile")
+            .then(() => window.location = '/profile')
         } catch {
             setError('Failed to sign in')
         }

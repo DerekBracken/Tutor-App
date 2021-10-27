@@ -28,7 +28,6 @@ const MentorList = ({allMentors, user}) => {
         // const service = new Service();
         // service.patch(`http://localhost:8080/mentees/${currentUser.email}`, user);
     }
-
    
     
     const individualMentor = getTotalScores(user, allMentors, 5,5,5,5,5).map((mentor, index) => {
