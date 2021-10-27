@@ -8,7 +8,7 @@ import Mentee from "../components/Mentee"
 const MenteeContainer = ({user}) => {
 
     if (user != null){
-        if (user.mentees.length > 0){
+        if (user.mentees != null){
 
             const mentees = user.mentees.map((mentee, index) => {
                 return <Mentee mentee={mentee} key={index} />
