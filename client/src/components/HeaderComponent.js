@@ -33,7 +33,7 @@ const HeaderComponent = ({user}) => {
     return(
         <>
             <div id="header">
-                    <div id="navbar">
+    
                     <a href="http://localhost:3000/"><img id="logo" src={image} type='image' alt='logo'/></a>
 
                     <div id="header-links">
@@ -46,7 +46,7 @@ const HeaderComponent = ({user}) => {
                         {currentUser && <button className="header-button" to="/" variant='link' onClick={handleLogout}>Log Out</button>} 
                     </div>
             </div>
-            </div>
+           
 
             <div id="line"/>
         </>

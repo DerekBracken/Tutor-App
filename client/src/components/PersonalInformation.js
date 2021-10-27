@@ -7,7 +7,7 @@ import "../styles/button.css"
 
 const PersonalInformation = ({user}) => {
     const { currentUser } = useAuth()
-
+    
 
     if (user != null){
       const updateUrl = "/users/update/" + user.id
@@ -24,9 +24,9 @@ const PersonalInformation = ({user}) => {
           <div className="information-container"><p className="profile-label"> Gender</p><p className="profile-information">{user.gender}</p></div>
           <div className="information-container"><p className="profile-label">About Me </p><p className="profile-information">{user.aboutMe}</p></div>
           <div className="information-container"><p className="profile-label">Location </p><p className="profile-information">{user.location}</p></div>
-          <div className="information-container"><p className="profile-label">English Level </p><p className="profile-information"> {user.englishLevel}</p></div>
-          <div className="information-container"><p className="profile-label">Languages Spoken</p><p className="profile-information">{user.languagesSpoken}</p></div>
-          <div className="information-container"><p className="profile-label">Availability </p><p className="profile-information">{user.availability} </p></div>
+          {/* <div className="information-container"><p className="profile-label">English Level </p><p className="profile-information"> {level}</p></div> */}
+          <div className="information-container"><p className="profile-label">Languages Spoken</p><p className="profile-information">{user.languagesSpoken.join(", ")}</p></div>
+          <div className="information-container"><p className="profile-label">Availability </p><p className="profile-information">{user.availability.join(", ")} </p></div>
             {/* <Link to= {updateUrl}><button type="button">Update</button></Link> */}
             <button className="update-button">Update</button>
           </p>

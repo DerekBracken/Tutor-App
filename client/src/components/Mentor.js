@@ -17,7 +17,7 @@ const Mentor = ({mentor}) => {
                     <p className="mentor-tags">Gender </p> <p className="mentor-info"> {mentor.gender} </p>
                     </div>
                     <div id="optional-info">
-                    <p className="mentor-tags">Spoken Languages </p> <p className="mentor-info" > {mentor.languagesSpoken}</p>
+                    <p className="mentor-tags">Spoken Languages </p> <p className="mentor-info" > {mentor.languagesSpoken.join(", ")}</p>
                     </div>
                 </div>
 
@@ -25,10 +25,10 @@ const Mentor = ({mentor}) => {
                     <div id="optional-info">
                     </div>
                     <div id="optional-info">
-                    <p className="mentor-tags">Teaching Level</p> <p className="mentor-info"> {mentor.teachingLevel} </p>
+                    <p className="mentor-tags">Teaching Level</p> <p className="mentor-info"> {mentor.teachingLevel.join(", ")} </p>
                     </div>
                     <div id="optional-info">
-                    <p className="mentor-tags">Availability</p> <p className="mentor-info" >{mentor.availability}</p>
+                    <p className="mentor-tags">Availability</p> <p className="mentor-info" >{mentor.availability.join(", ")}</p>
                     </div>
                 </div>
             {/* </div> */}

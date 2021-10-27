@@ -3,21 +3,20 @@
     font-weight: 200;
     background-color: #5C7AEA;
     font-size: 16px;
-
     padding-bottom: 8px;
     color: white;
     display: flex;
-    /* justify-content: space-around; */
+    justify-content: space-between;
     width: 100%;
-    align-content: space-around;
+    /* align-content: space-around; */
     
 }
 
-#navbar {
+/* #navbar {
     padding-left: 32px;
     display: flex;
-    /* align-content: space-between; */
-}
+    align-content: space-between;
+} */
 
 #logo {
     max-height: 36px;
@@ -34,6 +33,8 @@
     /* right: 0; */
     padding-left: 300px;
     padding-top: 18px;
+    justify-content: flex-end;
+
     
 }
 
