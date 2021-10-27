@@ -30,7 +30,7 @@ const MentorSignupFormComponent = () =>{
             "teachingLevel" : teachingLevel,
             "languagesSpoken": [event.target[13].value], // make some logic for comma separator
             "availability" : availability,
-            "type": "mentor"
+            "type": "Mentor"
         }
 
         for (let i = 14; i < 18; i ++){
