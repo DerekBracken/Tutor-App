@@ -37,7 +37,6 @@ const MenteeSignupFormComponent = () =>{
                 availability.push(event.target[i].value)
             }
         }
-        console.log(mentee);
         handlePost(mentee) 
     }
     return (
@@ -142,9 +141,6 @@ const MenteeSignupFormComponent = () =>{
         </>
     )
 }
-
-//     @Column(name="languages_spoken")
-//     private ArrayList<String> languagesSpoken;
 
 export default MenteeSignupFormComponent;
 

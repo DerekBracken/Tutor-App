@@ -25,18 +25,12 @@ const MeetingFormComponent = ({user}) => {
             "mentor": user,
             "mentee": user.mentees[parseInt(event.target[3].value)]
         }
-        console.log("notes", event.target[1].value);
-        console.log("link", event.target[2].value.toString());
-
-        console.log("this is the meeting", meeting);
-
         handlePost(meeting) 
 
     }
 
     // below should loop through the current mentors list of mentees
     if (user && user.mentees != null){
-        console.log("HHHHHHH", user.mentees);
     const menteeOptions = user.mentees.map((mentee, index) =>{
         return <option value={index} key={index}>{mentee.firstName} {mentee.lastName}</option>
     })
