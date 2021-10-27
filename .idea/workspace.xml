@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8fb7908-7e79-4735-b975-6f8b836bd231" name="Default Changelist" comment="" />
+    <list default="true" id="a8fb7908-7e79-4735-b975-6f8b836bd231" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/client/src/styles/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/form.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +23,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a8fb7908-7e79-4735-b975-6f8b836bd231" name="Default Changelist" comment="" />

@@ -1,14 +1,82 @@
-.form-label{
+/* SIGN UP AND LOG IN FORMS */
+.form-label {
     font-family: 'Cabin', sans-serif;
     font-weight: 200;
     color: #0D0B6D;
     text-align: left;
-    /* align the forms to middle */
     padding-left: 170px;
 }
 
-.form-field{
+.form-field {
     border: 1px solid black;
     border-radius: 4px;
     box-shadow: none;
+}
+
+.form-field-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+}
+
+/* MENTOR FORM  */
+.mentor-form-label {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 200;
+    color: #0D0B6D;
+    flex-direction: column;
+}
+
+.mentor-form-small-options {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 100;
+    color: #0D0B6D;
+    font-size: 14px;
+    text-align: left;
+}
+
+#mentor-form-container {
+    text-align: left;
+    color: #0D0B6D;
+    border-width: 512px;
+    margin-left: 200px;
+    margin-right: 100px;
+    border:  2px solid #14279B;
+    border-radius: 4px;
+    padding-left: 200px;
+
+}
+
+/* Mentee FORM  */
+
+.mentee-form-label {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 200;
+    color: #0D0B6D;
+}
+
+.mentee-form-small-options {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 100;
+    color: #0D0B6D;
+    font-size: 14px;
+    text-align: left;
+}
+
+#mentee-form-container {
+    /* text-align: center; */
+    color: #0D0B6D;
+    border-width: 512px;
+    border-height: 618px;
+    border-width: 500px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border:  2px solid #14279B;
+    border-radius: 4px;
+    max-width: 500px;
+}
+
+#signup-form-heading {
+    text-align: center;
+    color: #0D0B6D;
 }
