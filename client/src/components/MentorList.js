@@ -31,13 +31,12 @@ const MentorList = ({allMentors, user}) => {
         individualMentor = getTotalScores(user, allMentors, 5,5,5,5,5).map((mentor, index) => {
         return(
             <div>
-                <Mentor mentor = {mentor} key = {index}/>
-                <button type="submit" value={mentor.id-1} onClick={handleButtonClick}>Connect with mentor</button>
+                <Mentor mentor = {mentor} key = {index} user={user} handleButtonClick={handleButtonClick}/>
             </div>
         ) 
     })} else {
             individualMentor = allMentors.map((mentor, index) => {
-            return <Mentor mentor = {mentor} key = {index}/>
+            return <Mentor mentor = {mentor} key = {index} user={user} handleButtonClick={handleButtonClick}/>
         })}
 
 
@@ -45,7 +44,7 @@ const MentorList = ({allMentors, user}) => {
         return(
             <>
                 <h1>Your current mentor</h1>
-                <Mentor mentor = {user.mentor}/>
+                <Mentor mentor = {user.mentor} user={user} handleButtonClick={handleButtonClick} />
                 <h1>All Mentors </h1>
                 {individualMentor}
             </>

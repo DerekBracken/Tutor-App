@@ -1,13 +1,24 @@
 import "../styles/mentor.css"
 
-const Mentor = ({mentor}) => {
+const Mentor = ({mentor, user, handleButtonClick}) => {
+    console.log("WOOOO", user)
 
+    let matchButton =true;
+
+    if (user.type == "Mentee" && user.mentor){
+        if (user.mentor.id == mentor.id){
+            matchButton = false
+        }
+    } 
+        // else if (user.type == "Mentee"){
+        //         matchButton = true
+        // }
 
     return(
         <>
-       
         <div id="individual-mentor-container">
             <p id="name" > {mentor.firstName} {mentor.lastName}</p>
+            {matchButton && <button type="submit" value={mentor.id-1} onClick={handleButtonClick}>Connect with mentor</button>}
             <p id="motivation"> "{mentor.motivation}"</p>
             {/* <div className="row"> */}
                 <div className="column1">
