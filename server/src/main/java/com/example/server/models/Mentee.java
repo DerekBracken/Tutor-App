@@ -13,6 +13,9 @@ public class Mentee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "type")
+    private String type;
+
     @Column(name="first_name")
     private String firstName;
 
@@ -59,7 +62,7 @@ public class Mentee {
     @JoinColumn(name = "mentor_id")
     private Mentor mentor;
 
-    private String type;
+
 
     private int locationWeighting;
     private int languagesWeighting;
@@ -67,7 +70,7 @@ public class Mentee {
     private int genderWeight;
 
     public Mentee(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String aboutMe, String location, String englishLevel, ArrayList<String> languagesSpoken, ArrayList<String> availability) {
-        this.type = "mentee";
+        this.type = "Mentee";
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
