@@ -25,46 +25,23 @@ const MentorList = ({allMentors, user}) => {
         user.mentor = allMentors[parseInt(event.target.value)]
         handlePut(user)
         window.location = '/view-mentors'
-        // const service = new Service();
-        // service.patch(`http://localhost:8080/mentees/${currentUser.email}`, user);
     }
-   
-    
-    const individualMentor = getTotalScores(user, allMentors, 5,5,5,5,5).map((mentor, index) => {
-        // console.log("current mentors: ", mentor);
+    let individualMentor;
+    if (user != null && user.type != "Mentor"){
+        individualMentor = getTotalScores(user, allMentors, 5,5,5,5,5).map((mentor, index) => {
         return(
             <div>
                 <Mentor mentor = {mentor} key = {index}/>
                 <button type="submit" value={mentor.id-1} onClick={handleButtonClick}>Connect with mentor</button>
             </div>
         ) 
-    })
+    })} else {
+            individualMentor = allMentors.map((mentor, index) => {
+            return <Mentor mentor = {mentor} key = {index}/>
+        })}
 
 
-    // const chooseMentor = allMentors.map((mentor, index) => {
-
-
-        // console.log("This is the mentee: ", user)
-        // console.log("This is the mentors: ", allMentors)
-        // return (
-        //     <div>
-        //         <Mentor mentor = {mentor} key = {index}/>
-        //         
-        //     </div>
-        // )
-    
-
-
-
-    // if (user.type == "Mentee"){ do the below}
-    // return(
-    //     <>
-    //     <h2> I'm the view for mentees</h2> 
-    //     {chooseMentor}
-    //     </>
-    // )
-
-    if (user.mentor != null){
+    if (user && user.type != "Mentor" && user.mentor != null){
         return(
             <>
                 <h1>Your current mentor</h1>
@@ -76,8 +53,6 @@ const MentorList = ({allMentors, user}) => {
     }
     return(
         <>
-            <h1>Your current mentor</h1>
-            <h2>No current mentors</h2>
             <h1>All Mentors </h1>
             {individualMentor}
         </>
