@@ -8,7 +8,6 @@ import illustration from "../imagehell/HomePageIllustration.svg";
 import { useHistory } from "react-router";
 
 const HomeContainer = ({user}) => {
-
     const history = useHistory();
 
     //ADD ON CLICK OF SIGN UP BUTTON TAKE TO href="http://localhost:3000/signup" onClick={handleSignUpButton}

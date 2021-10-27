@@ -9,7 +9,7 @@ const MenteeContainer = ({user}) => {
     if (user != null){
         return(
             <>
-            <HeaderComponent/>
+            <HeaderComponent user={user}/>
             <h3> Mentee Container </h3>
             <SessionsList user={user} />
             <Footer/>

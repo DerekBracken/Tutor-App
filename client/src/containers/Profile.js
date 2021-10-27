@@ -5,6 +5,10 @@ import { withRouter } from 'react-router-dom';
 
 const Profile = ({user}) => {
 
+    if (user== null) {
+        return 'Loading...'
+      }
+
     console.log("profile prop user",user);
 
     return(

@@ -32,7 +32,7 @@ const SessionsList = ({user}) => {
         </>
         )
     })
-    console.log(user.mentees[0].meetings[0]);
+    // console.log(user.mentees[0].meetings[0]);
 
     return(
         <>

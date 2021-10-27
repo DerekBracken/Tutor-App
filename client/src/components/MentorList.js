@@ -35,7 +35,7 @@ const MentorList = ({allMentors, user}) => {
         event.preventDefault();
         
         user.mentor = allMentors[parseInt(event.target.value)]
-        console.log("user object:", user);
+        // console.log("user object:", user);
         handlePut(user)
         // const service = new Service();
         // service.patch(`http://localhost:8080/mentees/${currentUser.email}`, user);
@@ -43,7 +43,7 @@ const MentorList = ({allMentors, user}) => {
 
     console.log("all mentors", allMentors)
     const individualMentor = allMentors.map((mentor, index) => {
-        console.log(mentor);
+        // console.log(mentor);
         return <Mentor mentor = {mentor} key = {index}/>
     })
    if (user === null){
