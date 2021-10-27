@@ -28,7 +28,7 @@ const PersonalInformation = ({user}) => {
           <div className="information-container"><p className="profile-label">Languages Spoken</p><p className="profile-information">{user.languagesSpoken}</p></div>
           <div className="information-container"><p className="profile-label">Availability </p><p className="profile-information">{user.availability} </p></div>
             {/* <Link to= {updateUrl}><button type="button">Update</button></Link> */}
-            <div i><button d="update-button">Update</button></div>
+            <button className="update-button">Update</button>
           </p>
         </div>
     );
