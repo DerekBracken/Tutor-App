@@ -153,50 +153,50 @@ public class DataLoader implements ApplicationRunner {
         Mentee dwight = new Mentee("Dwight", "Shrute", "98780", "dksmaster@hotmail.com", "0131 09083735", "male", "Getting told 'Don't me an idiot' changed my life", "Intermediate", "high", languagesSpoken, availability);
         menteeRepository.save(dwight);
 
-        Mentee daryl = new Mentee("Daryl", "Foula", "98796", "daryl@gmail.com", "09908083735", "male", "I'm a mystery of a person", "Glasgow", "Upper-Intermediate", languagesSpoken, availability);
+        Mentee daryl = new Mentee("Daryl", "Foula", "98796", "daryl@gmail.com", "099080 83735", "male", "I'm a mystery of a person", "Glasgow", "Upper-Intermediate", languagesSpoken, availability);
         menteeRepository.save(daryl);
 
-        Mentee pam = new Mentee("Pam", "Halpert", "8787", "pammy@aol.com", "097283735", "female", "I don't care what they say about me, I just want to eat.", "Edinburgh", "Upper-Intermediate", languagesSpoken, availability);
+        Mentee pam = new Mentee("Pam", "Halpert", "8787", "pammy@aol.com", "09728 3735", "female", "I don't care what they say about me, I just want to eat.", "Edinburgh", "Upper-Intermediate", languagesSpoken, availability);
         menteeRepository.save(pam);
 
-        Mentee michael = new Mentee("Michael", "Scarn", "09098", "mscarn@hotmail.com", "0987973735", "male", "I love inside jokes. I hope to be a part of one someday.", "Glasgow", "Beginner", languagesSpoken, availability);
+        Mentee michael = new Mentee("Michael", "Scarn", "09098", "mscarn@hotmail.com", "098797 3735", "male", "I love inside jokes. I hope to be a part of one someday.", "Glasgow", "Beginner", languagesSpoken, availability);
         menteeRepository.save(michael);
 
         //Saving instances of MENTORS
-        Mentor kat = new Mentor("Kathryn", "McVitie", "1987-06-01", "kathrynmcvitie@yahoo.co.uk", "0851488103", "female", "I want to help people improve their English skills.", "Edinburgh", englishLevel, languagesSpoken, availability);
+        Mentor kat = new Mentor("Kathryn", "McVitie", "1987-06-01", "kathrynmcvitie@yahoo.co.uk", "085148 8103", "female", "I want to help people improve their English skills.", "Edinburgh", englishLevel, languagesSpoken, availability);
         mentorRepository.save(kat);
 
-        Mentor johnny = new Mentor("John", "Johnson", "1984-06-01", "johny@gmail.com", "009898989", "male", "I want to share my language skills with others.", "Dundee", englishLevel2, languagesSpoken2, availability2);
+        Mentor johnny = new Mentor("John", "Johnson", "1984-06-01", "johny@gmail.com", "0098 989 89", "male", "I want to share my language skills with others.", "Dundee", englishLevel2, languagesSpoken2, availability2);
         mentorRepository.save(johnny);
 
-        Mentor roosa = new Mentor("Roosa", "Roserry", "1983-06-01", "roosa@gmail.com", "0892384792", "female", "I enjoy teaching people.", "Edinburgh", englishLevel3, languagesSpoken3, availability3);
+        Mentor roosa = new Mentor("Roosa", "Roserry", "1983-06-01", "roosa@gmail.com", "0892384 792", "female", "I enjoy teaching people.", "Edinburgh", englishLevel3, languagesSpoken3, availability3);
         mentorRepository.save(roosa);
 
-        Mentor hannah = new Mentor("Hannah", "Hannerson", "1981-06-01", "hanna@gmail.com", "088736478", "female", "I like helping people and get a good feeling from doing it.", "Glasgow", englishLevel4, languagesSpoken, availability4);
+        Mentor hannah = new Mentor("Hannah", "Hannerson", "1981-06-01", "hanna@gmail.com", "08873 6478", "female", "I like helping people and get a good feeling from doing it.", "Glasgow", englishLevel4, languagesSpoken, availability4);
         mentorRepository.save(hannah);
 
-        Mentor colin = new Mentor( "Colin", "Colington", "1989-06-01", "colin@teach.com","018263543947", "male", "Good opportunity to meet new people", "Inverness", englishLevel5, languagesSpoken2, availability5);
+        Mentor colin = new Mentor( "Colin", "Colington", "1989-06-01", "colin@teach.com","01826 3543 947", "male", "Good opportunity to meet new people", "Inverness", englishLevel5, languagesSpoken2, availability5);
         mentorRepository.save(colin);
 
-        Mentor duncanM = new Mentor("Duncan", "SoutterMentor", "1993-01-04", "duncan.soutter@gmail.com", "0921323", "male", "To teach people to learn English and help them get a job.", "Aberdeen", englishLevel6, languagesSpoken3, availability6);
+        Mentor duncanM = new Mentor("Duncan", "SoutterMentor", "1993-01-04", "duncan.soutter@gmail.com", "0921323 988", "male", "To teach people to learn English and help them get a job.", "Aberdeen", englishLevel6, languagesSpoken3, availability6);
         mentorRepository.save(duncanM);
 
-        Mentor dirk = new Mentor("Dirk", "Birkenstock", "1950-03-01", "dirkbirk@yahoo.co.uk", "0851488103", "male", "I am looking for a new challenge and think I can make a difference", "Stirling", englishLevel, languagesSpoken, availability);
+        Mentor dirk = new Mentor("Dirk", "Birkenstock", "1950-03-01", "dirkbirk@yahoo.co.uk", "0851 488 103", "male", "I am looking for a new challenge and think I can make a difference", "Stirling", englishLevel, languagesSpoken, availability);
         mentorRepository.save(dirk);
 
-        Mentor sally = new Mentor("Sally", "Rally", "1930-03-01", "sallyrally@gmail.com", "009898989", "female", "For a new fun challenge and to see the smiles on peoples faces learning English.", "Edinburgh", englishLevel2, languagesSpoken2, availability2);
+        Mentor sally = new Mentor("Sally", "Rally", "1930-03-01", "sallyrally@gmail.com", "0098 98 989", "female", "For a new fun challenge and to see the smiles on peoples faces learning English.", "Edinburgh", englishLevel2, languagesSpoken2, availability2);
         mentorRepository.save(sally);
 
-        Mentor helen = new Mentor("Helen", "Melon", "1960-09-10", "helenmelon@gmail.com", "0892384792", "female", "I am not overly sure but got told to do it by a friend...", "Edinburgh", englishLevel3, languagesSpoken3, availability3);
+        Mentor helen = new Mentor("Helen", "Melon", "1960-09-10", "helenmelon@gmail.com", "08923 847 92", "female", "I am not overly sure but got told to do it by a friend...", "Edinburgh", englishLevel3, languagesSpoken3, availability3);
         mentorRepository.save(helen);
 
-        Mentor george = new Mentor("Georgie", "Porgie", "2000-06-07", "georgiepor@gmail.com", "088736478", "male", "I like helping people and get a good feeling from doing it.", "Glasgow", englishLevel4, languagesSpoken, availability4);
+        Mentor george = new Mentor("Georgie", "Porgie", "2000-06-07", "georgiepor@gmail.com", "0889 736 478", "male", "I like helping people and get a good feeling from doing it.", "Glasgow", englishLevel4, languagesSpoken, availability4);
         mentorRepository.save(george);
 
-        Mentor humpty = new Mentor( "Humpty", "Dumpty", "1980-03-01", "humptydump@teach.com","018263543947", "female", "Through the use of nursery rhymes I want to teach some people English.", "Dundee", englishLevel5, languagesSpoken2, availability5);
+        Mentor humpty = new Mentor( "Humpty", "Dumpty", "1980-03-01", "humptydump@teach.com","01826 3543 94", "female", "Through the use of nursery rhymes I want to teach some people English.", "Dundee", englishLevel5, languagesSpoken2, availability5);
         mentorRepository.save(humpty);
 
-        Mentor shrek = new Mentor("Shrek", "Ogre", "1998-03-04", "shrekogre@gmail.com", "0921323", "male", "To make some new friends, no one likes Ogres...", "Edinburgh", englishLevel6, languagesSpoken3, availability6);
+        Mentor shrek = new Mentor("Shrek", "Ogre", "1998-03-04", "shrekogre@gmail.com", "0921 3237 732", "male", "To make some new friends, no one likes Ogres...", "Edinburgh", englishLevel6, languagesSpoken3, availability6);
         mentorRepository.save(shrek);
 
         //        Date and time - THESE DON"T WORK
@@ -213,34 +213,34 @@ public class DataLoader implements ApplicationRunner {
         String meeting4time = "13:30";
 
         //MEETINGS - NEED NEW DATE AND TIME INSTANCES TO CONFIRM IT WORKS
-        Meeting meeting1 = new Meeting(meeting1date, meeting1time, "these are notes", "www", johnny, sean);
+        Meeting meeting1 = new Meeting(meeting1date, meeting1time, " Notes: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum fermentum orci, a fringilla lorem vulputate sit amet. Aliquam consequat vitae purus nec mattis.  ", "www", johnny, sean);
         meetingRepository.save(meeting1);
 
-        Meeting meeting2 = new Meeting(meeting2date, meeting2time, "these are notes", "www", roosa, maggie);
+        Meeting meeting2 = new Meeting(meeting2date, meeting2time, "Notes: Aliquam non lectus nec velit dapibus volutpat. Suspendisse vitae est a quam efficitur fringilla id non lacus.", "www", roosa, maggie);
         meetingRepository.save(meeting2);
 
-        Meeting meeting3 = new Meeting(meeting3date, meeting3time, "these are notes", "www",  colin, kelly);
+        Meeting meeting3 = new Meeting(meeting3date, meeting3time, "Notes: Aliquam non tempor erat. Orci varius natoque penatibus.", "www",  colin, kelly);
         meetingRepository.save(meeting3);
 
-        Meeting meeting4 = new Meeting(meeting4date, meeting4time, "these are notes", "www", hannah, michael);
+        Meeting meeting4 = new Meeting(meeting4date, meeting4time, "Notes: Vivamus vel egestas ligula, vel feugiat libero. ", "www", hannah, michael);
         meetingRepository.save(meeting4);
 
-        Meeting meeting5 = new Meeting(meeting1date, meeting1time, "these are notes for meeting 1", "https://github.com/", duncanM, dwight);
+        Meeting meeting5 = new Meeting(meeting1date, meeting1time, "Notes: Lorem ipsum dolor sit amet, consectetur adipiscing elit. ", "https://github.com/", duncanM, dwight);
         meetingRepository.save(meeting5);
 
-        Meeting meeting6 = new Meeting(meeting2date, meeting2time, "these are notes for meeting 2", "https://github.com/", duncanM, dwight);
+        Meeting meeting6 = new Meeting(meeting2date, meeting2time, "Notes: Aliquam non tempor erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.", "https://github.com/", duncanM, dwight);
         meetingRepository.save(meeting6);
 
-        Meeting meeting7 = new Meeting(meeting3date, meeting3time, "these are notes for meeting 3", "https://github.com/",  duncanM, daryl);
+        Meeting meeting7 = new Meeting(meeting3date, meeting3time, "Notes:Nulla a dignissim lectus. Sed gravida iaculis malesuada. Fusce ullamcorper consectetur quam, vel pulvinar diam sagittis at. Sed ac dui quis lacus imperdiet tincidunt. ", "https://github.com/",  duncanM, daryl);
         meetingRepository.save(meeting7);
 
-        Meeting meeting8 = new Meeting(meeting4date, meeting4time, "these are notes for meeting 4", "https://github.com/", duncanM, maggie);
+        Meeting meeting8 = new Meeting(meeting4date, meeting4time, "Notes: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum fermentum orci, a fringilla lorem vulputate sit amet. Aliquam consequat vitae purus nec mattis. ", "https://github.com/", duncanM, maggie);
         meetingRepository.save(meeting8);
 
-        Meeting meeting9 = new Meeting(meeting5date, meeting3time, "these are notes for meeting 5", "https://github.com/", duncanM, dwight);
+        Meeting meeting9 = new Meeting(meeting5date, meeting3time, "Notes: Nulla a dignissim lectus. Sed gravida iaculis malesuada. Fusce ullamcorper consectetur quam, vel pulvinar diam sagittis at. Sed ac dui quis lacus imperdiet tincidunt. ", "https://github.com/", duncanM, dwight);
         meetingRepository.save(meeting9);
 
-        Meeting meeting10 = new Meeting(meeting6date, meeting4time, "these are notes for meeting 6", "https://github.com/", duncanM, maggie);
+        Meeting meeting10 = new Meeting(meeting6date, meeting4time, "Notes: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum fermentum orci, a fringilla lorem vulputate sit amet. Aliquam consequat vitae purus nec mattis. ", "https://github.com/", duncanM, maggie);
         meetingRepository.save(meeting10);
 
         dwight.setMentor(duncanM);

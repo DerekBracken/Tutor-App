@@ -17,7 +17,7 @@ const MenteeContainer = ({user}) => {
         return(
             <>
             <HeaderComponent user={user}/>
-            <h3> Mentee Container </h3>
+            <h1> My Mentees </h1>
                 {mentees}
             <Footer/>
             </>
@@ -26,7 +26,7 @@ const MenteeContainer = ({user}) => {
     return (
         <>
         <HeaderComponent user={user}/>
-        <h3> No Connected Mentees</h3>
+        <h1> No Connected Mentees</h1>
         <Footer/>
         </>
     )
