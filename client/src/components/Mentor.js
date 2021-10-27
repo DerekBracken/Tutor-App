@@ -2,6 +2,7 @@ import "../styles/mentor.css"
 
 const Mentor = ({mentor}) => {
 
+
     return(
         <>
        

@@ -31,6 +31,8 @@ const MeetingFormComponent = ({user}) => {
     }
 
     // below should loop through the current mentors list of mentees
+    if (user && user.mentees.length > 0){
+        console.log("HHHHHHH", user.mentees);
     const menteeOptions = user.mentees.map((mentee, index) =>{
         return <option value={index} key={index}>{mentee.firstName} {mentee.lastName}</option>
     })
@@ -61,7 +63,32 @@ const MeetingFormComponent = ({user}) => {
 
         </>
     )
+} 
+return(
+    <>
+    <h2>Create new session </h2>
+    {/* include date, time, notes, meeting_link, mentor and mentee */}
+    <form onSubmit={handleFormSubmit}>
 
+        <label HTMLfor="date_time">Select date and time: </label>
+            <input type='datetime-local' id="date_time" name="date_time" required/>
+
+        <label HTMLfor='notes'>What will be discussed? </label>
+            <textarea id="notes" name = "notes" placeholder='Enter meeting notes here' />
+
+        <label HTMLfor='meeting_link'>Enter meeting link: </label>
+            <input type='url' id='meeting_link' name='meeting_link' placeholder="Meeting URL"/>
+
+        <label HTMLfor="mentee">Choose mentee: </label>
+            <select name='mentee' id='mentee' required>
+                <option disabled selected>Select mentee from list below</option>
+            </select>
+        <input type='submit' value='Submit'/>
+    </form>
+
+
+    </>
+)
 }
 
 export default MeetingFormComponent;

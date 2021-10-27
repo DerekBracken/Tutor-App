@@ -14,6 +14,9 @@ public class Mentor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="type")
+    private String type;
+
     @Column(name="first_name")
     private String firstName;
 
@@ -61,12 +64,11 @@ public class Mentor {
     @OneToMany(mappedBy = "mentor", fetch = FetchType.LAZY)
     private List<Mentee> mentees;
 
-    private String type;
 
     private int suitabilityScore;
 
     public Mentor(String firstName, String lastName, String dateOfBirth, String email, String contactNumber, String gender, String motivation, String location, List<String> teachingLevel, List<String> languagesSpoken, List<String> availability) {
-        this.type = "mentor";
+        this.type = "Mentor";
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;

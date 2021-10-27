@@ -34,7 +34,7 @@ export default function Signup(){
             setError('')
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
-            history.push(formUrl)
+            .then(() => window.location = formUrl)
         } catch {
             setError('Failed to create an account, email may already exist')
         }

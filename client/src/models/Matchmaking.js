@@ -26,7 +26,7 @@ function teachingScore(mentee, mentorArray, teachingWeighting){
         }
     }
 }
-
+ 
 function languagesScore(mentee, mentorArray, languagesWeighting){
     for (let i=0; i<mentorArray.length; i++ ){
         for (let j=0; j<mentee.languagesSpoken.length; j++ ){
@@ -88,6 +88,7 @@ function newSortedMentorsArray(mentorArray, sortedArrayId){
     return sortedMentors
 }
 
+// below function takes all the parameters above plus the users weighting from the signup form and returns a sorted array of mentor objects from most preferred to least preferred.
 
 export function getTotalScores(mentee, mentorArray, locationWeighting, teachingWeighting, languagesWeighting, genderWeighting, availabilityWeighting){
     dictionarySetup(mentorArray);
@@ -99,9 +100,7 @@ export function getTotalScores(mentee, mentorArray, locationWeighting, teachingW
     convertToArray(dict);
     sortArray(nestedArray);
     obtainObjectsFromSortedArray(sortedNestedArr)
-
-    newSortedMentorsArray(mentorArray, sortedAllMentors(finalArr))
-    console.log(newSortedMentorsArray(mentorArray, sortedAllMentors(finalArr)))
+    return newSortedMentorsArray(mentorArray, sortedAllMentors(finalArr))
 }
 
 export default getTotalScores;
