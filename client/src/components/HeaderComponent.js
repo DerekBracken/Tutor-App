@@ -14,10 +14,15 @@ const HeaderComponent = ({user}) => {
     // const [profile, setProfile] = useState()
     // const [loggedin, setLoggedin] = useState(false)
 
+    console.log("This is the user", user)
+
     useEffect( ()=> {
       if (user !=null) {
         setUserTitle("My " + user.type[0].toUpperCase() + user.type.slice(1) + "s")
+       } else {
+           setUserTitle("All Mentors")
        }
+       
     }, [user])
     
     async function handleLogout() {
