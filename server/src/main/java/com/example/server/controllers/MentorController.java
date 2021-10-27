@@ -15,7 +15,8 @@ public class MentorController {
 
     @GetMapping(value = "/mentors")
     public ResponseEntity<Mentor> getMentor(
-            @RequestParam(value = "email", required = false) String email){
+            @RequestParam(value = "email", required = false) String email)
+    {
         if (email != null){
             return new ResponseEntity (mentorRepository.findByEmail(email), HttpStatus.OK);
         }
