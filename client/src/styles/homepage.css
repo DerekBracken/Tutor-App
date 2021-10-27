@@ -28,6 +28,7 @@ body{
 
 #home-layout{
     display: flex;
+    justify-content: space-evenly;
 }
 
 #home-page-image{

@@ -39,7 +39,7 @@ const HeaderComponent = ({user}) => {
                     <div id="header-links">
                         <a href="http://localhost:3000/">Home</a>
                         <a href="http://localhost:3000/learning-resources">Learning Resources</a>
-                        <a href="http://localhost:3000/how-it-works">How It Works</a>
+                        {!user && <a href="http://localhost:3000/how-it-works">How It Works</a>}
                         <a href="http://localhost:3000/view-mentors">{userTitle}</a>
                         {!currentUser &&  <a href="/login"><button className="header-button">Log In</button></a> }
                         {currentUser &&  <a  href="/profile"><button className="header-button" >Profile</button></a> }
