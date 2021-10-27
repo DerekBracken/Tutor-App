@@ -17,6 +17,7 @@ import ForgotPassword from "./components/authentication/ForgotPassword";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import PrivateRoute from "./PrivateRoute"
 import HowItWorksContainer from "./containers/HowItWorksContainer";
+import SessionsList from "./components/SessionsList";
 
 
 function MainContainer() {
@@ -80,11 +81,14 @@ function MainContainer() {
               <PrivateRoute path="/mentor-form" component={MentorSignupFormComponent} exact/>
     
               <PrivateRoute path="/mentee-form" component={MenteeSignupFormComponent} exact/>
+
+              {/* displays all a mentors view of their mentees */}
+              <PrivateRoute exact path="/sessions" component={() => <SessionsList user={user} />}/>
               
               {/* displays all a mentors view of their mentees */}
               <PrivateRoute exact path="/my-mentees" component={() => <MenteeContainer user={user} />}/>
  
-              {/* mentor displays all sessions */}
+              {/* mentor displays all sessions NEEDED? */}
               <PrivateRoute exact path="/my-mentor" component={() => <MentorContainer user={user} allMentees={allMentees}/>}/>
 
               {/* mentor and mentee routes need to be locked behind private - accessible only with signin */}
