@@ -4,7 +4,6 @@ const UpdateProfile = ({user}) => {
     if ( user != null){
     return (
         <>
-            <p>Hello</p>
             <form>
 
             <label HTMLfor="first_name">First name: </label>
