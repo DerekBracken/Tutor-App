@@ -134,69 +134,69 @@ public class DataLoader implements ApplicationRunner {
 
         //Saving Instances of MENTEES
 
-        Mentee duncan = new Mentee("duncan", "Hollywood", "010101", "dsoutter@hotmail.co.uk", "0857107119", "male", "Hi", "Edinburgh", "Beginner", languagesSpoken, availability);
+        Mentee duncan = new Mentee("Duncan", "Hollywood", "010101", "dsoutter@hotmail.co.uk", "0857107119", "Male", "Hi", "Edinburgh", "Beginner", languagesSpoken, availability);
         menteeRepository.save(duncan);
       
-        Mentee derek = new Mentee("Derek", "Bracken", "01-09-1987", "derekbracken@gmail.com", "07951357317", "male", "Want to learn", "Edinburgh", "Beginner", languagesSpoken, availability);
+        Mentee derek = new Mentee("Derek", "Bracken", "01-09-1987", "derekbracken@gmail.com", "07951357317", "Male", "Want to learn", "Edinburgh", "Beginner", languagesSpoken, availability);
         menteeRepository.save(derek);
 
-        Mentee sean = new Mentee("Sean", "Hollywood", "010101", "sofiaakbar@hotmail.co.uk", "0857107119", "male", "Hi", "Edinburgh", "Beginner", languagesSpoken, availability);
+        Mentee sean = new Mentee("Sean", "Hollywood", "010101", "sofiaakbar@hotmail.co.uk", "0857107119", "Male", "Hi", "Edinburgh", "Beginner", languagesSpoken, availability);
 
         menteeRepository.save(sean);
 
-        Mentee maggie = new Mentee("Maggie", "Pent", "090908", "m.pen@hotmail.com", "07987 654 343", "female", "I like cats","Edinburgh", "Pre-Intermediate", languagesSpoken, availability);
+        Mentee maggie = new Mentee("Maggie", "Pent", "090908", "m.pen@hotmail.com", "07987 654 343", "Female", "I like cats","Edinburgh", "Pre-Intermediate", languagesSpoken, availability);
         menteeRepository.save(maggie);
 
-        Mentee kelly = new Mentee("Kelly", "Kapour", "09097", "k.capour@hotmail.com", "098989 65678","female", "I'm really smart you guys", "Dundee", "Advanced", languagesSpoken, availability);
+        Mentee kelly = new Mentee("Kelly", "Kapour", "09097", "k.capour@hotmail.com", "098989 65678","Female", "I'm really smart you guys", "Dundee", "Advanced", languagesSpoken, availability);
         menteeRepository.save(kelly);
 
-        Mentee dwight = new Mentee("Dwight", "Shrute", "98780", "dksmaster@hotmail.com", "0131 09083735", "male", "Getting told 'Don't me an idiot' changed my life", "Intermediate", "Pre-Intermediate", languagesSpoken, availability);
+        Mentee dwight = new Mentee("Dwight", "Shrute", "98780", "dksmaster@hotmail.com", "0131 09083735", "Male", "Getting told 'Don't me an idiot' changed my life", "Intermediate", "Pre-Intermediate", languagesSpoken, availability);
         menteeRepository.save(dwight);
 
-        Mentee daryl = new Mentee("Daryl", "Foula", "98796", "daryl@gmail.com", "099080 83735", "male", "I'm a mystery of a person", "Glasgow", "Upper-Intermediate", languagesSpoken, availability);
+        Mentee daryl = new Mentee("Daryl", "Foula", "98796", "daryl@gmail.com", "099080 83735", "Male", "I'm a mystery of a person", "Glasgow", "Upper-Intermediate", languagesSpoken, availability);
         menteeRepository.save(daryl);
 
-        Mentee pam = new Mentee("Pam", "Halpert", "8787", "pammy@aol.com", "09728 3735", "female", "I don't care what they say about me, I just want to eat.", "Edinburgh", "Upper-Intermediate", languagesSpoken, availability);
+        Mentee pam = new Mentee("Pam", "Halpert", "8787", "pammy@aol.com", "09728 3735", "Female", "I don't care what they say about me, I just want to eat.", "Edinburgh", "Upper-Intermediate", languagesSpoken, availability);
         menteeRepository.save(pam);
 
-        Mentee michael = new Mentee("Michael", "Scarn", "09098", "mscarn@hotmail.com", "098797 3735", "male", "I love inside jokes. I hope to be a part of one someday.", "Glasgow", "Beginner", languagesSpoken, availability);
+        Mentee michael = new Mentee("Michael", "Scarn", "09098", "mscarn@hotmail.com", "098797 3735", "Male", "I love inside jokes. I hope to be a part of one someday.", "Glasgow", "Beginner", languagesSpoken, availability);
         menteeRepository.save(michael);
 
         //Saving instances of MENTORS
-        Mentor kat = new Mentor("Kathryn", "McVitie", "1987-06-01", "kathrynmcvitie@yahoo.co.uk", "085148 8103", "female", "I want to help people improve their English skills.", "Edinburgh", englishLevel, languagesSpoken, availability);
+        Mentor kat = new Mentor("Kathryn", "McVitie", "1987-06-01", "kathrynmcvitie@yahoo.co.uk", "085148 8103", "Female", "I want to help people improve their English skills.", "Edinburgh", englishLevel, languagesSpoken, availability);
         mentorRepository.save(kat);
 
-        Mentor johnny = new Mentor("John", "Johnson", "1984-06-01", "johny@gmail.com", "0098 989 89", "male", "I want to share my language skills with others.", "Dundee", englishLevel2, languagesSpoken2, availability2);
+        Mentor johnny = new Mentor("John", "Johnson", "1984-06-01", "johny@gmail.com", "0098 989 89", "Male", "I want to share my language skills with others.", "Dundee", englishLevel2, languagesSpoken2, availability2);
         mentorRepository.save(johnny);
 
-        Mentor roosa = new Mentor("Roosa", "Roserry", "1983-06-01", "roosa@gmail.com", "0892384 792", "female", "I enjoy teaching people.", "Edinburgh", englishLevel3, languagesSpoken3, availability3);
+        Mentor roosa = new Mentor("Roosa", "Roserry", "1983-06-01", "roosa@gmail.com", "0892384 792", "Female", "I enjoy teaching people.", "Edinburgh", englishLevel3, languagesSpoken3, availability3);
         mentorRepository.save(roosa);
 
-        Mentor hannah = new Mentor("Hannah", "Hannerson", "1981-06-01", "hanna@gmail.com", "08873 6478", "female", "I like helping people and get a good feeling from doing it.", "Glasgow", englishLevel4, languagesSpoken, availability4);
+        Mentor hannah = new Mentor("Hannah", "Hannerson", "1981-06-01", "hanna@gmail.com", "08873 6478", "Female", "I like helping people and get a good feeling from doing it.", "Glasgow", englishLevel4, languagesSpoken, availability4);
         mentorRepository.save(hannah);
 
-        Mentor colin = new Mentor( "Colin", "Colington", "1989-06-01", "colin@teach.com","01826 3543 947", "male", "Good opportunity to meet new people", "Inverness", englishLevel5, languagesSpoken2, availability5);
+        Mentor colin = new Mentor( "Colin", "Colington", "1989-06-01", "colin@teach.com","01826 3543 947", "Male", "Good opportunity to meet new people", "Inverness", englishLevel5, languagesSpoken2, availability5);
         mentorRepository.save(colin);
 
-        Mentor duncanM = new Mentor("Duncan", "SoutterMentor", "1993-01-04", "duncan.soutter@gmail.com", "0921323 988", "male", "To teach people to learn English and help them get a job.", "Aberdeen", englishLevel6, languagesSpoken3, availability6);
+        Mentor duncanM = new Mentor("Duncan", "SoutterMentor", "1993-01-04", "duncan.soutter@gmail.com", "0921323 988", "Male", "To teach people to learn English and help them get a job.", "Aberdeen", englishLevel6, languagesSpoken3, availability6);
         mentorRepository.save(duncanM);
 
-        Mentor dirk = new Mentor("Dirk", "Birkenstock", "1950-03-01", "dirkbirk@yahoo.co.uk", "0851 488 103", "male", "I am looking for a new challenge and think I can make a difference", "Stirling", englishLevel, languagesSpoken, availability);
+        Mentor dirk = new Mentor("Dirk", "Birkenstock", "1950-03-01", "dirkbirk@yahoo.co.uk", "0851 488 103", "Male", "I am looking for a new challenge and think I can make a difference", "Stirling", englishLevel, languagesSpoken, availability);
         mentorRepository.save(dirk);
 
-        Mentor sally = new Mentor("Sally", "Rally", "1930-03-01", "sallyrally@gmail.com", "0098 98 989", "female", "For a new fun challenge and to see the smiles on peoples faces learning English.", "Edinburgh", englishLevel2, languagesSpoken2, availability2);
+        Mentor sally = new Mentor("Sally", "Rally", "1930-03-01", "sallyrally@gmail.com", "0098 98 989", "Female", "For a new fun challenge and to see the smiles on peoples faces learning English.", "Edinburgh", englishLevel2, languagesSpoken2, availability2);
         mentorRepository.save(sally);
 
-        Mentor helen = new Mentor("Helen", "Melon", "1960-09-10", "helenmelon@gmail.com", "08923 847 92", "female", "I am not overly sure but got told to do it by a friend...", "Edinburgh", englishLevel3, languagesSpoken3, availability3);
+        Mentor helen = new Mentor("Helen", "Melon", "1960-09-10", "helenmelon@gmail.com", "08923 847 92", "Female", "I am not overly sure but got told to do it by a friend...", "Edinburgh", englishLevel3, languagesSpoken3, availability3);
         mentorRepository.save(helen);
 
-        Mentor george = new Mentor("Georgie", "Porgie", "2000-06-07", "georgiepor@gmail.com", "0889 736 478", "male", "I like helping people and get a good feeling from doing it.", "Glasgow", englishLevel4, languagesSpoken, availability4);
+        Mentor george = new Mentor("Georgie", "Porgie", "2000-06-07", "georgiepor@gmail.com", "0889 736 478", "Male", "I like helping people and get a good feeling from doing it.", "Glasgow", englishLevel4, languagesSpoken, availability4);
         mentorRepository.save(george);
 
-        Mentor humpty = new Mentor( "Humpty", "Dumpty", "1980-03-01", "humptydump@teach.com","01826 3543 94", "female", "Through the use of nursery rhymes I want to teach some people English.", "Dundee", englishLevel5, languagesSpoken2, availability5);
+        Mentor humpty = new Mentor( "Humpty", "Dumpty", "1980-03-01", "humptydump@teach.com","01826 3543 94", "Female", "Through the use of nursery rhymes I want to teach some people English.", "Dundee", englishLevel5, languagesSpoken2, availability5);
         mentorRepository.save(humpty);
 
-        Mentor shrek = new Mentor("Shrek", "Ogre", "1998-03-04", "shrekogre@gmail.com", "0921 3237 732", "male", "To make some new friends, no one likes Ogres...", "Edinburgh", englishLevel6, languagesSpoken3, availability6);
+        Mentor shrek = new Mentor("Shrek", "Ogre", "1998-03-04", "shrekogre@gmail.com", "0921 3237 732", "Male", "To make some new friends, no one likes Ogres...", "Edinburgh", englishLevel6, languagesSpoken3, availability6);
         mentorRepository.save(shrek);
 
         //        Date and time - THESE DON"T WORK
