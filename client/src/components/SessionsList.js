@@ -17,7 +17,7 @@ const SessionsList = ({user}) => {
                             <div className="session-display-container">
                                 <h3 className="session-label"> Session {meeting.id}  with {user.mentees[i].firstName} {user.mentees[i].lastName}</h3>
                                 <p className="session-notes">{meeting.notes}</p>
-                                <p className="session-date-time">{meeting.date} on {meeting.time} </p>
+                                <p className="session-date-time">{meeting.time} on {meeting.date} </p>
                             </div>
                                 {/* <h2>{meeting.mentee.firstName}</h2> */}
                             </>
