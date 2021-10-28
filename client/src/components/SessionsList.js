@@ -15,7 +15,8 @@ const SessionsList = ({user}) => {
                         return (
                             <>
                             <div className="session-display-container">
-                                <h3 className="session-label"> Session {meeting.id}  with {user.mentees[i].firstName} {user.mentees[i].lastName}</h3>
+                                <h3 className="session-label"> Session with {user.mentees[i].firstName} {user.mentees[i].lastName}</h3>
+                                <p className="session-notes">Meeting Link: {meeting.meetingLink}</p>
                                 <p className="session-notes">{meeting.notes}</p>
                                 <p className="session-date-time">{meeting.time} on {meeting.date} </p>
                             </div>
