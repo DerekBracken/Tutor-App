@@ -1,6 +1,5 @@
 import HeaderComponent from "../components/HeaderComponent";
 import { withRouter } from 'react-router-dom';
-// import LoginComponent from "../components/authentication/LoginComponent";
 import "../styles/homepage.css";
 import "../styles/button.css";
 import Footer from "../components/FooterComponent";
@@ -10,7 +9,6 @@ import { useHistory } from "react-router";
 const HomeContainer = ({user}) => {
     const history = useHistory();
 
-    //ADD ON CLICK OF SIGN UP BUTTON TAKE TO href="http://localhost:3000/signup" onClick={handleSignUpButton}
     const handleSignUpButton  = () => {
         history.push('/signup')
     }
@@ -25,7 +23,6 @@ const HomeContainer = ({user}) => {
                     </h1> 
                         <img id="home-page-image" alt="pic of people meeting" src={illustration}/>
                 </div>
-            {/* <LoginComponent/> */}
             <Footer/>
         </div>
     )

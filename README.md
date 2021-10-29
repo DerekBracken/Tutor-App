@@ -15,7 +15,7 @@ To deploy this project run
 6. If the localhost doesn't open automatically, in Chrome enter http://localhost:3000
 ```
 
-Brief
+## Brief
 
 A web app to connect mentees with volunteer mentors, with the aim to help refugees and those from minority ethnic communities with English language and life in the UK. 
 
@@ -25,7 +25,7 @@ A web app to connect mentees with volunteer mentors, with the aim to help refuge
 - Once a mentor and mentee are connected, a mentor can organise an online session with any of their mentees. 
 
 
-Extensions:
+## Extensions:
 - Users can upload their own photo for profile
 - Availability calendar for mentors to say when they’re available, and for mentees to pick their time. 
 - Web hosting.
@@ -33,8 +33,9 @@ Extensions:
 - Location-based → for in-person sessions, and to see your local network.
 - Mobile web app version with media queries (MP ADDED Sat 16th OCT)
 
-Other:
+## Other:
 - Functionality for mentees to review their mentors.
 - Chat room / social function.
 - Add students to a friend list.
 - Other language exchange pair ups.
+

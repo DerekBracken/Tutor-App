@@ -7,15 +7,13 @@ import { useEffect, useState } from "react";
 
 const MentorContainer = ({user, allMentees}) => {
     
-
-
     if (allMentees != null){  
         return(
             <>
-            <HeaderComponent user={user}/>
+            <HeaderComponent user={user} />
 
             <h1> Mentor Container</h1>
-            <MenteeList allMentees={allMentees}/> 
+            <MenteeList allMentees={allMentees} /> 
 
             <Footer/>
             </>
@@ -23,12 +21,10 @@ const MentorContainer = ({user, allMentees}) => {
     }
     return(
         <>
-        <HeaderComponent user={user}/>
-
-        <h1> Mentor Container</h1>
-        <MenteeList/>
-
-        <Footer/>
+        <HeaderComponent user={user} />
+        <h1> Mentor Container </h1>
+        <MenteeList />
+        <Footer />
         </>
     )
 }

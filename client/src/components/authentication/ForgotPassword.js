@@ -1,10 +1,7 @@
 import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
-import { Link } from "react-router-dom"
 import "../../styles/Authentication.css"
 import HeaderComponent from '../HeaderComponent';
-
-
 
 export default function ForgotPassword(){
     const emailRef = useRef()
@@ -42,8 +39,6 @@ export default function ForgotPassword(){
                     </div>
                     <button className="small-button" disabled={loading} type="submit">Reset Password</button>
                 </form>
-                {/* <button className="small-button" href="/login" >Log In</button> */}
-                {/* <Link href="/login">Login </Link> */}
                 <h3>Need an account? <a className="form-redirection-link" href="http://localhost:3000/signup">Sign Up</a></h3>
             </div>
         </>

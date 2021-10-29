@@ -13,8 +13,8 @@ const Profile = ({user}) => {
 
     return(
         <>
-        <HeaderComponent user={user}/>
-        <PersonalInformation user={user}/>
+        <HeaderComponent user={user} />
+            <PersonalInformation user={user} />
         <Footer/>
         </>
     )

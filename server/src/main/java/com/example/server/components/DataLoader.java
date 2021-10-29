@@ -24,12 +24,6 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     MenteeRepository menteeRepository;
 
-//    @Autowired
-//    AvailabilityRepository availabilityRepository;
-
-//    @Autowired
-//    EnglishLevelRepository englishLevelRepository;
-
     private ArrayList<String> englishLevel;
     private ArrayList<String> englishLevel2;
     private ArrayList<String> englishLevel3;
@@ -45,12 +39,8 @@ public class DataLoader implements ApplicationRunner {
     private ArrayList<String> availability4;
     private ArrayList<String> availability5;
     private ArrayList<String> availability6;
-//    private String date1;
-//    private String date2;
-//    private String date3;
-//    private String date4;
 
-    //MP: I'M NOT SURE WHY WE HAVE TWO DATA LOADERS? LINE 20 AND LINE 40?
+    //MP: I'M NOT SURE WHY WE HAVE TWO DATA LOADERS? LINE 16 AND LINE 44?
     public DataLoader (){
         //NEED TO FLESH OUT LANGUAGES SPOKEN AND ENGLISH LEVEL TO ADD THINGS TO IT
         this.englishLevel = new ArrayList();
@@ -199,13 +189,13 @@ public class DataLoader implements ApplicationRunner {
         Mentor shrek = new Mentor("Shrek", "Ogre", "1998-03-04", "shrekogre@gmail.com", "0921 3237 732", "Male", "To make some new friends, no one likes Ogres...", "Edinburgh", englishLevel6, languagesSpoken3, availability6);
         mentorRepository.save(shrek);
 
-        //        Date and time - THESE DON"T WORK
+        //        Date and time
         String meeting1date = "2021-02-01";
         String meeting2date = "2021-05-02";
         String meeting3date = "2021-06-04";
         String meeting4date = "2021-07-09";
         String meeting5date = "2021-08-11";
-        String meeting6date = "2021-9-10";
+        String meeting6date = "2021-09-10";
 //
         String meeting1time = "09:30";
         String meeting2time = "17:30";

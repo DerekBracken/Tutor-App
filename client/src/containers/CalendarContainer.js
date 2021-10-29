@@ -10,6 +10,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { withRouter } from 'react-router-dom';
 import Footer from "../components/FooterComponent";
 
+// not connected to the app yet - in production to be added to schedule
+
 //need to change this from the US to the UK - GB isn't working
 const locales = {
     "en-GB": require("date-fns/locale/en-GB"),
@@ -27,7 +29,6 @@ const localizer = dateFnsLocalizer({
 // move to helpers folder to be imported elsewhere
 const makeDate = date => new Date(Date.parse(date))
 
-//dates are really weird
 const events = [
     {
         title: "Big Meeting",

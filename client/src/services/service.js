@@ -4,17 +4,9 @@ const baseMeetingUrl = 'http://localhost:8080/'
 
 class Service {
 
-    // TODO needed?
     getMentor(){
-        return fetch(baseMentorUrl).then(res => res.json());
+      return fetch(baseMentorUrl).then(res => res.json());
     }
-
-    // delete(baseAppUrl, id) {
-    //     return fetch(baseAppUrl, {
-    //       method: "DELETE",
-    //       headers: {'Content-Type': 'application/json'}
-    //     })
-    // }
   
     post(baseMentorUrl, payload){
         return fetch(baseMentorUrl, {

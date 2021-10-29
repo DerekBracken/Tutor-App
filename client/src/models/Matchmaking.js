@@ -1,4 +1,3 @@
-
 const dict = {};
 let nestedArray = [];
 let sortedNestedArr = [];
@@ -88,8 +87,7 @@ function newSortedMentorsArray(mentorArray, sortedArrayId){
     return sortedMentors
 }
 
-// below function takes all the parameters above plus the users weighting from the signup form and returns a sorted array of mentor objects from most preferred to least preferred.
-
+// Below function takes all the parameters above plus the users weighting from the signup form and returns a sorted array of mentor objects from most preferred to least preferred.
 export function getTotalScores(mentee, mentorArray, locationWeighting, teachingWeighting, languagesWeighting, genderWeighting, availabilityWeighting){
     dictionarySetup(mentorArray);
     locationScore(mentee, mentorArray, locationWeighting);

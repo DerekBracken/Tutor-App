@@ -1,12 +1,10 @@
 import React, {useRef, useState} from 'react';
 import { useAuth } from '../../contexts/AuthContext'
-import { useHistory } from "react-router-dom"
 import "../../styles/Authentication.css"
 import "../../styles/form.css"
 import "../../styles/button.css"
 import HeaderComponent from '../HeaderComponent';
 import Footer from '../FooterComponent';
-
 
 export default function Signup(){
     const emailRef = useRef()
@@ -15,7 +13,6 @@ export default function Signup(){
     const { signup } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const history = useHistory()
     let formUrl;
 
     async function handleSubmit(e){
@@ -65,8 +62,8 @@ export default function Signup(){
                     <label >Membership :</label> <br/>
                     <select  className="form-field"  name='account' id='account' required>
                         <option className="form-field" disabled selected>Select from below</option>
-                            <option className="form-field" value="mentor">Mentor</option>
-                            <option className="form-field" value="mentee">Mentee</option>
+                        <option className="form-field" value="mentor">Mentor</option>
+                        <option className="form-field" value="mentee">Mentee</option>
                     </select>
                     </div>
                    <button className="small-button" disabled={loading} type="submit">Sign Up</button>
