@@ -35,14 +35,6 @@ function languagesScore(mentee, mentorArray, languagesWeighting){
         }
     }
 }
-// gender pref will not work yet as we don't have the form working yet...
-function genderScore(mentee, mentorArray, genderWeighting){
-    for (let i=0; i<mentorArray.length; i++ ){
-        if (mentorArray[i].gender === mentee.genderPref || mentee.genderPref === "No preference"){
-            dict[mentorArray[i].id] += genderWeighting
-        }
-    }
-}
 
 function availabilityScore(mentee, mentorArray, availabilityWeighting){
     for (let i=0; i<mentorArray.length; i++ ){
@@ -93,12 +85,11 @@ export function getTotalScores(mentee, mentorArray, locationWeighting, teachingW
     locationScore(mentee, mentorArray, locationWeighting);
     teachingScore(mentee, mentorArray, teachingWeighting);
     languagesScore(mentee, mentorArray, languagesWeighting);
-    genderScore(mentee, mentorArray, genderWeighting);
     availabilityScore(mentee, mentorArray, availabilityWeighting);
     convertToArray(dict);
     sortArray(nestedArray);
-    obtainObjectsFromSortedArray(sortedNestedArr)
-    return newSortedMentorsArray(mentorArray, sortedAllMentors(finalArr))
+    obtainObjectsFromSortedArray(sortedNestedArr);
+    return newSortedMentorsArray(mentorArray, sortedAllMentors(finalArr));
 }
 
 export default getTotalScores;

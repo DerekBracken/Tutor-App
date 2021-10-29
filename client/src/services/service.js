@@ -1,6 +1,4 @@
 const baseMentorUrl = 'http://localhost:8080/mentors'
-const baseMenteeUrl = 'http://localhost:8080/'
-const baseMeetingUrl = 'http://localhost:8080/'
 
 class Service {
 
@@ -23,7 +21,6 @@ class Service {
           body: JSON.stringify(payload)
         })
     }
-
 }
 
 export default Service;
