@@ -1,0 +1,34 @@
+/* CREATE SESSION CSS - LOOK TO MEETING */
+.create-session-container {
+    border: 2px solid #0D0B6D;
+    border-radius: 4px;
+    box-shadow: none;
+    max-width: 500px;
+    margin: auto;
+    align-items: center;
+}
+
+.session-form-field-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 120px;
+
+}
+
+.session-form-label {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 200;
+    color: #0D0B6D;
+    text-align: left;
+    font-size: 16px;
+    padding-top: 8px;
+}
+
+.session-form-field {
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: none;
+    width: 250px;
+    padding: 4px;
+
+}

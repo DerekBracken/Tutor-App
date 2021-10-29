@@ -1,0 +1,59 @@
+#individual-mentor-container {
+    border:  2px solid #14279B;
+    border-radius: 4px;
+    max-width: 550px;
+    min-height: 250px;
+    margin: auto;
+    margin-bottom: 16px;
+
+}
+
+#optional-info {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#name {
+    font-family: Cabin;
+    font-weight: bold;
+    font-size: 32px;
+    color: #14279B;
+    margin: 0;
+    padding-left: 8px;
+    margin-top: 4px;
+}
+
+#motivation {
+    font-family: Cabin;
+    font-style: italic;
+    font-weight: 400;
+    margin: 8px;
+}
+
+.mentor-tags {
+    font-family: Cabin;
+    font-weight: bold;
+    margin: 8px 8px 0px 8px;
+    width: 50%;
+}
+
+
+.mentor-info {
+    font-family: Cabin;
+    font-weight: 300;
+    margin: 0px 8px 8px 8px;
+}
+.column1 {
+    width: 50%;
+    float: left;
+}
+
+.column2 {
+    width: 50%;
+    float: right;
+}
+
+#mentor-headline {
+    display: flex;
+    justify-content: space-between;
+}
