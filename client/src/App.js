@@ -5,11 +5,9 @@ import MainContainer from "./MainContainer";
 function App() {
 
   return (
-
     <AuthProvider>
       <MainContainer/>
     </AuthProvider>
-      
   );
 }
 

@@ -1,10 +1,8 @@
-/* footer */
 #footer-wrapper-block {
     bottom: 0;
     width: 100%;
     position: fixed;
     background: #5C7AEA;
-    /* border-top: 3.5px solid rgb(213, 213, 213); */
     height: 1.75rem;
 }
 #footer-wrapper {

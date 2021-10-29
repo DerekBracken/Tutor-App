@@ -9,7 +9,6 @@
 }
 
 #optional-info {
-    /* display: flex; */
     margin-top: 8px;
     margin-bottom: 8px;
 }
@@ -43,7 +42,6 @@
     font-family: Cabin;
     font-weight: 300;
     margin: 0px 8px 8px 8px;
-    /* margin-top: 4px; */
 }
 .column1 {
     width: 50%;

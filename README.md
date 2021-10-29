@@ -1,24 +1,29 @@
 # Tutor-App
 
+Created in a two-week sprint by a team of 5 from CodeClan's E51 cohort to consolidate technologies such as React, JS, Java, Spring, CSS, and HTML, as well as learn new authentication technology, where Firebase was chosen.
+
+## Deployment
+
+To deploy this project run
+
+```bash
+1. Ensure NPM is installed on your machine
+2. Clone the repo onto your machine and open it in the terminal
+3. Open the Server directory in IntelliJ and run it
+4. Change to the Client directory in the terminal and run NPM i to install all the prerequisites listed in package.json.
+5. Run NPM start in the Client directory to start the client application
+6. If the localhost doesn't open automatically, in Chrome enter http://localhost:3000
+```
+
 Brief
 
-MVP
-Create a web app to connect mentees with volunteer mentors, with the aim to help refugees and those from minority ethnic communities with English language and life in the UK.  
-A mentee and a mentor should have individual accounts with different functionality.
-Each user should be able to sign up to become either a volunteer mentor / buddy or a mentee. 
+A web app to connect mentees with volunteer mentors, with the aim to help refugees and those from minority ethnic communities with English language and life in the UK. 
 
-A mentee should be able to:
-- Fill in a questionnaire and take an optional English test, and info will be stored in a database.
-- See all tutors and be able to filter through according to gender, age, interests.
-- Message tutors, and receive an email alert. 
-- Edit their user page, including adding an “About me” section, and choosing a default avatar. 
-- View the notes that the mentor has added to their page after each session.
+- A mentee and a mentor have individual accounts with different functionality.
+- Each user is able to sign up to become either a volunteer mentor or a mentee, and an algorithm sorts the list of mentors based on the information provided by each user in the sign-up questionnaire. 
+- A mentee can then pick which mentor they want to connect with. 
+- Once a mentor and mentee are connected, a mentor can organise an online session with any of their mentees. 
 
-A mentor should be able to:
-- Fill in a questionnaire / sign-up page.
-- Receive messages from mentees - receive an email alert, and be able to send a response.
-- Arrange an online video session.
-- Add notes to a mentee’s page after each session, viewable by the mentee, and other mentors. 
 
 Extensions:
 - Users can upload their own photo for profile
