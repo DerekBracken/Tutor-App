@@ -8,6 +8,5 @@ public interface MenteeRepository extends JpaRepository<Mentee, Long> {
 
     Mentee findByEmail(String email);
 
-    // TODO remove if not needed
     List<Mentee> findByMentor_id(Long id);
 }

@@ -40,9 +40,7 @@ public class DataLoader implements ApplicationRunner {
     private ArrayList<String> availability5;
     private ArrayList<String> availability6;
 
-    //MP: I'M NOT SURE WHY WE HAVE TWO DATA LOADERS? LINE 16 AND LINE 44?
     public DataLoader (){
-        //NEED TO FLESH OUT LANGUAGES SPOKEN AND ENGLISH LEVEL TO ADD THINGS TO IT
         this.englishLevel = new ArrayList();
         this.englishLevel2 = new ArrayList();
         this.englishLevel3 = new ArrayList();
@@ -202,7 +200,7 @@ public class DataLoader implements ApplicationRunner {
         String meeting3time = "19:00";
         String meeting4time = "13:30";
 
-        //MEETINGS - NEED NEW DATE AND TIME INSTANCES TO CONFIRM IT WORKS
+        //MEETINGS 
         Meeting meeting1 = new Meeting(meeting1date, meeting1time, " Notes: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum fermentum orci, a fringilla lorem vulputate sit amet. Aliquam consequat vitae purus nec mattis.  ", "www", johnny, sean);
         meetingRepository.save(meeting1);
 
@@ -246,98 +244,5 @@ public class DataLoader implements ApplicationRunner {
         menteeRepository.save(maggie);
         mentorRepository.save(duncanM);
 
-        //Saving Instances of AVAILABILITY
-//        Availabilty one = new Availabilty("Monday-Friday Daytime");
-//        availability.add(one);
-//        availabilityRepository.save(one);
-//
-//        Availabilty two = new Availabilty("Monday-Friday Evening");
-//        availability.add(two);
-//        availabilityRepository.save(two);
-//
-//        Availabilty three = new Availabilty("Weekend Daytime");
-//        availability.add(three);
-//        availabilityRepository.save(three);
-//
-//        Availabilty four = new Availabilty("Weekend Evening");
-//        availability.add(four);
-//        availabilityRepository.save(four);
-
-        //Saving Instances of ENGLISH LEVEL //Beginner, Elementary, Pre-Intermediate, Intermediate, Upper-Intermediate, Advanced
-//        EnglishLevel beginner = new EnglishLevel("Beginner");
-//        englishLevel.add(beginner);
-//        englishLevelRepository.save(beginner);
-//
-//        EnglishLevel elementary = new EnglishLevel("Elementary");
-//        englishLevel.add(elementary);
-//        englishLevelRepository.save(elementary);
-//
-//        EnglishLevel preIntermediate = new EnglishLevel("Pre-Intermediate");
-//        englishLevel.add(preIntermediate);
-//        englishLevelRepository.save(preIntermediate);
-//
-//        EnglishLevel intermediate = new EnglishLevel("Intermediate");
-//        englishLevel.add(intermediate);
-//        englishLevelRepository.save(intermediate);
-//
-//        EnglishLevel upperIntermediate = new EnglishLevel("Upper-Intermediate");
-//        englishLevel.add(upperIntermediate);
-//        englishLevelRepository.save(upperIntermediate);
-//
-//        EnglishLevel advanced = new EnglishLevel("Advanced");
-//        englishLevel.add(advanced);
-//        englishLevelRepository.save(advanced);
-
-        //Saving mentor's ENGLISH LEVEL
-//        johnny.addEnglishLevel(beginner);
-//        roosa.addEnglishLevel(beginner);
-//        roosa.addEnglishLevel(intermediate);
-//        roosa.addEnglishLevel(preIntermediate);
-//        roosa.addEnglishLevel(advanced);
-//        hannah.addEnglishLevel(intermediate);
-//        hannah.addEnglishLevel(upperIntermediate);
-//        hannah.addEnglishLevel(advanced);
-//        colin.addEnglishLevel(beginner);
-//        colin.addEnglishLevel(elementary);
-//        colin.addEnglishLevel(preIntermediate);
-//        colin.addEnglishLevel(intermediate);
-//        colin.addEnglishLevel(upperIntermediate);
-//        colin.addEnglishLevel(advanced);
-
-        //Saving Mentor's AVAILABILITY
-//        johnny.addAvailability(one);
-//        johnny.addAvailability(two);
-//        johnny.addAvailability(three);
-//        mentorRepository.save(johnny);
-//        roosa.addAvailability(four);
-//        roosa.addAvailability(one);
-//        mentorRepository.save(roosa);
-//        hannah.addAvailability(three);
-//        hannah.addAvailability(one);
-//        hannah.addAvailability(two);
-//        mentorRepository.save(hannah);
-//        colin.addAvailability(one);
-//        mentorRepository.save(colin);
-
-//        //Saving Mentee's Availability
-//        sean.addAvailability(one);
-//        menteeRepository.save(sean);
-//        maggie.addAvailability(two);
-//        maggie.addAvailability(three);
-//        maggie.addAvailability(four);
-//        menteeRepository.save(maggie);
-//        kelly.addAvailability(four);
-//        menteeRepository.save(kelly);
-//        dwight.addAvailability(one);
-//        dwight.addAvailability(two);
-//        dwight.addAvailability(three);
-//        dwight.addAvailability(four);
-//        menteeRepository.save(dwight);
-//        pam.addAvailability(two);
-//        pam.addAvailability(one);
-//        menteeRepository.save(pam);
-//        michael.addAvailability(one);
-//        michael.addAvailability(four);
-//        menteeRepository.save(michael);
     }
 }
