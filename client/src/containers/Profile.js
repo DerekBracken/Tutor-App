@@ -9,13 +9,11 @@ const Profile = ({user}) => {
         return 'Loading...'
       }
 
-    console.log("profile prop user",user);
-
     return(
         <>
-        <HeaderComponent user={user} />
+            <HeaderComponent user={user} />
             <PersonalInformation user={user} />
-        <Footer/>
+            <Footer/>
         </>
     )
 }

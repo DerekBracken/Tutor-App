@@ -163,7 +163,7 @@ const MentorSignupFormComponent = () =>{
                     </div>
                 </div>
 
-                <input className="small-button" type='submit' value='Submit' />
+                <input className="small-button" type='submit' value='Submit'/>
 
             </form>
         </>
