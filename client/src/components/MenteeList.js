@@ -2,10 +2,10 @@ import Mentee from "./Mentee";
 
 const MenteeList = ({allMentees}) => {
 
-    return(
+    return (
         <>
-        <h3> Mentee List </h3>
-        <Mentee allMentees={allMentees}/>
+            <h3> Mentee List </h3>
+            <Mentee allMentees={allMentees} />
         </>
     )
 }

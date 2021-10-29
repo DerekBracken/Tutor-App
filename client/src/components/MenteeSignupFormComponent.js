@@ -1,11 +1,8 @@
 import Service from "../services/service";
 import { useAuth } from "../contexts/AuthContext"
 
-
 const MenteeSignupFormComponent = () =>{
     const { currentUser } = useAuth()
-
-
     const handlePost = (mentee) => {
         const service = new Service();
         service.post("http://localhost:8080/mentees", mentee)
@@ -39,6 +36,7 @@ const MenteeSignupFormComponent = () =>{
         }
         handlePost(mentee) 
     }
+    
     return (
         <>
             <h1 id="signup-form-heading" >Mentee Signup Form Component</h1>
@@ -54,40 +52,35 @@ const MenteeSignupFormComponent = () =>{
                     <input className="form-field" type='text' id='last-name' name="last_name" placeholder="Enter Last Name" required/><br/>
             </div>     
                     
-        <div className="form-field-container">
+            <div className="form-field-container">
                 <label className="mentee-form-label" HTMLfor="dob"> Enter date of birth: </label><br/>
-                    <input className="form-field" type="date" id='dob' name='dob' required/><br/>
-        </div>
-                {/* <label>
-                will prepopulate with email from Dereks bit
-                    Enter email address: 
-                    <input type='email' id='email' name='email' placeholder="Enter email address" required/>
-                </label> */}
+                <input className="form-field" type="date" id='dob' name='dob' required/><br/>
+            </div>
 
             <div className="form-field-container">
                 <label className="mentee-form-label" HTMLfor="contact_number">Enter contact number: </label><br/>
-                    <input className="form-field" type='tel' id='contact-number' name='contact_number' placeholder="07856 658 658" required/><br/>
+                <input className="form-field" type='tel' id='contact-number' name='contact_number' placeholder="07856 658 658" required/><br/>
             </div>
 
             <div className="form-field-container">
                 <label className="mentee-form-label" HTMLfor="gender">Gender identity: </label><br/>
                     <select className="form-field" name='gender' id='gender' required>
                         <option disabled selected>Select from below</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Other">Other</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
                     </select>
             </div>
 
             <div className="form-field-container">
                 <label className="mentee-form-label" HTMLfor="about_me">About you: </label><br/>
-                    <textarea className="form-field" id='about_me' name='about_me' placeholder='I am from....' required/><br/>
+                <textarea className="form-field" id='about_me' name='about_me' placeholder='I am from....' required/><br/>
             </div>
 
             <div className="form-field-container">
                 <label className="mentee-form-label" HTMLfor="location"> Where are you based? </label><br/>
                     <select className="form-field" name='location' id='location' required><br/>
-                    <option disabled selected>Select from below</option>
+                        <option disabled selected>Select from below</option>
                         <option value="Aberdeen">Aberdeen</option>
                         <option value="Dundee">Dundee</option>
                         <option value="Edinburgh">Edinburgh</option>
@@ -101,12 +94,12 @@ const MenteeSignupFormComponent = () =>{
                 <label className="mentee-form-label" >What English level are you?</label><br/>
                     <select className="form-field" name='english_level' id='english_level' required>
                         <option disabled selected>Select</option>
-                            <option value="Beginner">Beginner</option>
-                            <option value="Elementary">Elementary</option>
-                            <option value="Pre-Intermediate">Pre-Intermediate</option>
-                            <option value="Intermediate">Intermediate</option>
-                            <option value="Upper-Intermediate">Upper-Intermediate</option>
-                            <option value="Advanced">Advanced</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Elementary">Elementary</option>
+                        <option value="Pre-Intermediate">Pre-Intermediate</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Upper-Intermediate">Upper-Intermediate</option>
+                        <option value="Advanced">Advanced</option>
                     </select>
             </div>
 
@@ -116,36 +109,32 @@ const MenteeSignupFormComponent = () =>{
                         <div>
                             <label className="mentee-form-label" > Select availability: </label>
                             <div>
-                            <input type="checkbox" name="mon_fri_day" value="Monday-Friday Daytime" id="mon_fri_day"/>
-                            <label className="mentee-form-small-options" for="mon_fri_day">Monday-Friday Daytime</label>
+                                <input type="checkbox" name="mon_fri_day" value="Monday-Friday Daytime" id="mon_fri_day"/>
+                                <label className="mentee-form-small-options" for="mon_fri_day">Monday-Friday Daytime</label>
                             </div>
 
                             <div>
-                            <input type="checkbox" name="mon_fri_eve" value="Monday-Friday Evening" id="mon_fri_eve"/>
-                            <label className="mentee-form-small-options" for="mon_fri_eve">Monday-Friday Evening</label>
+                                <input type="checkbox" name="mon_fri_eve" value="Monday-Friday Evening" id="mon_fri_eve"/>
+                                <label className="mentee-form-small-options" for="mon_fri_eve">Monday-Friday Evening</label>
                             </div>
 
                              <div>                                       
-                            <input type="checkbox" name="weekend_day" value="Weekend Daytime" id="weekend_day"/>
-                            <label className="mentee-form-small-options" for="weekend_day">Weekend Daytime</label>
+                                <input type="checkbox" name="weekend_day" value="Weekend Daytime" id="weekend_day"/>
+                                <label className="mentee-form-small-options" for="weekend_day">Weekend Daytime</label>
                             </div>
 
                              <div>                                       
-                            <input type="checkbox" name="weekend_eve" value="Weekend Evening" id="weekend_eve"/> 
-                            <label className="mentee-form-small-options" for="weekend_eve">Weekend Evening</label>   
+                                <input type="checkbox" name="weekend_eve" value="Weekend Evening" id="weekend_eve"/> 
+                                <label className="mentee-form-small-options" for="weekend_eve">Weekend Evening</label>   
                             </div>                               
                         </div>
                 </div>
+
                 <input className="small-button" type='submit' value='Submit'/>
+                
             </form>
         </>
     )
 }
 
 export default MenteeSignupFormComponent;
-
-
-// Code for red asterisk
-// .form-group .required .control-label:after {
-//     content:"*";color:red;
-//   }

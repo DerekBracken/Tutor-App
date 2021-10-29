@@ -1,58 +1,52 @@
 import Mentor from "./Mentor";
-import { useState, useEffect } from "react";
-import { useAuth } from "../contexts/AuthContext";
 import Service from "../services/service";
 import getTotalScores from "../models/Matchmaking";
 
-
 const MentorList = ({allMentors, user}) => {
-    const {currentUser} = useAuth()
 
-    
     if (allMentors === null) {
         return 'Loading'
       }
     
-    // We need to have two views, one depending on if the person signed in is a type mentee or other. The mentee will be able to see the choose mentor. Everyone else will just see a list.
-
     const handlePut = (user) => {
         const service = new Service();
-        service.put(`http://localhost:8080/mentees/${currentUser.email}`, user)   
+        service.put(`http://localhost:8080/mentees/${user.email}`, user)   
     }
 
-    const handleButtonClick = (event) =>{
+    const handleButtonClick = (event) => {
         event.preventDefault();
         user.mentor = allMentors[parseInt(event.target.value)]
         handlePut(user)
         window.location = '/view-mentors'
     }
+
     let individualMentor;
-    if (user != null && user.type != "Mentor"){
+    
+    if (user != null && user.type != "Mentor") {
         individualMentor = getTotalScores(user, allMentors, 5,5,5,5,5).map((mentor, index) => {
-        return(
+        return (
             <div>
-                <Mentor mentor = {mentor} key = {index} user={user} handleButtonClick={handleButtonClick}/>
+                <Mentor mentor = {mentor} key = {index} user={user} handleButtonClick={handleButtonClick} />
             </div>
         ) 
     })} else {
             individualMentor = allMentors.map((mentor, index) => {
-            return <Mentor mentor = {mentor} key = {index} user={user} handleButtonClick={handleButtonClick}/>
+            return <Mentor mentor = {mentor} key = {index} user={user} handleButtonClick={handleButtonClick} />
         })}
 
-
-    if (user && user.type != "Mentor" && user.mentor != null){
-        return(
+    if (user && user.type != "Mentor" && user.mentor != null) {
+        return (
             <>
-                <h1>Your current mentor</h1>
-                <Mentor mentor = {user.mentor} user={user} handleButtonClick={handleButtonClick} />
-                <h1>All Mentors </h1>
-                {individualMentor}
+            <h1> Your current mentor </h1>
+            <Mentor mentor = {user.mentor} user={user} handleButtonClick={handleButtonClick} />
+            <h1> All Mentors </h1>
+            {individualMentor}
             </>
         ) 
     }
-    return(
+    return (
         <>
-            <h1>All Mentors </h1>
+            <h1> All Mentors </h1>
             {individualMentor}
         </>
     )

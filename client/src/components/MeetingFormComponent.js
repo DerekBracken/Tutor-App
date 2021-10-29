@@ -1,14 +1,8 @@
 import { useAuth } from "../contexts/AuthContext";
-import {useState, useEffect} from 'react'
 import Service from "../services/service";
 import "../styles/session.css"
 
-
-
 const MeetingFormComponent = ({user}) => {
-    const {currentUser} = useAuth()
-
-
     const handlePost = (meeting) => {
         const service = new Service();
         service.post("http://localhost:8080/meetings", meeting)
@@ -30,7 +24,7 @@ const MeetingFormComponent = ({user}) => {
 
     }
 
-    // below should loop through the current mentors list of mentees
+    // Below should loop through the current mentors list of mentees
     if (user && user.mentees != null){
     const menteeOptions = user.mentees.map((mentee, index) =>{
         return <option value={index} key={index}>{mentee.firstName} {mentee.lastName}</option>
@@ -39,63 +33,65 @@ const MeetingFormComponent = ({user}) => {
     return(
         <>
         <h1>Create new session </h1>
-            {/* include date, time, notes, meeting_link, mentor and mentee */}
-            <form className="create-session-container" onSubmit={handleFormSubmit}>
-                <div className="session-form-field-container">
+        <form className="create-session-container" onSubmit={handleFormSubmit}>
+            <div className="session-form-field-container">
                 <label className="session-form-label" HTMLfor="date_time">Select date and time: </label>
-                    <input className="session-form-field" type='datetime-local' id="date_time" name="date_time" required/>
-                </div> <br/>
+                <input className="session-form-field" type='datetime-local' id="date_time" name="date_time" required/>
+            </div><br/>
 
-                <div className="session-form-field-container">
+            <div className="session-form-field-container">
                 <label className="session-form-label" HTMLfor='notes'>What will be discussed? </label>
-                    <textarea  className="session-form-field"  id="notes" name = "notes" placeholder='Enter meeting notes here' />
-                </div><br/>
+                <textarea  className="session-form-field"  id="notes" name = "notes" placeholder='Enter meeting notes here' />
+            </div><br/>
 
-                <div className="session-form-field-container">
+            <div className="session-form-field-container">
                 <label className="session-form-label" HTMLfor='meeting_link'>Enter meeting link: </label>
-                    <input className="session-form-field"  type='url' id='meeting_link' name='meeting_link' placeholder="Meeting URL"/>
-                </div><br/>
+                <input className="session-form-field"  type='url' id='meeting_link' name='meeting_link' placeholder="Meeting URL"/>
+            </div><br/>
 
-                <div className="session-form-field-container" >
-                <label className="session-form-label"  HTMLfor="mentee">Choose mentee: </label>
-                    <select className="session-form-field"  name='mentee' id='mentee' required>
-                        <option disabled selected>Select mentee from list below</option>
-                        {menteeOptions}
-                    </select>
-                </div><br/>
-                <input className="session-button" type='submit' value='Submit'/>
-            </form>
-        </>
+            <div className="session-form-field-container" >
+            <label className="session-form-label"  HTMLfor="mentee">Choose mentee: </label>
+                <select className="session-form-field"  name='mentee' id='mentee' required>
+                <option disabled selected>Select mentee from list below</option>
+                {menteeOptions}
+                </select>
+            </div><br/>
+
+            <input className="session-button" type='submit' value='Submit'/>
+
+        </form>
+    </>
     )
 } 
 return(
     <>
-    <h1>Create new session </h1>
-    {/* include date, time, notes, meeting_link, mentor and mentee */}
-    <form className="create-session-container" onSubmit={handleFormSubmit}>
-        <div className="session-form-field-container">
-        <label className="session-form-label" HTMLfor="date_time">Select date and time: </label>
-            <input className="session-form-field" type='datetime-local' id="date_time" name="date_time" required/>
-        </div> <br/>
+        <h1>Create new session </h1>
+        <form className="create-session-container" onSubmit={handleFormSubmit}>
+            <div className="session-form-field-container">
+                <label className="session-form-label" HTMLfor="date_time">Select date and time: </label>
+                <input className="session-form-field" type='datetime-local' id="date_time" name="date_time" required/>
+            </div><br/>
 
-        <div className="session-form-field-container">
-        <label className="session-form-label"  HTMLfor='notes'>What will be discussed? </label>
-            <textarea  className="session-form-field" id="notes" name = "notes" placeholder='Enter meeting notes here' />
-        </div> <br/>
+            <div className="session-form-field-container">
+                <label className="session-form-label"  HTMLfor='notes'>What will be discussed? </label>
+                <textarea  className="session-form-field" id="notes" name = "notes" placeholder='Enter meeting notes here' />
+            </div><br/>
 
-        <div className="session-form-field-container">
-        <label className="session-form-label" HTMLfor='meeting_link'>Enter meeting link: </label>
-            <input className="session-form-field" type='url' id='meeting_link' name='meeting_link' placeholder="Meeting URL"/>
-        </div> <br/>
+            <div className="session-form-field-container">
+                <label className="session-form-label" HTMLfor='meeting_link'>Enter meeting link: </label>
+                <input className="session-form-field" type='url' id='meeting_link' name='meeting_link' placeholder="Meeting URL"/>
+            </div><br/>
 
-        <div className="session-form-field-container">
-        <label className="session-form-label" HTMLfor="mentee">Choose mentee: </label>
-            <select className="session-form-field"  name='mentee' id='mentee' required>
-                <option disabled selected>Select mentee from list below</option>
-            </select>
-        </div> <br/>
-        <input className="session-button" type='submit' value='Submit'/>
-    </form>
+            <div className="session-form-field-container">
+                <label className="session-form-label" HTMLfor="mentee">Choose mentee: </label>
+                <select className="session-form-field"  name='mentee' id='mentee' required>
+                    <option disabled selected>Select mentee from list below</option>
+                </select>
+            </div><br/>
+            
+            <input className="session-button" type='submit' value='Submit'/>
+            
+        </form>
     </>
 )
 }
