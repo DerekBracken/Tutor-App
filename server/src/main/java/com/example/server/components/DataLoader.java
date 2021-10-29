@@ -7,9 +7,6 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import java.sql.Time;
-import java.util.Date;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 @Component
